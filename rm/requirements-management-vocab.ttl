@@ -9,77 +9,84 @@
 @prefix vs:          <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
 
-@prefix oslc_xxx:    <http://open-services.net/ns/xxx#> .
+@prefix rm:    <http://open-services.net/ns/rm#> .
 
-# The ontology
+# The Requirements Management ontology
 
-oslc_xxx:
-    a                              owl:Ontology ;
-    dcterms:title                  "OSLC XXX vocabulary" ;
-    dcterms:description            "The OSLC XXX vocabulary defines terms for specification XXX." ;
-    rdfs:label                     "OSLC XXX vocabulary" ;
-    vann:preferredNamespacePrefix  "oslc_xxx" ;
+rm:
+  a owl:Ontology ;
+  dcterms:title "The OSLC Requirements Management(RM) Vocabulary" ;
+  dcterms:description "All vocabulary URIs defined in the OSLC Requirements Management (RM) namespace."^^rdf:XMLLiteral ;
+  dcterms:source <https://github.com/oasis-tcs/oslc-domains/blob/master/rm/requirements-management-vocab.ttl> ;
+  vann:preferredNamespacePrefix "rm" ;
+  rdfs:label "Requirements Management(RM)" .
 
-    # This needs to refer to the published source of the vocabulary, in the OASIS document library
-    dcterms:source                 <http://docs.oasis-open.org/xxx.ttl> ;
+# ******** Classes ********
 
-    # TBD - what should the license and copyright info be here?
-    dcterms:license                "TBD" ;
-    dcterms:dateCopyrighted        "2012-2016" ;
-	rdfs:seeAlso                   <http://docs.oasis-open.org/tc-name/> .
+rm:Requirement
+        a                    rdfs:Class ;
+        rdfs:isDefinedBy     rm: ;
+        rdfs:label           "Requirement" ;
+        oslc:hasBasicShape   rm:requirementShape ;
+        dcterms:description  "Statement of need." ;
+        dcterms:issued       "2010-10-10" ;
+        dcterms:modified     "2010-10-10" .
 
-# Classes
+rm:RequirementCollection
+        a                    rdfs:Class ;
+        rdfs:isDefinedBy     rm: ;
+        rdfs:label           "RequirementCollection" ;
+        oslc:hasBasicShape   <http://open-services-net/shapes/rm#requirementCollectionShape> ;
+        dcterms:description  "Collection of requirements. A collection uses zero or more requirements." .
 
-oslc_xxx:ExampleClass1
-    a                              rdfs:Class ;
-    rdfs:isDefinedBy               oslc_xxx: ;
-    rdfs:label                     "ExampleClass1" ;
-    rdfs:comment                   "Description of ExampleClass1." .
 
-oslc_xxx:ExampleClass2
-    a                              rdfs:Class ;
-    rdfs:isDefinedBy               oslc_xxx: ;
-    rdfs:label                     "ExampleClass2" ;
-    rdfs:comment                   "Description of ExampleClass2." .
+# ******** Properties ********
 
-oslc_xxx:Color
-    a                              rdfs:Class ;
-    rdfs:isDefinedBy               oslc_xxx: ;
-    rdfs:label                     "Color" ;
-    rdfs:comment                   "The class of colors." .
+rm:implementedBy
+        a                    rdf:Property ;
+        rdfs:comment         "An entity which is a necessary or desirable aspect of an implementation." ;
+        rdfs:isDefinedBy     rm: ;
+        rdfs:label           "implementedBy" ;
+        dcterms:description  "Expresses an implementation relationship between entities." .
 
-# Properties
+rm:trackedBy
+        a                    rdf:Property ;
+        rdfs:comment         "An entity which in some way tracks or governs the evolution of an entity." ;
+        rdfs:isDefinedBy     rm: ;
+        rdfs:label           "trackedBy" ;
+        dcterms:description  "Expresses a tracking relationship between entities. For example, a change request may be said to track a requirement, in that it governs the changes to a requirement according to some process machinery." .
 
-oslc_xxx:color
-    a                              rdf:Property ;
-    rdfs:isDefinedBy               oslc_xxx: ;
-    rdfs:label                     "color" ;
-    rdfs:comment                   "The color of a resource." ;
-    rdfs:range                     oslc_xxx:Color . # be sparing in the use of domain and range
+rm:uses
+        a                    rdf:Property ;
+        rdfs:comment         "An entity which is used by another resource." ;
+        rdfs:isDefinedBy     rm: ;
+        rdfs:label           "uses" ;
+        dcterms:description  "Expresses a use relationship between entities. For example, a requirement collection may use a requirement." .
 
-# Individuals
+rm:elaboratedBy
+        a                    rdf:Property ;
+        rdfs:comment         "An entity which elaborates." ;
+        rdfs:isDefinedBy     rm: ;
+        rdfs:label           "elaboratedBy" ;
+        dcterms:description  "Expresses an elaboration relationship between entities. For example, a model element can elaborate a requirement." .
 
-oslc_xxx:red
-    a                              oslc_xxx:Color ;
-    rdfs:isDefinedBy               oslc_xxx: ;
-    rdfs:label                     "red" ;
-    rdfs:comment                   "Red" .
+rm:specifiedBy
+        a                    rdf:Property ;
+        rdfs:comment         "An entity which further clarifies or specifies." ;
+        rdfs:isDefinedBy     rm: ;
+        rdfs:label           "specifiedBy" ;
+        dcterms:description  "Expresses a specification relationship between entities. For example, a model element can specifiy a requirement." .
 
-oslc_xxx:green
-    a                              oslc_xxx:Color ;
-    rdfs:isDefinedBy               oslc_xxx: ;
-    rdfs:label                     "green" ;
-    rdfs:comment                   "Green" .
+rm:affectedBy
+        a                    rdf:Property ;
+        rdfs:comment         "An entity which in some way affects the object entity." ;
+        rdfs:isDefinedBy     rm: ;
+        rdfs:label           "affectedBy" ;
+        dcterms:description  "Expresses an affects relationship between entities. For example, a defect may be said to affect a requirement." .
 
-oslc_xxx:blue
-    a                              oslc_xxx:Color ;
-    rdfs:isDefinedBy               oslc_xxx: ;
-    rdfs:label                     "blue" ;
-    rdfs:comment                   "Blue" .
-
-oslc_xxx:otherColor
-    a                              oslc_xxx:Color ;
-    rdfs:isDefinedBy               oslc_xxx: ;
-    rdfs:label                     "other" ;
-    rdfs:comment                   "Other color" .
-
+rm:validatedBy
+        a                    rdf:Property ;
+        rdfs:comment         "An entity which in some way validates." ;
+        rdfs:isDefinedBy     rm: ;
+        rdfs:label           "validatedBy" ;
+        dcterms:description  "Expresses a validation relationship between entities. For example, a test plan may be said to validated a requirement collection." .
