@@ -8,7 +8,7 @@
 @prefix vann:        <http://purl.org/vocab/vann/> .
 @prefix vs:          <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
-@prefix oslc_oslc_rm:    <http://open-services.net/ns/rm#> .
+@prefix oslc_rm:    <http://open-services.net/ns/rm#> .
 
 # The Requirements Management ontology
 
