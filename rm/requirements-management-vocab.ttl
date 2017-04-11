@@ -8,12 +8,11 @@
 @prefix vann:        <http://purl.org/vocab/vann/> .
 @prefix vs:          <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
-
-@prefix rm:    <http://open-services.net/ns/rm#> .
+@prefix oslc_oslc_rm:    <http://open-services.net/ns/rm#> .
 
 # The Requirements Management ontology
 
-rm:
+oslc_rm:
   a owl:Ontology ;
   dcterms:title "The OSLC Requirements Management(RM) Vocabulary" ;
   dcterms:description "All vocabulary URIs defined in the OSLC Requirements Management (RM) namespace."^^rdf:XMLLiteral ;
@@ -23,18 +22,16 @@ rm:
 
 # ******** Classes ********
 
-rm:Requirement
+oslc_rm:Requirement
         a                    rdfs:Class ;
-        rdfs:isDefinedBy     rm: ;
+        rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "Requirement" ;
-        oslc:hasBasicShape   rm:requirementShape ;
-        dcterms:description  "Statement of need." ;
-        dcterms:issued       "2010-10-10" ;
-        dcterms:modified     "2010-10-10" .
+        oslc:hasBasicShape   oslc_rm:requirementShape ;
+        dcterms:description  "Statement of need." .
 
-rm:RequirementCollection
+oslc_rm:RequirementCollection
         a                    rdfs:Class ;
-        rdfs:isDefinedBy     rm: ;
+        rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "RequirementCollection" ;
         oslc:hasBasicShape   <http://open-services-net/shapes/rm#requirementCollectionShape> ;
         dcterms:description  "Collection of requirements. A collection uses zero or more requirements." .
@@ -42,51 +39,51 @@ rm:RequirementCollection
 
 # ******** Properties ********
 
-rm:implementedBy
+oslc_rm:implementedBy
         a                    rdf:Property ;
         rdfs:comment         "An entity which is a necessary or desirable aspect of an implementation." ;
-        rdfs:isDefinedBy     rm: ;
+        rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "implementedBy" ;
         dcterms:description  "Expresses an implementation relationship between entities." .
 
-rm:trackedBy
+oslc_rm:trackedBy
         a                    rdf:Property ;
         rdfs:comment         "An entity which in some way tracks or governs the evolution of an entity." ;
-        rdfs:isDefinedBy     rm: ;
+        rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "trackedBy" ;
         dcterms:description  "Expresses a tracking relationship between entities. For example, a change request may be said to track a requirement, in that it governs the changes to a requirement according to some process machinery." .
 
-rm:uses
+oslc_rm:uses
         a                    rdf:Property ;
         rdfs:comment         "An entity which is used by another resource." ;
-        rdfs:isDefinedBy     rm: ;
+        rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "uses" ;
         dcterms:description  "Expresses a use relationship between entities. For example, a requirement collection may use a requirement." .
 
-rm:elaboratedBy
+oslc_rm:elaboratedBy
         a                    rdf:Property ;
         rdfs:comment         "An entity which elaborates." ;
-        rdfs:isDefinedBy     rm: ;
+        rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "elaboratedBy" ;
         dcterms:description  "Expresses an elaboration relationship between entities. For example, a model element can elaborate a requirement." .
 
-rm:specifiedBy
+oslc_rm:specifiedBy
         a                    rdf:Property ;
         rdfs:comment         "An entity which further clarifies or specifies." ;
-        rdfs:isDefinedBy     rm: ;
+        rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "specifiedBy" ;
         dcterms:description  "Expresses a specification relationship between entities. For example, a model element can specifiy a requirement." .
 
-rm:affectedBy
+oslc_rm:affectedBy
         a                    rdf:Property ;
         rdfs:comment         "An entity which in some way affects the object entity." ;
-        rdfs:isDefinedBy     rm: ;
+        rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "affectedBy" ;
         dcterms:description  "Expresses an affects relationship between entities. For example, a defect may be said to affect a requirement." .
 
-rm:validatedBy
+oslc_rm:validatedBy
         a                    rdf:Property ;
         rdfs:comment         "An entity which in some way validates." ;
-        rdfs:isDefinedBy     rm: ;
+        rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "validatedBy" ;
         dcterms:description  "Expresses a validation relationship between entities. For example, a test plan may be said to validated a requirement collection." .
