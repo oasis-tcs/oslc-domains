@@ -4,10 +4,10 @@
 <!-- replace am with your domains's short name, e.g., cm -->
 <meta charset='utf-8' />
 <head>
-<title>OSLC Architecture Management Specification 3.0</title>
-<link rel="stylesheet" type="text/css" href="../styles/oslc-styles.css" />
-<link rel="stylesheet" type="text/css" href="../styles/table-styles.css" />
-<link rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
+<title>OSLC Architecture Management Specification 2.1</title> <link 
+rel="stylesheet" type="text/css" href="../styles/oslc-styles.css" /> <link 
+rel="stylesheet" type="text/css" href="../styles/table-styles.css" /> <link 
+rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 <script src='https://ndjc.github.io/respec/builds/oasis/respec-oasis-common.js' async class='remove'></script>
 <script class='remove'>
   var respecConfig = {
@@ -24,7 +24,7 @@
         // subtitle   :  "Committee Specification Draft 02",
 
         // the document's citation label
-        citationLabel: "OSLC-Architecture Management-v3.0",
+        citationLabel: "OSLC-Architecture Management-v2.1",
 
         // Revision level of the document within its stage
         revision: "01",
@@ -37,7 +37,7 @@
 
         // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
         // and its maturity status
-        // previousPublishDate:  "1977-03-15",
+        // previousPublishDate:  "2011-08-15",
         // previousMaturity:  "WD",
 
         // Only include h1 and h2 levels in the table of contents
@@ -49,10 +49,10 @@
     // Chairs and editors, add as many as you like: you must have at least one editor.
     // Only "name" is required, but the other fields are recommended.
     editors:  [ {
-        name:        "Jim Amsden",
-        mailto :     "jamsden@us.ibm.com",
-        company :    "IBM",
-        companyURL : "http://www.ibm.com"
+        name:        "Mark Schulte",
+        mailto :     "mark.d.schulte@boeing.com",
+        company :    "The Boeing Company",
+        companyURL : "http://www.boeing.com"
       },
     ],
     chairs : [ {
@@ -99,81 +99,73 @@
 
         localBiblio : {
             "OSLCCore2" : {
-                title:    "OSLC Core 2.0",
+                title:    "OSLC Core Specification 2.0",
                 href:     "http://open-services.net/bin/view/Main/OslcCoreSpecification",
-                authors:  ["S. Speicher", "D. Johnson"],
+                authors : [ "Dave Johnson", "S. Speicher" ],
                 status:   "Finalized",
                 publisher:  "http://open-services.net",
             },
-            "OSLCCore3": {
-                title:     "OSLC Core 3.0",
-                href:      "http://tools.oasis-open.org/version-control/svn/oslc-core/specs/oslc-core-v3.html",
-                authors:   [ "Steve Speicher", "Jim Amsden" ],
-                publisher: "OASIS",
-            },
-            "OSLCCoreVocab" : {
-                title : "OSLC Core Vocabulary",
-                href : "http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part7-core-vocabulary.html",
-                authors : [ "Jim Amsden", "S. Padgett", "S. Speicher" ],
-                status:   "Working Draft",
-                publisher : "OASIS",
-            },
-            "OSLCResourcePreview": {
-                title:    "OSLC Core 3.0 Resource Preview",
-                href:     "http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part3-resource-preview.html",
-                authors:  ["Jim Amsden", "S. Speicher"],
-                status:   "Draft",
-                publisher:  "OASIS",
-            },
-            "OSLCTRS3": {
-                title:     "Tracked Resource Set Specification Version 3.0",
-                href:      "http://tools.oasis-open.org/version-control/svn/oslc-core/specs/tracked-resource-set.html",
-                authors:   [ "Jim Amsden", "Nicholas Crossley", "Vivek Garg" ],
-                status:    "Committee Specification Draft",
+            "OSLCUI": {
+                title:     "OSLC UI Preview Guidance",
+                href:      "http://open-services.net/bin/view/Main/OslcUiPreviewDRAFT",
+                status:    "Draft",
                 publisher: "http://open-services.net",
             },
-            "OSLCQuery" : {
-                title:    "OSLC Core 2.0 Query Capability",
-                href:     "http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities",
-                authors:  ["S. Speicher", "D. Johnson"],
+            "DublinCore" : {
+                title : "Dublin Core Metadata Element Set, Version 1.1",
+                href : "http://dublincore.org/documents/dces/",
+                status:   "DCMI Recommendation",
+                publisher : "Dublin Core Metadata Initiative",
+            },
+            "FOAF": {
+                title:    "Friend of a Friend (FOAF)",
+                href:     "http://xmlns.com/foaf/spec/",
+                authors:  ["Dan Brickley", "Libby Miller"],
                 status:   "Finalized",
-                publisher:  "http://open-services.net",
+                publisher:  "FOAF project",
             },
-            "LDPPaging": {
-                title:    "Linked Data Platform Paging 1.0",
-                href:     "https://dvcs.w3.org/hg/ldpwg/raw-file/default/ldp-paging.html",
-                authors:  ["S. Speicher", "J. Arwe", "A. Malhotra"],
-                status:   "Working Group Note",
-                publisher:  "http://www.w3c.org",
+            "HTTP": {
+                title:     "Hyper-text Transfer Protocol (HTTP/1.1)",
+                href:      "https://tools.ietf.org/html/rfc2616",
+                authors:   [ "Jim Amsden", "Nicholas Crossley", "Vivek Garg" ],
+                status:    "Draft Standard",
             },
-            "LDPPatch" : {
-                title : "Linked Data Patch Format",
-                href : "http://www.w3.org/TR/ldpatch/",
+            "RDF/XML Concepts" : {
+                title:    "RDF/XML Concepts and Abstract Syntax",
+                href:     "http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/",
+                authors:  ["Graham Klyne", "Jeremy J. Carroll"],
+                status:   "Superseded Recommendation",
+                publisher:  "www.w3.org",
+            },
+            "RDF/XML Syntax": {
+                title:    "RDF/XML Syntax Specification (Revised)",
+                href:     "http://www.w3.org/TR/2004/REC-rdf-syntax-grammar-20040210/",
+                authors:  ["Dave Beckett"],
+                status:   "Revision",
+                publisher:  "www.w3.org",
+            },
+            "URI Syntax" : {
+                title : "URI Generic Syntax",
+                href : "https://tools.ietf.org/html/rfc3986",
                 status : "Working Group Note",
-                publisher : "http://www.w3.org/",
+                },
+            "XML Namespaces": {
+                title : "Namespaces in XML 1.0 (Third Edition)",
+                href : "http://www.w3.org/TR/REC-xml-names/",
+                authors : [ "Tim Bray", "Dave Hollander", "Andrew Layman", "Richard Tobin", "Henry S. Thompson" ],
+                publisher : "www.w3.org",
             },
-            "OSLCShape": {
-                title : "OSLC Resource Shape 3.0",
-                href : "https://tools.oasis-open.org/version-control/svn/oslc-core/trunk/specs/resource-shape.html",
-                authors : [ "Arthur Ryman", "Jim Amsden" ],
-                publisher : "OASIS",
+            "XML Base" : {
+                title : "XML Base (Second Edition)",
+                href : "http://www.w3.org/TR/xmlbase/",
+                authors : ["Jonathan Marsh", "Richard Tobin"], 
+                status: "Recommendation" ,
+                publisher : "www.w3.org",
             },
-            "OpenIDConnect" : {
-                title : "OpenID Connect",
-                href : "http://openid.net/connect/",
-                publisher : "openid.net",
-            },
-            "OSLCRM": {
-                title:    "Open Services for Lifecycle Collaboration Requirements Management Specification Version 2.0",
-                href:     "http://open-services.net/bin/view/Main/RmSpecificationV2",
-                authors:  ["Ian Green"],
-                status:   "Final",
-                publisher:  "http://open-services.net",
-            },
-            "OSLCQM": {
-                title:    "Open Services for Lifecycle Collaboration Quality Management Specification Version 2.0",
-                href:     "http://open-services.net/bin/view/Main/QmSpecificationV2",
-                authors:  ["Paul McMahan"],
+            "XSD Datatypes": {
+                title:    "XML Schema Part 2: Datatypes Second Edition",
+                href:     "http://www.w3.org/TR/xmlschema-2/",
+                authors:  ["Paul V. Biron", "Ashok Malhotra"],
                 status:   "Final",
                 publisher:  "http://open-services.net",
             },
@@ -226,250 +218,322 @@ dd {
 
 <section id='intro' class='informative'>
   <h2>Introduction</h2>
-  <p></p>
+  <p>The general approach taken by the Architecture Management (AM) workgroup 
+ follows the OSLC Change Management team's lead by not attempting to re-define 
+ model storage formats or even model or other architecture management resource 
+ notations, but rather extract out a least common denominator, that could be 
+ managed by an AM server, and still be useful to the overall goal of 
+ architecture management in a collaborative ALM environment. This does not 
+ prevent knowledgeable clients from getting and making use of internal resource 
+ content. 
+    </p>
+  <p> The AM resource properties are not limited to the ones defined in this 
+ specification. It is recommended to contribute resource properties in their own 
+ unique namespace. Service providers MUST NOT reuse or re-define properties or 
+ terms defined in this specification.
+ </p> 
+  <p>
+This specification is a <a 
+href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core 
+2.0</a> compliant specification, as such most of its content are references to 
+the 
+Core 2.0 specification.
+</p>
 
   <section id='terminology' class='informative'>
     <h3>Terminology</h3>
-    <p>Terminology is based on OSLC Core Overview [[OSLCCore3]],
-      W3C Linked Data Platform [[LDP]],
-      W3C's Architecture of the World Wide Web [[WEBARCH]],
-      and Hyper-text Transfer Protocol [[HTTP11]].</p>
-    <dl class="spaced">
-      <dt><dfn>Term1</dfn></dt>
-      <dd>Definition 1.</dd>
+      <dl class="spaced">
+      <dt><dfn>Resource</dfn></dt>
+      <dd>An artifact used in the ALM space. A resource is directly addressable 
+        with an absolute URL.</dd>
 
-      <dt><dfn>Term2</dfn></dt>
-      <dd>Definition 2.</dd>
+      <dt><dfn>Architecture Management Resource (AMR)</dfn></dt>
+      <dd>Directly addressable resources of some domain/notation (i.e. UML, 
+        BMPN, ER) that represent an abstraction of some behavior or construct of 
+        a system under development. An AMR maintains its identity after 
+        refactoring. In the semantic web, an AMR might correspond to a graph 
+        that is an instance of some vocabulary or micro-theory.</dd> 
+        
+        <dt><dfn>Link</dfn></dt>
+      <dd>A logical relationship from one resource to another resource. An OSLC AM Link is uni-directional. 
+        The subject (source) of a link represents the resource that "knows 
+        about" and is referencing another resource (target). The type of 
+        relationship is given by a predicate URI (link type). In semantic web 
+        terminology, a link would correspond to an RDF statement with a subject 
+        (source) a predicate (type) and object (target). The predicate could be 
+        defined by property in an RDF schema.</dd>
+
+
+         <dt><dfn>Link Type (LT)</dfn></dt>
+      <dd>A URI that represents the type of a link. In semantic web terminology it is the predicate of an 
+        RDF triple. It clarifies the type of relationship between two resources. 
+        Link Type URIs may be defined locally, within the OSLC, or externaly 
+        (i.e. Dublin Core terms). Link types could be defined in RDF 
+        Schemas.</dd>
+
+
+         <dt><dfn>Link type Resource (LTR)</dfn></dt>
+      <dd>A resource that contains human consumable information about a Link Type, like its human readable 
+        name and description. The resource is managed by the AM provider. The 
+        information may be about a Link Type in a different domain (i.e. Dublin 
+        Core Terms or OWL). The main use of a LTR is for clients who want to 
+        build a UI for users that clearly labels potential link types.</dd>
+
+
+         <dt><dfn>Service Provider</dfn></dt>
+      <dd>An implementation of the OSLC Architecture Management specifications as a server. 
+        OSLC AM clients consume these service.</dd>
+
+
+         <dt><dfn>Service Description Resource</dfn></dt>
+      <dd>An informational resource describing the capabilities and contextual 
+        configuration needed for a set of Architecture Management-specific 
+        services.</dd>
+
+
+         <dt><dfn>Service Description Document</dfn></dt>
+      <dd>The representation of a Architecture Management Services 
+        Resource.</dd>
+
 
     </dl>
   </section>
 
-  <section id='references'><h3>References</h3></section>
-  <section id='conventions'></section>
 </section>
 
-<section class='informative'>
-  <h2>Motivation</h2>
-  <p></p>
-</section>
-
-
-<section id='concepts' class='informative'>
-  <h2>Basic Concepts</h2>
-  <p></p>
-</section>
 
 <section id="baseRequirements">
 <h2>Base Requirements</h2>
-
-<section id="compliance">
-<h2>Compliance</h2>
-<p>This specification is based on [[!OSLCCore3]]. OSLC Architecture Management clients and servers
-MUST be compliant with both the core specification and this
-specification, and SHOULD follow all the guidelines and recommendations in both
-these specifications.</p>
-
-<p>The following table summarizes the requirements from OSLC Core Specification
-as well as some additional requirements specific to the Architecture Management domain. Note that
-this specification further restricts some of the requirements for OSLC Core
-Specification. See subsequent sections in this specification or the
-OSLC Core Specification to get further details on each of these
-requirements.</p>
+  
+  <p>The following is a summary of OSLC AM Service Provider Requirements.</p>
 
 <table>
 <thead>
 <tr>
-  <th>Requirement</th>
-  <th>Level</th>
-  <th>Meaning</th>
+  <th><strong>Requirement</strong></th>
+  <th><strong>Level</strong></th>
+  <th><strong>Comment</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Unknown properties and content</td>
-  <td>MAY / MUST</td>
-  <td>OSLC services MAY ignore unknown content and OSLC clients MUST preserve unknown content</td>
-</tr>
-<tr>
-  <td>Resource Operations</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Service provider resource</a></td>
   <td>MUST</td>
-  <td>OSLC service MUST support resource operations via standard HTTP operations</td>
+  <td>Service providers <strong>MUST</strong> provide a service provider resource (http://open-services.net/ns/core#ServiceProvider) for clients to discover service endpoints.</td>
 </tr>
 <tr>
-  <td>Resource Paging</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OSLC_Defined_Resource_Representa">Absolute URIs</a></td>
+  <td>MUST</td>
+  <td>Service providers <strong>MUST</strong> use absolute URIs for all references to resources by properties.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OSLC_Defined_Resource_Representa">RDF/XML format</a></td>
+  <td>MUST</td>
+  <td>Service providers <strong>MUST</strong> provide RDF/XML representations for all resources. Service providers <strong>MUST</strong> accept valid GET requests with <code>application/rdf+xml</code> Accept headers.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Operations">HTTP REST services</a></td>
+  <td>MUST</td>
+  <td>Service providers <strong>MUST</strong> provide standard HTTP based REST services using standard HTTP responses for resource access.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Operations">HTTP If-Match use</a></td>
+  <td>MUST</td>
+  <td>If service providers support update and delete of resources <strong>MUST</strong> support the standard HTTP <code>If-Match</code> header in PUT and DELETE for concurency protection of resources.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Resource Query Capability</a></td>
+  <td>MUST</td>
+  <td>Service providers <strong>MUST</strong> support a query interface for <code>oslc_am:Resource</code> resources.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Authentication">Authentication</a></td>
+  <td>SHOULD</td>
+  <td>Service providers <strong>SHOULD</strong> provide at least one OSLC Core recognized form of authentication (Basic, Form, or OAuth).</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Link Type Query Capability</a></td>
+  <td>SHOULD</td>
+  <td>Service providers <strong>SHOULD</strong> support a query interface for <code>oslc_am:LinkType</code> resources that support a GET for all link type resources. Such a GET does not require any simple query syntax parameters. Service providers <strong>MAY</strong> support the full query syntax for Link Type resources.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated selection UI</a></td>
+  <td>SHOULD</td>
+  <td>Service providers <strong>SHOULD</strong> support the OSLC Core 2.0 Delegated UI specification for resource selection of <code>oslc_am:Resource</code> resources.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Error_Responses">Error format</a></td>
+  <td>SHOULD</td>
+  <td>Service providers <strong>SHOULD</strong> support the OSLC Core 2.0 common error response format.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Paging">Paging of queries</a></td>
+  <td>SHOULD</td>
+  <td>Service providers <strong>SHOULD</strong> support paging of query results.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Operations">HTTP resource PUT/DELETE</a></td>
+  <td>SHOULD</td>
+  <td>Service providers <strong>SHOULD</strong> support resource modifications with standard HTTP PUT and DELETE methods. Service providers <strong>MAY</strong> limit modifications in any way they want.</td>
+</tr>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Service provider catalog</a></td>
   <td>MAY</td>
-  <td>OSLC services MAY provide paging for resources but only when specifically requested by client</td>
+  <td>Service providers <strong>MAY</strong> organize services they provide on a context or project basis and use the OSLC define catalog resource to organize them.</td>
 </tr>
 <tr>
-  <td>Partial Resource Representations</td>
-  <td>MAY / MUST</td>
-  <td>OSLC services MUST support request for a subset of a resource’s properties via the oslc.properties URL parameter retrieval via HTTP GET</td>
-</tr>
-<tr>
-  <td>Partial Update</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Operations">Creation Factory</a></td>
   <td>MAY</td>
-  <td>OSLC services MAY support partial update of resources using patch semantics and MAY support via HTTP PUT</td>
+  <td>Service providers <strong>MAY</strong> provide creation factories for resource formats that it supports. Service providers <strong>MAY</strong> support creation factories for OSLC AM defined resources formatted as <code>application/rdf+xml</code>. Service providers <strong>MAY</strong> support creation factories for other formats, and will indicate such with a non-default identifier in the <code>oslc:usage</code> property of the creation factory definition in the service provider document.</td>
 </tr>
 <tr>
-  <td>Discovery</td>
-  <td>MUST / MAY / SHOULD</td>
-  <td>OSLC servers MUST support OSLC Core 3.0 Discovery, MAY provide a ServiceProviderCatalog and SHOULD provide a ServiceProvider resource for Core v2 compatibility.</td>
-</tr>
-<tr>
-  <td>Creation Factories</td>
-  <td>MUST</td>
-  <td>OSLC servers MUST provide LDPC creation factories to enable resource creation of Change Management resources via HTTP POST</td>
-</tr>
-<tr>
-  <td>Query Capabilities</td>
-  <td>SHOULD</td>
-  <td>OSLC servers SHOULD provide query capabilities to enable clients to query for resources</td>
-</tr>
-<tr>
-  <td>Query Syntax</td>
-  <td>SHOULD / MAY</td>
-  <td>OSLC query capabilities SHOULD support the OSLC Core Query Syntax and MAY use other query syntax</td>
-</tr>
-<tr>
-  <td>Delegated UI Dialogs</td>
-  <td>MUST / SHOULD</td>
-  <td>OSLC Services MUST offer delegated UI dialogs (creation and selections) specified via OSLC Core 3.0 Delegated Dialogs and SHOULD include discovery through a ServiceProvider resource for OSLC v2 compatibility</td>
-</tr>
-<tr>
-  <td>UI Preview</td>
-  <td>SHOULD</td>
-  <td>OSLC Services SHOULD offer UI previews for resources that may be referenced by other resources specified via OSLC Core 3.0 Preview and SHOULD include discovery through a server resource for OSLC v2 compatibility</td>
-</tr>
-<tr>
-  <td>HTTP Basic Authentication</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Unknown_properties_and_content">Ignore unknown content</a></td>
   <td>MAY</td>
-  <td>OSLC Services MAY support Basic Auth and should do so only over HTTPS</td>
+  <td>Service providers <strong>MAY</strong> ignore unkown content, including link types that have not been registered with the server. Providers <strong>MAY</strong> discard such properties and continue the POST or PUT operation without warning to the client.</td>
 </tr>
 <tr>
-  <td>OAuth Authentication</td>
-  <td>SHOULD</td>
-  <td>OSLC Services SHOULD support OAuth and can indicate the required OAuth URLs via the ServiceProviderCatalog or ServiceProvider resources</td>
+  <td><a href="http://open-services.net/bin/view/Main/OSLCCorePartialUpdateDRAFT">Partial update</a></td>
+  <td>MAY</td>
+  <td>Service providers <strong>MAY</strong> support <a href="http://open-services.net/bin/view/Main/OSLCCorePartialUpdateDRAFT">partial updates of resources</a>.</td>
 </tr>
 <tr>
-  <td>Error Responses</td>
-  <td>SHOULD</td>
-  <td>OSLC Services SHOULD provide error responses using OSLC Core 3.0 defined error formats</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Paging">Paging of resource properties</a></td>
+  <td>MAY</td>
+  <td>Service providers <strong>MAY</strong> page the results of a GET on a AM resource that contains a large number of properties.</td>
 </tr>
 <tr>
-  <td>Turtle Representations</td>
-  <td>MUST</td>
-  <td>OSLC services MUST provide a Turtle representation for HTTP GET requests and SHOULD support Turtle representations on POST and PUT requests.</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Selective_Property_Values">Selective properties</a></td>
+  <td>MAY</td>
+  <td>Service providers <strong>MAY</strong> support selective properties on resource GET calls.</td>
 </tr>
 <tr>
-  <td>RDF/XML Representations</td>
-  <td>SHOULD</td>
-  <td>OSLC services SHOULD provide an RDF/XML representation for HTTP GET requests and SHOULD support RDF/XML representations on POST and PUT requests</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated creation UI</a></td>
+  <td>MAY</td>
+  <td>Service providers <strong>MAY</strong> support the OSLC Core 2.0 Delegated UI specification for resource creation.</td>
 </tr>
 <tr>
-  <td>XML Representations</td>
-  <td>SHOULD</td>
-  <td>OSLC services SHOULD provide a XML representation for HTTP GET, POST and PUT requests that conform to the Core 2.0 Guidelines for XML.</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#HTTP_Basic_Authentication">Basic authentication</a></td>
+  <td>MAY</td>
+  <td>Service providers <strong>MAY</strong> support standard HTTP Basic authentication.</td>
 </tr>
 <tr>
-  <td>JSON Representations</td>
-  <td>MUST</td>
-  <td>OSLC services MUST provide JSON-LD representations for HTTP GET, POST and PUT requests that conform to the Core Guidelines for JSON-LD</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OAuth_Authentication">Oauth authentication</a></td>
+  <td>MAY</td>
+  <td>Service providers <strong>MAY</strong> support OAuth authentication.</td>
 </tr>
 <tr>
-  <td>HTML Representations</td>
-  <td>SHOULD</td>
-  <td>OSLC services SHOULD provide HTML representations for HTTP GET requests</td>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Form_Based_Authentication">Form authentication</a></td>
+  <td>MAY</td>
+  <td>Service providers <strong>MAY</strong> support standard HTTP Form based authentication.</td>
 </tr>
 </tbody>
 </table>
-</section>
+
+<p>The following is a summary of OSLC AM Client Requirements</p>
+
+<table>
+<thead>
+<tr>
+  <th><strong>Requirement</strong></th>
+  <th><strong>Level</strong></th>
+  <th><strong>Comment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Unknown_properties_and_content">Unknown properties and content</a></td>
+  <td>MUST</td>
+  <td>OSLC AM Clients <strong>MUST</strong> preserve unknown content when PUTing updates to resources.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<section id="compliance">
+<h2>Compliance</h2>
+<p>This specification is based on OSLC Core Specification. OSLC AM consumers and 
+  service providers MUST be compliant with both the core specification and this 
+  AM specification, and SHOULD follow all the guidelines and recommendations in 
+  both these specifications.</p>
+  </section>
 
 <section id="versioning">
 <h2 id="specificationversioningspec_versioning">Specification Versioning</h2>
 
-<p>This specification follows the specification version guidelines given in [OSLCCore3].</p>
+<p>See <a 
+  href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Specification_Versioning">OSLC Core Specification Versioning section.</a></p>
+
+  <p>Service providers that support the resource formats and services in this 
+    specification MUST use HTTP response header of OSLC-Core-Version with a 
+    value of 2.0. Consumers MAY request formats and services defined in this 
+    document by providing a HTTP request header of OSLC-Core-Version with a 
+    value of 2.0.  </p>
 </section>
 
 <section id="namespaces">
 <h2>Namespaces</h2>
 
-<p>In addition to the namespace URIs and namespace prefixes <code>oslc</code>, <code>rdf</code>, <code>dcterms</code> and <code>foaf</code> defined in the [OSLCCore3], OSLC am defines the namespace URI of <code>http://open-services.net/ns/am#</code> with a namespace prefix of <code>oslc_am</code>.</p>
+<p>In addition to the namespace URIs and namespace prefixes oslc, rdf, dcterms 
+  and foaf defined in the <a 
+  href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core 
+  specification</a>, this specification defines 
+  the namespace URI http://open-services.net/ns/am# with a namespace prefix of 
+  oslc_am.</p>
 
-<p>This specification also uses these namespace prefix definitions:</p>
-
-<ul>
-<li>oslc_rm : <code>http://open-services.net/ns/rm#</code> [[OSLCRM]]</li>
-<li>oslc_qm : <code>http://open-services.net/ns/qm#</code> [[OSLCQM]]</li>
-</ul>
 </section>
 
 <section id="formats">
 <h2>Resource Formats</h2>
 
-<p>In addition to the requirements for resource representations in [[!OSLCCore3]], this section outlines further refinements and restrictions.</p>
+<p>OSLC AM service providers MUST provide and accept RDF/XML formats in 
+  accordance with <a 
+  href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Formats">OSLC Core Resource Formats</a>.</p>
 
-<p>For HTTP GET requests on all OSLC CM and OSLC Core defined resource types,</p>
-
-<ul>
-<li>Architecture Management servers MUST provide Turtle and JSON-LD, and SHOULD provide RDF/XML and XML representations. The XML and JSON representations SHOULD follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a> to maintain compatibility with [[!OSLCCore2]].</li>
-<li>comain-name clients requesting RDF/XML SHOULD be prepared for any valid RDF/XML document. CM clients requesting XML SHOULD be prepared for representations that follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.</li>
-<li>Architecture Management servers SHOULD support an [X]HTML representation and a user interface (UI) preview as defined by <a href="http://open-services.net/bin/view/Main/OslcCoreUiPreview">UI Preview Guidance</a></li>
-</ul>
-
-<p>For HTTP PUT/POST request formats for resource type of ChangeRequest:</p>
-
-<ul>
-<li>Architecture Management servers MUST accept Turtle and JSON-LD representations and SHOULD accept RDF/XML and XML representations. CM servers accepting RDF/XML SHOULD be prepared for any valid RDF/XML document. For XML, Architecture Management servers SHOULD be prepared for representations that follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.</li>
-</ul>
-
-<p>For HTTP GET response formats for Query requests,</p>
-
-<p>Architecture Management servers MUST provide Turtle and JSON-LD, SHOULD provide RDF/XML, XML, and MAY provide Atom Syndication Format XML representations.</p>
-
-<p>When Architecture Management clients request:</p>
-
-<ul>
-<li><code>text/turtle</code> Architecture Management servers MUST respond with Turtle representation.</li>
-<li><code>application/ld+json</code> Architecture Management servers MUST respond with JSON-LD representation.</li>
-<li><code>application/rdf+xml</code> Architecture Management servers SHOULD respond with RDF/XML representation without restrictions.</li>
-<li><code>application/xml</code> Architecture Management servers SHOULD respond with OSLC-defined abbreviated XML representation as defined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a></li>
-<li><code>application/atom+xml</code> Architecture Management servers SHOULD respond with Atom Syndication Format XML representation as defined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a></li>
-<li>The Atom Syndication Format XML representation SHOULD use RDF/XML representation without restrictions for the atom:content entries representing the resource representations.</li>
-</ul>
-
-<p>See Query Capabilities for additional information when Resource Shapes affect representation.</p>
-
-<section id="contentNegotiation">
-<h2>Content Negotiation</h2>
-
-<p>[[!OSLCCore3]] specifies RDF representations (and specifically Turtle and JSON-LD) as a convention that all OSLC server implementations minimally provide and accept. OSLC Architecture Management server implementations are strongly encouraged to adopt this convention. Future versions of this specification are expected to require RDF representations for all operations and relax requirements for specialized XML representations.</p>
-
-<p><strong>XML Representation</strong> - identified by the <code>application/xml</code> content type. Format representation rules are outlined in Core <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Resource Formats section</a></p>
-
-<p><strong>RDF/XML Representation</strong> - identified by the <code>application/rdf+xml</code> content type. No additional guidance is given.</p>
-
-<p><strong>JSON-LD Representation</strong> - identified by the <code>application/ld+json</code> content type. Format representation rules are specified in <a href="http://www.w3.org/TR/json-ld/">JSON-LD 1.0</a>.</p>
-
-<p><strong>Atom Syndication Format XML Representation</strong> - identified by the <code>application/atom+xml</code> content type. Format representation rules are outlined in Core <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Resource Formats section</a>.</p>
 </section>
+  
+  <section id="resourceOps">
+<h2>Resource Operations</h2>
+
+    <p>OSLC AM clients <strong>MUST</strong> include the OSLC Core Version header (OSLC-Core-Version: 2.0) in all HTTP request to OSLC AM service providers.</p>
+
+<p>OSLC AM service providers <strong>MUST</strong> support HTTP GET requests on <a href="#Resource_Architecture_Management">Architecture Management Resources (AMR)</a>, with an Accept header of <code>application/rdf+xml</code>, and return the RDF/XML representation of the resource.</p>
+
+<p>OSLC AM service providers <strong>SHOULD</strong> support HTTP GET requests on <a href="#Resource_Architecture_Management">Architecture Management Resources (AMR)</a>, with an Accept header of an HTML type ( <code>application/html</code>, <code>application/xhtml</code>), and return either an HTML/XHTML representation of the resource or redirect the client to another URL that can (i.e. 302 Redirect).</p>
+
+<p>OSLC AM service providers <strong>SHOULD</strong> support HTTP GET requests for user interface (UI) preview of <a href="#Resource_Architecture_Management">Architecture Management Resources (AMR)</a> as defined by <a href="http://open-services.net/bin/view/Main/OslcCoreUiPreview">UI Preview Guidance</a>. (see <a href="#DelegatedUIs">Delegated UIs</a>).</p>
+
+<p>OSLC AM Service providers <strong>SHOULD</strong> support resource modifications on <a href="#Resource_Architecture_Management">Architecture Management Resources (AMR)</a> with standard HTTP PUT and DELETE methods. Service providers <strong>MAY</strong> limit modifications in any way they want. For example a service provider may limit updates to resources to simple link properties of link types already defined in the provider. Modification methods <strong>SHOULD</strong> use the If-Match header for concurency management. Providers <strong>MAY</strong> discard such properties and continue a PUT operation without warning to the client.</p>
+
+<p>OSLC AM Service providers <strong>SHOULD</strong> support resource modifications on Link Type Resources (LTR) with standard HTTP PUT and DELETE methods. Service providers <strong>MAY</strong> limit modifications in any way they want. For example a service provider may not support additional properties. Modification methods <strong>SHOULD</strong> use the If-Match header for concurency management.</p>
+
+
 </section>
+
 
 <section id="authentication">
 <h2>Authentication</h2>
 
-<p>[[!OSLCCore3]] specifies the recommended OSLC authentication mechanisms. In addition to the OSLC Core authentication requirements, OSLC Architecture Management services providers SHOULD support [[!OpenIDConnect]].</p>
+<p>See <a 
+href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Authentication">OSLC Core Authentication section</a>. 
+  OSLC AM puts no additional constraints on authentication.</p> 
 </section>
 
 <section id="errors">
 <h2>Error Responses</h2>
 
-<p>[[!OSLCCoreVocab]] specifies the OSLC Core error responses. OSLC Architecture Management puts no additional constraints on error responses.</p>
+<p>See <a 
+href="http://open-services.net/bin/view/Main/OslcCorePartialUpdate">OSLC Core 
+Partial Update</a>. OSLC AM puts no additional constraints on error 
+  responses</p>
 </section>
 
 <section id="pagination">
 <h2>Pagination</h2>
 
-<p>OSLC Architecture Management servers SHOULD support pagination of query results and MAY support pagination of a single resource's properties as defined by [[!OSLCCore3]].</p>
+<p>OSLC AM service providers SHOULD support pagination of query results and MAY 
+  support pagination of a single resource's properties as defined by the OSLC 
+  Core Specification.</p>
 </section>
 
 <section id="requestProps">
@@ -478,95 +542,75 @@ requirements.</p>
 <section id="requestSubset">
 <h4>Requesting a Subset of Properties</h4>
 
-<p>A client MAY request a subset of a resource's properties as well as properties from a referenced resource. In order to support this behavior a server MUST support the <code>oslc.properties</code> and <code>oslc.prefix</code> URL parameter on a HTTP GET request on individual resource request or a collection of resources by query. If the <code>oslc.properties</code> parameter is omitted on the request, then all resource properties MUST be provided in the response.</p>
+<p>A service provider MAY support the oslc.properties URL parameter on a HTTP 
+  GET request on individual resource request or a collection of resources by 
+  query. If the oslc.properties parameter is omitted on the request, then all 
+  resource properties MUST be provided in the response.</p>
 </section>
 
 <section id="updateSubset">
 <h4>Updating a Subset of Properties</h4>
 
-<p>A client MAY request that a subset of a resource's properties be updated by using the [[LDPPatch]] <code>PATCH</code> method.</p>
+<p>A client MAY request that a subset of a resource's properties be updated by 
+  identifying those properties to be modified using the oslc.properties URL 
+  parameter on a HTTP PUT request.</p>
 
-<p>For compatibility with [[!OSLCCore2]], Architecture Management servers MAY also support partial update by identifying those properties to be modified using the <code>oslc.properties</code> URL parameter on a HTTP PUT request.</p>
-
-<p>If the parameter <code>oslc.properties</code> contains a valid resource property on the request that is not provided in the content, the server MUST set the resource's property to a null or empty value. If the parameter <code>oslc.properties</code> contains an invalid resource property, then a <code>409 Conflict</code> MUST be returned.</p>
 </section>
 
 <section id="updatingMultiValueProps">
 <h4>Updating Multi-Valued Properties</h4>
 
-<p>For multi-valued properties that contain a large number of values, it may be difficult and inefficient to add or remove property values. OSLC Architecture Management servers SHOULD provide support for a partial update of the multi-valued properties as defined by <a href="http://open-services.net/bin/view/Main/OslcCorePartialUpdate">OSLC Core Partial Update</a>.</p>
+<p>A service provider MAY provide support for a partial update of the 
+  multi-valued properties as defined by <a 
+  href="http://open-services.net/bin/view/Main/OslcCorePartialUpdate">OSLC Core 
+  Partial Update.</a>.</p>
+</section> 
 </section>
-</section>
+</section> 
 
-<section id="labels" class='informative'>
-<h3>Labels for Relationships</h3>
+<section id="ResourceDefs">
+<h2>AM Resource Definitions</h2>
 
-<p>Architecture Management relationships to other resources are represented by RDF properties. Instances of a relationship - often called links - are RDF triples with a subject URI, a predicate that is the property, and a value (or object) that is the URI of target resource. When a link is to be presented in a user interface, it may be helpful to display an informative and useful textual label instead of or in addition to the URI of the predicate and or object. There are three items that clients could display:
-<ul>
-  <li><b>The property</b>: OSLC recommends using the rdfs:label property of the rdf:Property from the vocabulary to display the property.</li>
-  <li><b>The value, or object of the triple</b>: OSLC recommends using OSLC resource preview [[!OSLCResourcePreview]] to obtain an appropriate icon and label, and possibly a small and/or large dialog for displaying the object.</li>
-  <li><b>The link</b>: The link is a combination of the subject, predicate and object of the triple (RDF statement or assertion). In the case where the link requires a unique label that is not available from the target resource, only then OSLC servers may support a dcterms:title on a reified statement to provide a label for a link that describes the assertion itself.</li>
-</ul></p> 
+    <p>Property value types that are not defined in the following sections, are defined in <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Defining_OSLC_Properties">OSLC Core - Defining OSLC Properties</a>.</p>
 
-<p>Turtle example using a reified statement:</p>
+<p>There are two OSLC AM defined resources; Architecture Management Resource and Link Type Resource. OSLC AM defines a least common set of properties for resources, however service implementations are free to extend this set of properties. Clients <strong>MUST</strong> preserve properties it does not recognize when updating resources. Service providers <strong>MAY</strong> ignore properties that it does not recognize. Additional properties may come from existing vocabularies (ie. Dublin Core, OWL). When additional properties do not come from a known vocabulary, it is recommended that they exist in their own unique namespace, and providers <strong>SHOULD NOT</strong> reuse namespaces defined in these specifications.</p>
+
+<p>All RDF/XML resources that include links with annotations MUST begin with an outer <code>&lt;rdf:RDF&gt;</code> element. This outer XML element is required to support the ability to include annotations on &#8216;link&#8217; properties with additional <code>&lt;rdf:Description&gt;</code> elements <a href="http://www.w3.org/TR/REC-rdf-syntax/#section-Syntax-reifying">reifying statements</a> about the link.</p>
+
+<p>Service implementations and clients MUST be prepared to accept any form of valid RDF/XML. For example the following two resource forms are equivalent.</p>
 
 <pre class="example">
-@prefix ns0: &lt;http://open-services.net/ns/cm#&gt; .
-@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
-@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:oslc="http://open-services.net/ns/core#"
+   xmlns:oslc_am="http://open-services.net/ns/am#"
+   xmlns:dcterms="http://purl.org/dc/terms/"&gt;
 
-&lt;http://example.com/bugs/4321&gt;
-  a &lt;http://open-services.net/ns/cm#ChangeRequest&gt; ;
-  ns0:relatedChangeRequest &lt;http://anotherexample.com/defects/123&gt; .
+    &lt;oslc_am:Resource rdf:about="https://acme.com/resources/res1"&gt;
+      &lt;dcterms:title&gt;Service Interface&lt;/dcterms:title&gt;
+      &lt;dcterms:identifier&gt;res1&lt;/dcterms:identifier&gt;
+      &lt;oslc:serviceProvider rdf:resource="http://open-services.net/ns/am#"/&gt;
+    &lt;/oslc_am:Resource&gt;
 
-&lt;http://njh.me/#link1&gt;
-  a rdf:Statement ;
-  rdf:subject &lt;http://example.com/bugs/4321&gt; ;
-  rdf:predicate ns0:relatedChangeRequest ;
-  rdf:object &lt;http://anotherexample.com/defects/123&gt; ;
-  dcterms:title &quot;Defect 123: Problems during install&quot; .
+&lt;/rdf:RDF&gt;&lt;/verbatim&gt; is equivalent to &lt;verbatim&gt;&lt;rdf:RDF 
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:oslc="http://open-services.net/ns/core#"
+   xmlns:dcterms="http://purl.org/dc/terms/"&gt;
+
+    &lt;rdf:Description rdf:about="https://acme.com/resources/res1"&gt;
+      &lt;dcterms:title&gt;Service Interface&lt;/dcterms:title&gt;
+      &lt;dcterms:identifier&gt;res1&lt;/dcterms:identifier&gt;
+      &lt;rdf:type rdf:resource="http://open-services.net/ns/am#Resource" /&gt;
+      &lt;oslc:serviceProvider rdf:resource="http://open-services.net/ns/am#"/&gt;
+    &lt;/rdf:Description&gt;
+
+&lt;/rdf:RDF&gt;
 </pre>
-
-<p>JSON-LD example using reified statement:</p>
-
-<pre class="example">
-{
-  "@context": {
-    "dcterms": "http://purl.org/dc/terms/",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "oslc": "http://open-services.net/ns/core#",
-    "oslc_cm": "http://open-services.net/ns/cm#"
-  },
-  "@id": "http://example.com/bugs/4321",
-  "@type": "oslc_cm:ChangeRequest",
-  "oslc_cm:relatedChangeRequest": {
-    "@id": "http://anotherexample.com/defects/123",
-    "dcterms:title": "Defect 123: Problems during install"
-  }
-}
-</pre>
-</section>
-</section>
-
-<section id='termsAndConstraints'>
-  <h2>Vocabulary Terms and Constraints</h2>
-  <p><a href="termsAndConstraints.html">OSLC Architecture Management Resources 3.0</a>
-    Defines the vocabulary terms and constraints for OSLC Change Management resources.
-    These terms and constraints are specified according to [[!OSLCCoreVocab]].</p>
-    <p>The intent is to define resources needed to
-    support common integration scenarios and not to provide a comprehensive
-    definition of a Change Request. The resource formats may not match exactly
-    the native models supported by change management service providers, but are
-    intended to be compatible with them. The approach to supporting these
-    scenarios is to delegate operations, as driven by service provider
-    contributed user interfaces, as much as possible and not require a service
-    provider to expose its complete data model and application logic.</p>
 
   <section id="vocabulary">
   <h2>Architecture Management Vocabulary Terms</h2>
   <p>This specification defines a number of specific, commonly occurring vocabulary terms (OWL classes), properties and values. Servers may define additional classes and provide additional properties as needed.</p>
     <div title='RDF Vocabulary for OSLC Architecture Management Domain'
-        data-include='Architecture Management-vocab.ttl'
+        data-include='architecture-management-vocab.ttl'
         data-oninclude='vocabToSpec'
         data-include-sync='true' 
         data-include-replace='true'
@@ -579,16 +623,22 @@ requirements.</p>
     in this specification, service providers may provide additional properties.
     It is recommended that any additional properties exist in their own unique
     namespace and not use the namespaces defined in these specifications.</p>
+    <p>An Architecture Management Resource (AMR) is a generic resource format that can be used to represent any type of specific architecture resource like a UML Class, Use Case, or Business Process Diagram. Links from AMR resources are managed in accordance with the <a href="http://open-services.net/bin/view/Main/OSLCCoreLinksDRAFT">OSLC Core Guidance on Links and Relationships</a>. They appear as simple properties in the resource. Links <strong>MAY</strong> include <a href="http://open-services.net/bin/view/Main/OSLCCoreLinksDRAFT#Link_with_inlined_values_of_targ">inlined values for the target</a> and <strong>MAY</strong> include <a href="http://open-services.net/bin/view/Main/OSLCCoreLinksDRAFT#2_Anchor">properties on the link itself</a>. Service providers <strong>SHOULD</strong> support Link Type Resources for clients to get a list of known and acceptable link properties.</p>
+
+<ul>
+<li><strong>Name:</strong> <code>Resource</code></li>
+<li><strong>Type URI</strong> <code>http://open-services.net/ns/am#Resource</code></li>
+</ul>
 
   <div title='Shapes for Architecture Management'
-        data-include='Architecture Management-shapes.ttl#ExampleShape1'
+        data-include='architecture-management-shapes.ttl#Resource'
         data-oninclude='shapeToSpec'
         data-include-sync='true'
         data-include-replace='true'
         data-include-format='html'>
    </div>
   <div title='Shapes for Architecture Management'
-        data-include='Architecture Management-shapes.ttl#ExampleShape2'
+        data-include='architecture-management-shapes.ttl#LinkType'
         data-oninclude='shapeToSpec'
         data-include-sync='true'
         data-include-replace='true'
@@ -596,170 +646,164 @@ requirements.</p>
    </div>
 </section>
 </section>
+
+ </section>
+
+
 
 <section id="capabilities">
-<h2>Architecture Management Server Capabilities</h2>
+<h2>AM Service Provider Capabilities</h2>
+
+<section id="resourceShapes1">
+<h3>Resource Shapes</h3>
+
+  <p>OSLC AM services providers <strong>SHOULD</strong> support <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">Resource Shapes</a> as defined in <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">OSLC Core Specification</a></p>
+
+</section>
 
 <section id="resources">
-<h3>Server Resources</h3>
+<h3>Service Provider Resources</h3>
 
-<p>OSLC Architecture Management servers MUST support OSLC Discovery capabilities defined by [[!OSLCCore3]].</p>
+  <p>OSLC AM service providers <strong>MUST</strong> provide a <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Service Provider Resource</a> that can be retrieved at a implementation dependent URI.</p>
 
-<p>OSLC domanin-name servers MAY provide a ServiceProvider Resource that can be retrieved at a implementation dependent URI.</p>
+<p>OSLC AM service providers <strong>MUST</strong> provide a <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Catalog_Resources">Service Provider Catalog Resource</a> that can be retrieved at a implementation dependent URI.</p>
 
-<p>OSLC Architecture Management servers MAY provide a ServiceProviderCatalog Resource that can be retrieved at a implementation dependent URI.</p>
+<p>OSLC AM service providers <strong>MUST</strong> provide a <code>oslc:serviceProvider</code> property for their defined resources that will be the URI to a <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Service Provider Resource</a>. This does not prevent service providers from providing multiple servie provider properties with different values, if the service provider supports multiple OSLC domain specifications, and the resource is applicable to multiple domains.</p>
 
-<p>OSLC Architecture Management servers MAY provide a <code>oslc:serviceProvider</code> property for their defined resources that will be the URI to a ServiceProvider Resource.</p>
+<p>OSLC AM service providers <strong>MUST</strong> supply a value of <code>http://open-services.net/ns/am#</code> for the property <code>oslc:domain</code> on either <code>oslc:ServiceProvider</code> or <code>oslc:ServiceProviderCatalog</code> resources.</p>
 
-<p>OSLC Architecture Management servers MUST supply a value of <code>http://open-services.net/ns/cm#</code> for the property <code>oslc:domain</code> on either <code>oslc:Service</code> or <code>oslc:ServiceProviderCatalog</code> resources.</p>
 </section>
+
 
 <section id="creationfactories">
 <h3>Creation Factories</h3>
 
-<p>OSLC Architecture Management servers MUST support [[!OSLCCore3]] Creation Factories and list them in the Service Provider Resource as defined by OSLC Core. OSLC Architecture Management servers SHOULD support Resource Shapes for Creation Factories as defined in [[!OSLCShape]].</p>
+<p>OSLC AM service providers <strong>MAY</strong> support <a 
+ href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Creation Factories</a> as defined by OSLC Core.</p>
+
+<p>OSLC AM service Providers <strong>MAY</strong> discard properties it does not recognize and continue the POST operation without warning to the client. The returned resource will contain the accepted properties (and server generated properties like the dcterms:identifer) so clients will be able to confirm if required what was accepted.</p>
+
+<p>If OSLC AM service providers support the creation of resources from the OSLC defined <code>oslc_am:Resource</code> format, there <strong>MUST</strong> be at least one <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Creation Factory</a> entry in the Services definition, and its <code>oslc:usage</code> property MUST be set to <code>http://open-services/ns/core#default</code>. The <code>oslc:resourceType</code> MUST be set to <code>http://open-services.net/ns/am#Resource</code>.</p>
+
+<p>If OSLC AM service providers support the creation of resources from a resource other than <code>oslc_am:Resource</code>, there <strong>MUST</strong> be a separate creation services definition whose <code>oslc:usage</code> property <strong>MUST NOT</strong> be set to <code>http://open-services/ns/core#default</code>.</p>
+
 </section>
 
 <section id="querycapabilities">
 <h3 id="querycapabilities">Query Capabilities</h3>
 
-<p>OSLC CM servers SHOULD support the Query Capabilities as defined by [[!OSLCCore3]]. OSLC CM servers SHOULD support Resource Shapes for Query Capability as defined in [[!OSLCShape]].</p>
+<p>OSLC AM service providers <strong>SHOULD</strong> support the <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Query Capabilities</a> as defined by OSLC Core for both <a href="#Resource_Architecture_Management">oslc_am:Resource </a> and <a href="#Resource_Link_Type_Resource_LTR">oslc_am:LinkType </a> resources.</p>
 
-<p>The Query Capability, if supported, MUST support these parameters:</p>
+<p>If the service provider supports query capability for <a href="#Resource_Architecture_Management">oslc_am:Resource </a> resources, it <strong>MUST</strong> support the following query parameters:</p>
 
 <ul>
 <li><code>oslc.where</code></li>
-<li><code>oslc.select</code></li>
-<li><code>oslc.properties</code></li>
-<li><code>oslc.prefix</code></li>
+<li><code>oslc.searchTerms</code></li>
 </ul>
 
-<p>If shape information is NOT present with the Query Capability, servers SHOULD use these default properties to contain the result:
-<ul>
-  <li>For RDF/XML and XML, use <code>rdf:Description</code> and <code>rdfs:member</code> as defined in <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Specifying_the_shape_of_a_query">OSLC Core RDF/XML Examples</a>.</li>
-  <li>For JSON, the query results are contained within <code>oslc:results</code> array. See <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_JSON">OSLC Core Representation Guidance for JSON</a></li></ul></p>
+<p>OSLC AM service providers <strong>SHOULD</strong> support query capability for <a href="#Resource_Link_Type_Resource_LTR">oslc_am:LinkType </a> resources. If supported then service providers <strong>MUST</strong> support a simple GET without any simple query parameters that returns all link type resources. Service providers <strong>SHOULD</strong> support the full simple query syntax.</p>
 </section>
 
 <section id="delegatedUIs">
 <h3>Delegated UIs</h3>
 
-<p>OSLC Architecture Management servers MUST support the selection and creation of resources by delegated web-based user interface delegated dialogs Delegated as defined by [[!OSLCCore3]].</p>
+<p>OSLC AM service providers <strong>SHOULD</strong> support the selection of resources by delegated web-based user interface dialogs <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a> as defined by OSLC Core.</p>
 
-<p>OSLC Architecture Management servers MAY support the pre-filling of creation dialogs based on the definition [[!OSLCCore3]].</p>
+<p>OSLC AM service providers <strong>MAY</strong> support the creation of resources by delegated web-based user interface dialogs <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a> as defined by OSLC Core.</p>
+
+<p>In <code>oslc:Dialog</code> elements, the two optional child elements; <code>oslc:hintWidth</code> and <code>oslc:hintHeight</code> specify the suggested size of the dialog or frame to render the HTML content in. Expected for the size values are defined by <a href="http://www.w3.org/TR/CSS1/#length-units">CSS length units</a>.</p>
+
 </section>
 
-<section id="usageidentifiers">
-<h3>Usage Identifiers</h3>
+</section>
 
-<p>An OSLC Architecture Management server can identify or distinguish the usage of various services with additional property values for the  defined <code>oslc:usage</code> property on <code>oslc:Dialog</code>, <code>CreationFactory</code> and <code>QueryCapability</code> as specified in [[!OSLCCore3]]. The <code>oslc:usage</code> property value of <code>http://open-services.net/ns/core#default</code> will be used to designate the default or primary service to be used by clients when multiple entries are found.</p>
+<section id="samples" class="appendix">
+<h2>Samples</h2>
 
-<p>The additional Architecture Management property values for <code>oslc:usage</code> are:</p>
+<p>See <a 
+ href="http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-2.0-Appendix-A%3A-Samples" title="OSLC-Architecture-Management-2.0-Appendix-A:-Samples">OSLC Architecture Management 2.0 Appendix A: Samples</a></p>
+</section>
+  
+<section id="resourceShapes2" class="appendix">
+<h2>Resource Shapes</h2> 
+
+<p>See <a 
+  href="http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-2.0-Appendix-B%3A-Resource-Shapes" title="OSLC-Architecture-Management-Specification-Version-2.0-Appendix-B:-Resource-Shapes">OSLC Architecture Management Specification Version 2.0 Appendix B: Resource Shapes</a></p>
+
+</section>
+
+
+<section id="noticesAndReferences" class="appendix">
+<h2>Notices and References</h2> 
+
+<section id="authorsAndContacts">
+<h3 id="authorsAndContacts">Authors and Contact Information</h3>
 
 <ul>
-<li><code></code></li>
+<li><a href="http://open-services.net/bin/view/Main/JimAmsden">JimAmsden</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/ChrisArmstrong">ChrisArmstrong</a> (Armstrong Process Group)</li>
+<li><a href="http://open-services.net/bin/view/Main/AndyBerner">AndyBerner</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/ScottBosworth">ScottBosworth</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/JimConallen">JimConallen</a> (IBM, OSLC AM Lead)</li>
+<li><a href="http://open-services.net/bin/view/Main/DerryDavis">DerryDavis</a> (Accenture)</li>
+<li><a href="http://open-services.net/bin/view/Main/BrendaEllis">BrendaEllis</a> (Northrop Grumman Corporation)</li>
+<li><a href="http://open-services.net/bin/view/Main/IanGreen">IanGreen</a> (IBM, OSLC RM Lead)</li>
+<li><a href="http://open-services.net/bin/view/Main/JonathanHarclerode">JonathanHarclerode</a> (Accenture)</li>
+<li><a href="http://open-services.net/bin/view/Main/SimonHelsen">SimonHelsen</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/ClydeIcuspit">ClydeIcuspit</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/WallyMclaughlin">WallyMclaughlin</a> (Armstrong Process Group)</li>
+<li><a href="http://open-services.net/bin/view/Main/ThomasPicolli">ThomasPicolli</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/VishyRamaswamy">VishyRamaswamy</a> (IBM)</li>
+<li><a href="http://open-services.net/bin/view/Main/RenRenganathan">RenRenganathan</a> (Citi Bank)</li>
 </ul>
-</section>
-</section>
 
-<section id="versionCompability" class="appendix">
-<h2>Version Compatibility with 2.0 Specifications</h2>
-
-<section id="deprecatedTerms">
-<h3 id="deprecatedterms">Deprecated terms</h3>
-
-<p>A number of terms introduced in early development of the OSLC Architecture Management domain have been deprecated.</p>
-
-<table class="table-code-shrink table-nudged table-shrink">
-<thead>
-<tr>
-  <th><strong></strong></th>
-  <th><strong>Occurs</strong></th>
-  <th><strong>Read-only</strong></th>
-  <th><strong>Value-type</strong></th>
-  <th><strong>Represen-tation</strong></th>
-  <th><strong>Range</strong></th>
-  <th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><em>deprecated</em> dcterms:type</td>
-  <td>zero-or-more</td>
-  <td>unspecified</td>
-  <td>String</td>
-  <td>n/a</td>
-  <td>n/a</td>
-  <td>A short string representation for the type, example <code>Defect</code>.</td>
-</tr>
-<tr>
-  <td><strong>Relationship properties:</strong> This grouping of properties are used to identify relationships between resources managed by other OSLC servers</td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-</tr>
-<tr>
-  <td><em>deprecated</em> </td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td><code style="white-space: pre;"></code></td>
-  <td></td>
-</tr>
-</tbody>
-</table>
 </section>
 
+  <section id="reporting">
+    <h3>Reporting Issues on the Specification</h3>
+    
+    <p>The working group participants who author and maintain this working draft specification, monitor a distribution list where issues or questions can be raised, see <a href="http://open-services.net/mailman/listinfo/oslc-am_open-services.net">Architecture Management Mailing List</a></p>
+
+     <p>Also the issues found with this specification and their resolution can 
+ be found at <a 
+ href="http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-v2.0-Specification-Issues" title="OSLC-Architecture-Management-v2.0-Specification-Issues">OSLC Architecture Management v2.0 Specification Issues</a>.</p>
+
+    </section>
+
+  <section id="intellectualProperty">
+    <h3>Intellectual Property Covenant</h3>
+    <p>The members of the Working Group (or as appropriate, their employers) 
+    have documented a Patent Non-Assertion Covenant for implementations of the 
+    AM 2.0 Specification, as described in the open-services.net <a 
+    href="/terms/">Terms of Use</a>. Details of the Covenant may be found <a 
+    href="http://open-services.net/bin/view/Main/AmSpecificationCovenantV2">here</a>.</p> 
+  </section>
+
+  <section id="references"> 
+    <h3>References</h3>
+
+        <ul>
+<li>OSLC Core - <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core Specification 2.0</a></li>
+<li>OSLC UI Preview - <a href="http://open-services.net/bin/view/Main/OslcUiPreviewDRAFT">OSLC UI Preview Guidance</a></li>
+<li>Dublin Core - <a href="http://dublincore.org/documents/dces/">Dublin Core Metadata Element Set, Version 1.1</a></li>
+<li>FOAF - <a href="http://xmlns.com/foaf/spec">Friend of a Friend (FOAF)</a></li>
+<li>HTTP - <a href="http://tools.ietf.org/html/rfc2616">Hyper-text Transfer Protocol (HTTP/1.1)</a></li>
+<li>RDF/XML Concepts - <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">RDF/XML Concepts and Abstract Syntax</a></li>
+<li>RDF/XML Syntax - <a href="http://www.w3.org/TR/2004/REC-rdf-syntax-grammar-20040210/">RDF / XML Syntax Specification (Revised)</a></li>
+<li>URI Syntax - <a href="http://tools.ietf.org/html/rfc3986">URI Generic Syntax</a></li>
+<li>XML Namespaces - <a href="http://www.w3.org/TR/REC-xml-names/">Namespaces in XML 1.0 (Third Edition)</a></li>
+<li>XML Base - <a href="http://www.w3.org/TR/xmlbase/">XML Base (Second Edition)</a></li>
+<li>XSD Datatypes - <a href="http://www.w3.org/TR/xmlschema-2">XML Schema Part 2: Datatypes Second Edition</a></li>
+</ul>
+
+  </section>
+  
 <section id="changesFrom2">
-<h2>Changes from Version 2.0</h2>
+<h3>Changes from Version 2.0</h3>
 <p>There are no substantive changes from OSLC Architecture Management Specification 2.0. This document is a document maintenance update of the version 2.0 document to support migration from open-services.net to OASIS.</p>
 </section>
 </section>
 
-<section class='appendix informative'>
-  <h2>Acknowledgements</h2>
-  <p>The following individuals have participated in the creation of this specification and are gratefully acknowledged:</p>
-
-<p><b>Participants</b>:</p><p style="margin-left: 40px">
-James Amsden, IBM (Editor)<br>
-Geoff Clemm,  IBM<br>
-Nick Crossley, IBM (Chair)<br>
-Ian Green, IBM<br>
-Peter Hack, IBM<br>
-David Honey, IBM<br>
-Sam Padget, IBM<br>
-Martin Pain, IBM<br>
-Martin Sarabura, PTC<br>
-Brian Steele, IBM<br></p>
-</section>
-
-
-<section class="appendix informative" id="history">
-<h2>Change History</h2>
-<table border=1 cellspacing=0 cellpadding=0>
- <tr>
-  <td width=103 valign=top style='width:77.4pt;border:solid windowtext 1.0pt;
-  padding:0in 5.4pt 0in 5.4pt'><b>Revision</b></td>
-  <td width=96 valign=top style='width:1.0in;border:solid windowtext 1.0pt;
-  border-left:none;padding:0in 5.4pt 0in 5.4pt'><b>Date</b></td>
-  <td width=144 valign=top style='width:1.5in;border:solid windowtext 1.0pt;
-  border-left:none;padding:0in 5.4pt 0in 5.4pt'><b>Editor</b></td>
-  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
-  border-left:none;padding:0in 5.4pt 0in 5.4pt'><b>Changes Made</b></td>
- </tr>
- <tr>
-  <td>01</td>
-  <td>07/06/2016</td>
-  <td>Jim Amsden</td>
-  <td>CSD was approved and published.</td>
-</table>
-</section>
 
 </body>
 </html>
-
-
-

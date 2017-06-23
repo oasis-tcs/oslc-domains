@@ -29,13 +29,13 @@ oslc_am:
 	rdfs:seeAlso                   <http://docs.oasis-open.org/oslc-domains/> .
 
 
-<#Resource>
+oslc_am:Resource
         a                 rdfs:Class ;
         rdfs:comment      "A generic architecture resource.  A resource of this type is likely to be a model or design artifact." ;
         rdfs:isDefinedBy  oslc_am: ;
         rdfs:label        "Architecture Resource" .
 
-<#LinkType>
+oslc_am:LinkType
         a                 rdfs:Class ;
         rdfs:comment      "A locally managed resource that describes a link type predicate that might otherwise not be directly resolvable." ;
         rdfs:isDefinedBy  oslc_am: ;

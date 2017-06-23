@@ -7,11 +7,10 @@
 @prefix xsd:            <http://www.w3.org/2001/XMLSchema#> .
 
 @prefix oslc_rm:       <http://open-services.net/ns/rm#> .
+@base <http://open-services.net/ns/core/shapes/3.0/requirements-management-shape.ttl> .
 
 
-# This example shows multiple shapes sharing some common properties.
-# For the base URIs to be used for shapes, see https://issues.oasis-open.org/browse/OSLCCORE-25
-# Note the use of relative hash URIs for the shape and properties within this base.
+# OSLC Requirements Mangement Domain Resource Shapes.
 
 <#Requirement>
     a                       oslc:ResourceShape ;
