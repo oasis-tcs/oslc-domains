@@ -75,6 +75,13 @@ oslc_rm:specifiedBy
         rdfs:label           "specifiedBy" ;
         dcterms:description  "Expresses a specification relationship between entities. For example, a model element can specifiy a requirement." .
 
+oslc_rm:satisfiedBy
+        a                    rdf:Property ;
+        rdfs:comment         "An entity which further clarifies or specifies." ;
+        rdfs:isDefinedBy     oslc_rm: ;
+        rdfs:label           "satisfiedBy" ;
+        dcterms:description  "The subject is satisfied by the object. For example, a user requirement is satisfied by a system requirement." .
+
 oslc_rm:affectedBy
         a                    rdf:Property ;
         rdfs:comment         "An entity which in some way affects the object entity." ;
