@@ -54,6 +54,12 @@
         company :    "IBM",
         companyURL : "http://www.ibm.com"
       },
+	  {
+		name : "Daniel Zahka",
+		mailto : "daniel.d.zahka@boeing.com",
+		company : "Boeing",
+		companyURL : "http://www.boeing.com/"
+	  },
     ],
     chairs : [ {
       name : "Jim Amsden",
@@ -226,7 +232,27 @@ dd {
 
 <section id='intro' class='informative'>
   <h2>Introduction</h2>
-  <p></p>
+  <p>
+  This family of documents defines the Open Services for Lifecycle Collaboration Requirements Management and Definition
+specification, also known as OSLC RM. These documents collectively define the OSLC RM 2.0 specification, which is part
+of the OSLC group of specifications. This specification supports key REST APIs for software Requirements Management
+systems. OSLC RM 2.0 takes an open, loosely coupled approach to specific lifecycle integration scenarios. The scenarios
+and this V2.0 specification were created by the OSLC RM Working Group. More information on the principles underlying
+OSLC and RM in particular can be found on the main OSLC site and the home page of the RM topic.
+<br> <br>
+(this section is informative)
+<br> <br>
+This specification builds on the Open Services for Lifecycle Collaboration (OSLC) Core v2.0 Specification to define the
+resources, properties and operations supported by an OSLC Requirements Definition and Management (OSLC-RM)
+provider.
+<br> <br>
+Requirements Management resources include Requirements, Requirements Collections and supporting resources defined
+in the OSLC Core specification. The properties defined describe these resources and the relationships between resources.
+<br>
+Operations are defined in terms of HTTP methods and MIME type handling. The resources, properties and operations
+defined do not form a comprehensive interface to Requirements Definition and Management, but instead target specific
+integration use cases documented by the OSLC-RM workgroup.
+  </p>
 
   <section id='terminology' class='informative'>
     <h3>Terminology</h3>
@@ -235,12 +261,29 @@ dd {
       W3C's Architecture of the World Wide Web [[WEBARCH]],
       and Hyper-text Transfer Protocol [[HTTP11]].</p>
     <dl class="spaced">
-      <dt><dfn>Term1</dfn></dt>
-      <dd>Definition 1.</dd>
+      <dt><dfn>Requirement Resource</dfn></dt>
+		<dd>
+		Requirements are the basis for defining what the system stakeholders (users, customers,
+		suppliers and so on) need from a system and also what the system must do in order to meet those needs, and how the
+		surrounding processes must be orchestrated so that quality, scope and timescale objectives are satisfied.
+		</dd>
 
-      <dt><dfn>Term2</dfn></dt>
-      <dd>Definition 2.</dd>
+      <dt><dfn>RequirementCollection Resource</dfn></dt>
+      <dd>
+	  A collection of resources which constitute some statement of need.
+	  </dd>
 
+	  <dt><dfn>Service Provider</dfn></dt>
+      <dd>
+	  an implementation of the OSLC Requirements Management specification.
+	  </dd>
+
+      <dt><dfn>Service Consumer/OSLC Consumer/Client</dfn></dt>
+      <dd>
+	  an implementation of an HTTP client which consumes resource models 
+	  provided by a service provider.
+	  </dd>
+	  
     </dl>
   </section>
 
@@ -309,6 +352,11 @@ requirements.</p>
   <td>Partial Update</td>
   <td>MAY</td>
   <td>OSLC services MAY support partial update of resources using patch semantics and MAY support via HTTP PUT</td>
+</tr>
+<tr>
+  <td>Service Provider Resources</td>
+  <td>MAY / MUST</td>
+  <td>OSLC service providers MAY provide a Service Provider Catalog and MUST provide a Service Provider resource</td>
 </tr>
 <tr>
   <td>Discovery</td>
@@ -387,7 +435,20 @@ requirements.</p>
 <section id="versioning">
 <h2 id="specificationversioningspec_versioning">Specification Versioning</h2>
 
-<p>This specification follows the specification version guidelines given in [OSLCCore3].</p>
+<p>
+This specification follows the specification version guidelines given in [OSLCCore3].
+<br> <br>
+See <a href = "http://open-services.net/bin/view/Main/OslcCoreSpecification#Specification_Versioning">
+Core Specification Version 2.0 - Specification Versioning
+<a/>.
+<br> <br>
+Service providers that support the resource formats and services in this specification <strong>MUST</strong> add an HTTP response
+header of OSLC-Core-Version with a value of 2.0. Consumers <strong>SHOULD</strong> request formats and services defined in this
+document by providing a HTTP request header of OSLC-Core-Version with a value of 2.0. See section below on Version
+Compatibility with OSLC RM 1.0 Specifications.
+<br> <br>
+This specification reserves, for possible future use, the use of the HTTP header OSLC-RM-Version. OSLC Providers <strong>MUST NOT</strong> use this HTTP header.
+</p>
 </section>
 
 <section id="namespaces">
