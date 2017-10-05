@@ -16,35 +16,39 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
     // See http://docs.oasis-open.org/specGuidelines/ndr/namingDirectives.html#stage
     specStatus : "WD",
 
-        // the specification's short name with version but no dots
-        shortName : "oslc-am",
-
-        // if your specification has a subtitle that goes below the main
-        // formal title, define it here
-        // subtitle   :  "Committee Specification Draft 02",
-
-        // the document's citation label
-        citationLabel: "OSLC-Architecture Management-v2.1",
-
-        // Revision level of the document within its stage
-        revision: "01",
-
-        // if you wish the publication date to be other than the last modification, set this
-        // publishDate:  "2009-08-06",
-
-        // if the specification's copyright date is a range of years, specify the start date here:
-        // copyrightStart: "2005"
-
-        // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-        // and its maturity status
-        // previousPublishDate:  "2011-08-15",
-        // previousMaturity:  "WD",
-
-        // Only include h1 and h2 levels in the table of contents
-        maxTocLevel: 2,
+    // the specification's short name with version but no dots
+    shortName : "oslc-am",
 
     // if there a publicly available Editor's Draft, this is the link
-    edDraftURI:           "https://github.com/oasis-tcs/oslc-domains/am/architecture-management-spec.html",
+    edDraftURI: "https://github.com/oasis-tcs/oslc-domains/am/architecture-management-spec.html",
+    thisVersion: "https://github.com/oasis-tcs/oslc-domains/am/architecture-management-spec.html",
+    latestVersion: "https://github.com/oasis-tcs/oslc-domains/am/architecture-management-spec.html",
+    prevED: "http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-2.0/",
+
+    // if your specification has a subtitle that goes below the main
+    // formal title, define it here
+    // subtitle   :  "Committee Specification Draft 02",
+
+    // the document's citation label
+    citationLabel: "OSLC-AM-2.1",
+
+    // Revision level of the document within its stage
+    revision: "01",
+
+    // if you wish the publication date to be other than the last modification, set this
+    // publishDate:  "2009-08-06",
+
+    // if the specification's copyright date is a range of years, specify the start date here:
+    // copyrightStart: "2005"
+
+    // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+    // and its maturity status
+    // previousPublishDate:  "2011-08-15",
+    // previousMaturity:  "WD",
+
+    // Only include h1 and h2 levels in the table of contents
+    maxTocLevel: 3,
+
 
     // Chairs and editors, add as many as you like: you must have at least one editor.
     // Only "name" is required, but the other fields are recommended.
@@ -104,6 +108,13 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
                 authors : [ "Dave Johnson", "S. Speicher" ],
                 status:   "Finalized",
                 publisher:  "http://open-services.net",
+            },
+            "OSLCCore3": {
+                title:    "OSLC Core 3.0",
+                href:     "http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part1-overview.html",
+                authors:  ["Jim Amsden", "S. Speicher"],
+                status:   "Committee Specification",
+                publisher:  "OASIS",
             },
             "OSLCUI": {
                 title:     "OSLC UI Preview Guidance",
@@ -294,11 +305,10 @@ Core 2.0 specification.
          <dt><dfn>Service Description Document</dfn></dt>
       <dd>The representation of a Architecture Management Services 
         Resource.</dd>
-
-
     </dl>
   </section>
-
+  <section id='references'><h3>References</h3></section>
+  <section id="conventions"></section>
 </section>
 
 
@@ -461,14 +471,8 @@ Core 2.0 specification.
 <section id="versioning">
 <h2 id="specificationversioningspec_versioning">Specification Versioning</h2>
 
-<p>See <a 
-  href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Specification_Versioning">OSLC Core Specification Versioning section.</a></p>
+<p>See [[!OSLCCore3]], section Versioning Compatibility.</a></p>
 
-  <p>Service providers that support the resource formats and services in this 
-    specification MUST use HTTP response header of OSLC-Core-Version with a 
-    value of 2.0. Consumers MAY request formats and services defined in this 
-    document by providing a HTTP request header of OSLC-Core-Version with a 
-    value of 2.0.  </p>
 </section>
 
 <section id="namespaces">
@@ -569,9 +573,9 @@ Partial Update</a>. OSLC AM puts no additional constraints on error
 </section> 
 
 <section id="ResourceDefs">
-<h2>AM Resource Definitions</h2>
+<h2>Vocabulary Terms and Constraints</h2>
 
-    <p>Property value types that are not defined in the following sections, are defined in <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Defining_OSLC_Properties">OSLC Core - Defining OSLC Properties</a>.</p>
+    <p>Property value types that are not defined in the following sections, are defined in [[!OSLCCore3]].</p>
 
 <p>There are two OSLC AM defined resources; Architecture Management Resource and Link Type Resource. OSLC AM defines a least common set of properties for resources, however service implementations are free to extend this set of properties. Clients <strong>MUST</strong> preserve properties it does not recognize when updating resources. Service providers <strong>MAY</strong> ignore properties that it does not recognize. Additional properties may come from existing vocabularies (ie. Dublin Core, OWL). When additional properties do not come from a known vocabulary, it is recommended that they exist in their own unique namespace, and providers <strong>SHOULD NOT</strong> reuse namespaces defined in these specifications.</p>
 
@@ -724,86 +728,50 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
  href="http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-2.0-Appendix-A%3A-Samples" title="OSLC-Architecture-Management-2.0-Appendix-A:-Samples">OSLC Architecture Management 2.0 Appendix A: Samples</a></p>
 </section>
   
-<section id="resourceShapes2" class="appendix">
-<h2>Resource Shapes</h2> 
+<section class='appendix informative'>
+  <h2>Acknowledgements</h2>
+  <p>The following individuals have participated in the creation of this specification and are gratefully acknowledged:</p>
 
-<p>See <a 
-  href="http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-2.0-Appendix-B%3A-Resource-Shapes" title="OSLC-Architecture-Management-Specification-Version-2.0-Appendix-B:-Resource-Shapes">OSLC Architecture Management Specification Version 2.0 Appendix B: Resource Shapes</a></p>
-
+<p><b>Participants</b>:</p><p style="margin-left: 40px">
+James Amsden, IBM (Editor)<br>
+ChrisArmstrong, Armstrong Process Group<br>
+Andy Berner, IBM<br>
+Scott Bosworth, IBM</br>
+JimConallen, IBM<br>
+Derry Davis, Accenture<br>
+Brenda Ellis, Northrop Grumman Corporation<br>
+Ian Green, IBM<br>
+Jonathan Harclerode, Accenture<br>
+Simon Helsen, IBM<br>
+Clyde Icuspit, IBM<br>
+Wally Mclaughlin, Armstrong Process Group<br>
+Thomas Picolli, IBM<br>
+Vishy Ramaswamy, IBM<br>
+Ren Renganathan. Citi Bank<br>
+Nick Crossley, IBM (Chair)<br>
 </section>
 
 
-<section id="noticesAndReferences" class="appendix">
-<h2>Notices and References</h2> 
-
-<section id="authorsAndContacts">
-<h3 id="authorsAndContacts">Authors and Contact Information</h3>
-
-<ul>
-<li><a href="http://open-services.net/bin/view/Main/JimAmsden">JimAmsden</a> (IBM)</li>
-<li><a href="http://open-services.net/bin/view/Main/ChrisArmstrong">ChrisArmstrong</a> (Armstrong Process Group)</li>
-<li><a href="http://open-services.net/bin/view/Main/AndyBerner">AndyBerner</a> (IBM)</li>
-<li><a href="http://open-services.net/bin/view/Main/ScottBosworth">ScottBosworth</a> (IBM)</li>
-<li><a href="http://open-services.net/bin/view/Main/JimConallen">JimConallen</a> (IBM, OSLC AM Lead)</li>
-<li><a href="http://open-services.net/bin/view/Main/DerryDavis">DerryDavis</a> (Accenture)</li>
-<li><a href="http://open-services.net/bin/view/Main/BrendaEllis">BrendaEllis</a> (Northrop Grumman Corporation)</li>
-<li><a href="http://open-services.net/bin/view/Main/IanGreen">IanGreen</a> (IBM, OSLC RM Lead)</li>
-<li><a href="http://open-services.net/bin/view/Main/JonathanHarclerode">JonathanHarclerode</a> (Accenture)</li>
-<li><a href="http://open-services.net/bin/view/Main/SimonHelsen">SimonHelsen</a> (IBM)</li>
-<li><a href="http://open-services.net/bin/view/Main/ClydeIcuspit">ClydeIcuspit</a> (IBM)</li>
-<li><a href="http://open-services.net/bin/view/Main/WallyMclaughlin">WallyMclaughlin</a> (Armstrong Process Group)</li>
-<li><a href="http://open-services.net/bin/view/Main/ThomasPicolli">ThomasPicolli</a> (IBM)</li>
-<li><a href="http://open-services.net/bin/view/Main/VishyRamaswamy">VishyRamaswamy</a> (IBM)</li>
-<li><a href="http://open-services.net/bin/view/Main/RenRenganathan">RenRenganathan</a> (Citi Bank)</li>
-</ul>
-
+<section class="appendix informative" id="history">
+<h2>Change History</h2>
+<table border=1 cellspacing=0 cellpadding=0>
+ <tr>
+  <td width=103 valign=top style='width:77.4pt;border:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'><b>Revision</b></td>
+  <td width=96 valign=top style='width:1.0in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'><b>Date</b></td>
+  <td width=144 valign=top style='width:1.5in;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'><b>Editor</b></td>
+  <td width=295 valign=top style='width:221.4pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'><b>Changes Made</b></td>
+ </tr>
+ <tr>
+  <td>01</td>
+  <td>08/22/2017</td>
+  <td>Jim Amsden</td>
+  <td>Initial draft migration from open-services.net</td>
+ </tr>
+</table>
 </section>
-
-  <section id="reporting">
-    <h3>Reporting Issues on the Specification</h3>
-    
-    <p>The working group participants who author and maintain this working draft specification, monitor a distribution list where issues or questions can be raised, see <a href="http://open-services.net/mailman/listinfo/oslc-am_open-services.net">Architecture Management Mailing List</a></p>
-
-     <p>Also the issues found with this specification and their resolution can 
- be found at <a 
- href="http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-v2.0-Specification-Issues" title="OSLC-Architecture-Management-v2.0-Specification-Issues">OSLC Architecture Management v2.0 Specification Issues</a>.</p>
-
-    </section>
-
-  <section id="intellectualProperty">
-    <h3>Intellectual Property Covenant</h3>
-    <p>The members of the Working Group (or as appropriate, their employers) 
-    have documented a Patent Non-Assertion Covenant for implementations of the 
-    AM 2.0 Specification, as described in the open-services.net <a 
-    href="/terms/">Terms of Use</a>. Details of the Covenant may be found <a 
-    href="http://open-services.net/bin/view/Main/AmSpecificationCovenantV2">here</a>.</p> 
-  </section>
-
-  <section id="references"> 
-    <h3>References</h3>
-
-        <ul>
-<li>OSLC Core - <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core Specification 2.0</a></li>
-<li>OSLC UI Preview - <a href="http://open-services.net/bin/view/Main/OslcUiPreviewDRAFT">OSLC UI Preview Guidance</a></li>
-<li>Dublin Core - <a href="http://dublincore.org/documents/dces/">Dublin Core Metadata Element Set, Version 1.1</a></li>
-<li>FOAF - <a href="http://xmlns.com/foaf/spec">Friend of a Friend (FOAF)</a></li>
-<li>HTTP - <a href="http://tools.ietf.org/html/rfc2616">Hyper-text Transfer Protocol (HTTP/1.1)</a></li>
-<li>RDF/XML Concepts - <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/">RDF/XML Concepts and Abstract Syntax</a></li>
-<li>RDF/XML Syntax - <a href="http://www.w3.org/TR/2004/REC-rdf-syntax-grammar-20040210/">RDF / XML Syntax Specification (Revised)</a></li>
-<li>URI Syntax - <a href="http://tools.ietf.org/html/rfc3986">URI Generic Syntax</a></li>
-<li>XML Namespaces - <a href="http://www.w3.org/TR/REC-xml-names/">Namespaces in XML 1.0 (Third Edition)</a></li>
-<li>XML Base - <a href="http://www.w3.org/TR/xmlbase/">XML Base (Second Edition)</a></li>
-<li>XSD Datatypes - <a href="http://www.w3.org/TR/xmlschema-2">XML Schema Part 2: Datatypes Second Edition</a></li>
-</ul>
-
-  </section>
-  
-<section id="changesFrom2">
-<h3>Changes from Version 2.0</h3>
-<p>There are no substantive changes from OSLC Architecture Management Specification 2.0. This document is a document maintenance update of the version 2.0 document to support migration from open-services.net to OASIS.</p>
-</section>
-</section>
-
-
 </body>
 </html>
