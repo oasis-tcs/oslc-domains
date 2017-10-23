@@ -1,0 +1,418 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:crtv="http://open-services.net/ns/crtv#"
+    xmlns:oslc="http://open-services.net/ns/core#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:oslc_asset="http://open-services.net/ns/asset#"
+    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#" > 
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#fileName">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareModule"/>
+    <rdfs:comment>The file name of the package containing the SoftwareModule.</rdfs:comment>
+    <rdfs:label>fileName</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#version">
+    <rdfs:comment>The version string assigned to this entity.</rdfs:comment>
+    <rdfs:label>version</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#serialNumber">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:comment>Serial number assigned by the manufacturer. The value should be provided by the manufacturer of the resource.</rdfs:comment>
+    <owl:sameAs rdf:resource="http://open-services.net/ns/asset#serialNumber"/>
+    <rdfs:label>serialNumber</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#shortHostName">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:comment>A label assigned to a machine and used for communications on the local network. For example, a Windows hostname is IBM-2JMUUEH6TEQ .</rdfs:comment>
+    <rdfs:label>shortHostName</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#Network">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServiceInstance"/>
+    <rdfs:label>Network</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#Database">
+    <rdfs:comment>An organized collection of digital data that is managed by a database management system (DBMS). (A Database Management System, in turn, is represented as a SoftwareServer).</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#Database"/>
+    <rdfs:label>Database</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#model">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:comment>Value of the device model. The model number as provided by the device manufacturer.  </rdfs:comment>
+    <owl:sameAs rdf:resource="http://open-services.net/ns/asset#model"/>
+    <rdfs:label>model</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#ServerAccessPoint">
+    <rdfs:comment>A network endpoint, i.e. the combination of IP address and port number that clients connect to when accessing a SoftwareServer.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServerAccessPoint"/>
+    <rdfs:label>ServerAccessPoint</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#DatabaseConnectionPool">
+    <rdfs:comment>A set of shared database connections.</rdfs:comment>
+    <rdfs:label>DatabaseConnectionPool</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#dependsOn">
+    <rdfs:comment>A relationship denoting that the source of the relationship cannot function properly without an association with the target. The dependency is directional ( the source depends on the target but the reverse is not necessarily true ) and can represent any cause or type of dependency. For instance, this relationship can be used to denote that a device depends on its power supply(s) or that an IP path depends on a layer 2 connection.</rdfs:comment>
+    <rdfs:label>dependsOn</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#OracleInstance">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>OracleInstance</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#WebSphereServer">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>WebSphereServer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#manufacturer">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:comment>Name of the device manufacturer. This attribute SHOULD be a publicly available manufacturer name vocabulary. </rdfs:comment>
+    <owl:sameAs rdf:resource="http://open-services.net/ns/asset#manufacturer"/>
+    <rdfs:label>manufacturer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#name">
+    <rdfs:comment>Typically used as an identity field, this property is used to represent a known name of a resource instance.</rdfs:comment>
+    <rdfs:label>name</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#portNumber">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServerAccessPoint"/>
+    <rdfs:seeAlso rdf:resource="http://www.ietf.org"/>
+    <rdfs:seeAlso rdf:resource="http://www.iana.org"/>
+    <rdfs:comment>The port number as defined by IETF and IANA.</rdfs:comment>
+    <rdfs:label>portNumber</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#runsOn">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:comment>The ComputerSystem this SoftwareServer instance is running on.</rdfs:comment>
+    <rdfs:label>runsOn</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#NULL">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:label>NULL</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#occursBefore">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#Path"/>
+    <rdfs:comment>If there is a temporal order between other Path or ServiceInstance Resource Definitions, the Resource Definition action that occur after this Resource Instance are listed here. </rdfs:comment>
+    <rdfs:label>occursBefore</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#Compute">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServiceInstance"/>
+    <rdfs:label>Compute</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#Path">
+    <rdfs:comment>Path represents individual components of a directed graph of resources, where specific ordering is necessary to preserve a graph. Examples of such directed graphs are the representation of workflows or processes.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#Path"/>
+    <rdfs:label>Path</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#hostid">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:comment>A globally unique ID assigned to their machines by some manufacturers (.e.g Sun Solaris) .</rdfs:comment>
+    <rdfs:label>hostid</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#Application">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServiceInstance"/>
+    <rdfs:label>Application</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#OperatingSystem">
+    <rdfs:comment>Represents the operating system or control software installed and running on a ComputerSystem</rdfs:comment>
+    <vs:term_status>testing</vs:term_status>
+    <rdfs:label>OperatingSystem</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#MQQueue">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareModule"/>
+    <rdfs:label>MQQueue</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#instancePath">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:comment>The directory where the files for this SoftwareServer are stored.</rdfs:comment>
+    <rdfs:label>instancePath</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#dbInstance">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#Database"/>
+    <rdfs:comment>The Software Server representing the database instance that manages this database.</rdfs:comment>
+    <rdfs:label>dbInstance</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#contextAddressSpace">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#IPAddress"/>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:label>contextAddressSpace</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#parentServiceInstance">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServiceInstance"/>
+    <rdfs:comment>When context is required, this is the containing Application for the set of Transactions. </rdfs:comment>
+    <rdfs:label>parentServiceInstance</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#IBMHTTPServer">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>IBMHTTPServer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#J2EEServer">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>J2EEServer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#deployedTo">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareModule"/>
+    <rdfs:comment>The SoftwareServer on which this SoftwareModule is deployed.</rdfs:comment>
+    <rdfs:label>deployedTo</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0"/>
+    <rdfs:label>Common IT Resource Type Vocabulary</rdfs:label>
+    <dcterms:description>The Common IT Resource Type vocabulary.</dcterms:description>
+    <dcterms:title>Common IT Resource Type Vocabulary</dcterms:title>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#ServiceInstance">
+    <rdfs:comment>A Service Instance is the representation of a service offering that was selected by the customer and then instantiated for that specific customer. Service Instances are supported by definite and measurable warranties or guarantees that the expected level of service/value will be met. Instances of the resource carry exposure from the group that is responsible for supporting the offering externally to the group that is utilizing the offering. It is common to group or nest instances together to form a service instance hierarchy. This resource definition does not represent the individual processes and/or activities that comprise an overall service except in the case where such processes are viewed as an independent service. In this condition, an instance of ServiceInstance would be created to represent the ServiceInstance of the process, then creating a hierarchy of ServiceInstances (to the containing ServiceInstance).</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServiceInstance"/>
+    <rdfs:label>ServiceInstance</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#DB2Instance">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>DB2Instance</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#fqdn">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:comment>The fully qualified domain name (FQDN). In Internet communications, the name of a host system that includes all of the subnames of the domain name. An example of a fully qualified domain name is es123126.lab.ibm.com .</rdfs:comment>
+    <rdfs:label>fqdn</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#elementFrom">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#Path"/>
+    <rdfs:comment>The resource acting as the origination point in the ordered path.</rdfs:comment>
+    <rdfs:label>elementFrom</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#SoftwareModule">
+    <rdfs:comment>Represents packaged components that are deployed to a SoftwareServer.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareModule"/>
+    <rdfs:label>SoftwareModule</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#J2CConnectorPool">
+    <rdfs:comment>A set of shared J2C connections.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://www.jcp.org/en/jsr/detail?id=322"/>
+    <rdfs:label>J2CConnectorPool</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#Transaction">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServiceInstance"/>
+    <rdfs:label>Transaction</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#SoftwareServer">
+    <rdfs:comment>Represents an instance of software that participates in hosting a particular application.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>SoftwareServer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#Storage">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServiceInstance"/>
+    <rdfs:label>Storage</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#observationTime">
+    <rdfs:comment>The time that the resource was last observed by the provider.</rdfs:comment>
+    <rdfs:label>observationTime</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#ThreadPool">
+    <rdfs:comment>A set of shared threads.</rdfs:comment>
+    <rdfs:label>ThreadPool</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#WebServer">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>WebServer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#elementTo">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#Path"/>
+    <rdfs:comment>The resource acting as the destination point in the ordered path.</rdfs:comment>
+    <rdfs:label>elementTo</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#StorageVolume">
+    <rdfs:comment>Represents an identifiable unit of data storage. A StorageVolume can be a physical device ( e.g. a removable hard drive ) or a logical unit created by combining one or more other storage volumes.</rdfs:comment>
+    <vs:term_status>testing</vs:term_status>
+    <rdfs:label>StorageVolume</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#address">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#IPAddress"/>
+    <rdfs:comment>The canonical string representation of the IP address. </rdfs:comment>
+    <rdfs:label>address</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#systemBoardUUID">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:comment>The unique identifier of the system board.</rdfs:comment>
+    <rdfs:label>systemBoardUUID</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#MQQueueManager">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>MQQueueManager</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#Process">
+    <rdfs:comment>This resource represents a process running under an operating system.</rdfs:comment>
+    <vs:term_status>testing</vs:term_status>
+    <rdfs:label>Process</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#ipAddress">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ServerAccessPoint"/>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:comment>The IP address assigned to this system.</rdfs:comment>
+    <rdfs:label>ipAddress</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#IPAddress">
+    <rdfs:comment>Represents an IP address, either IPv4-based or IPv6-based.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#IPAddress"/>
+    <rdfs:label>IPAddress</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#processId">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#Process"/>
+    <rdfs:comment>The process id number assigned to the Process by the operating system.</rdfs:comment>
+    <rdfs:label>processId</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#Tablespace">
+    <rdfs:comment>the storage area used by an Database to store its data. Database administrators define how Tablespaces maps to actual system storage. A Tablespace can be a physical device ( e.g. a removable hard drive ) or a logical unit (e.g. a file or a virtual disk).</rdfs:comment>
+    <vs:term_status>testing</vs:term_status>
+    <rdfs:label>Tablespace</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#serverAccessPoint">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:comment>The Server Access Point clients use for communications with this resource. </rdfs:comment>
+    <rdfs:label>serverAccessPoint</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#J2EEApplication">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareModule"/>
+    <rdfs:label>J2EEApplication</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#MessagingServer">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>MessagingServer</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#vmid">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:comment>The VMID is a unique identifier for the virtual machine.</rdfs:comment>
+    <rdfs:label>vmid</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#DatabaseInstance">
+    <rdfs:comment></rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#SoftwareServer"/>
+    <rdfs:label>DatabaseInstance</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#ComputerSystem">
+    <rdfs:comment>An intelligent device, such as a computer, that can perform computing, data collection, and/or communication operations. This category includes general purpose computers, such as laptops, servers, and virtual machines; computers with specific functions, such as Networking and Storage hardware, Voice over IP Telephony devices, HVAC systems; monitoring data collection devices in buildings, automobiles, or electronic grids.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#ComputerSystem"/>
+    <rdfs:label>ComputerSystem</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://open-services.net/ns/crtv#assetTag">
+    <rdfs:seeAlso rdf:resource="http://open-services.net/wiki/reconciliation/OSLC-Reconciliation-Specification-Version-2.0/#Asset"/>
+    <rdfs:comment>Specifies the asset tag for a physical piece of equipment. Asset tags are typically human readable labels that are durable and securely attached to equipment. Asset tags may also be readable by barcode and/or RFID. </rdfs:comment>
+    <owl:sameAs rdf:resource="http://open-services.net/ns/asset#tag"/>
+    <rdfs:label>assetTag</rdfs:label>
+    <rdfs:isDefinedBy rdf:resource="http://open-services.net/ns/crtv#"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+</rdf:RDF>

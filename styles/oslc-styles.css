@@ -13,3 +13,33 @@ body     {
 ul.toc {
 	list-style-type: none;
 }
+
+table, thead, tr, td {
+	padding: 5px;
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: solid;
+	border-collapse: collapse;
+}
+
+td { min-width: 100px; } 
+
+.normalText {
+    color: black;
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: normal;
+}
+
+code {
+    font-weight:bold;
+}
+
+.rfc2119 {
+    font-weight:bold;
+}
+
+dd {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
