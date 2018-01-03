@@ -158,7 +158,7 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 <h2>Introduction</h2>
 <p>This specification defines the OSLC Requirements Management domain, also known as OSLC RM. The specification supports key RESTful web services interface for software Requirements Management systems. OSLC RM takes an open, loosely coupled approach to specific lifecycle integration scenarios. The scenarios and this specification were created by the OSLC RM Working Group.</p>
  
-<p>This specification builds on the Open Services for Lifecycle Collaboration (OSLC) Core v2.0 Specification to define the resources, properties and operations supported by an OSLC Requirements Definition and Management (OSLC-RM) provider.</p>
+<p>This specification builds on the Open Services for Lifecycle Collaboration Core Specification [[!OSLCCore3]] to define the resources, properties and operations supported by an OSLC Requirements Definition and Management (OSLC-RM) provider.</p>
 
 <p>Requirements Management resources include Requirements, Requirements Collections and supporting resources defined in the OSLC Core specification. The properties defined describe these resources and the relationships between resources. Operations are defined in terms of HTTP methods and MIME type handling. The resources, properties and operations defined do not form a comprehensive interface to Requirements Definition and Management, but instead target specific integration use cases documented by the OSLC-RM workgroup.</p>
 
@@ -317,19 +317,13 @@ requirements.</p>
 <section id="versioning">
 <h2 id="specificationversioningspec_versioning">Specification Versioning</h2>
 
-<p>See <a class="twikiAnchorLink" href="/bin/view/Main/OslcCoreSpecification#Specification_Versioning">Core Specification Version 2.0 - Specification Versioning</a>.
-</p>
-<p>Service providers that support the resource formats and services in this specification <strong>MUST</strong> add an HTTP response header of <code>OSLC-Core-Version</code> with a value of <code>2.0</code>. Consumers <strong>SHOULD</strong> request formats and services defined in this document by providing a HTTP request header of <code>OSLC-Core-Version</code> with a value of <code>2.0</code>. See section below on Version Compatibility with OSLC RM 1.0 Specifications.
-</p>
-<p>
-This specification reserves, for possible future use, the use of the HTTP header <code>OSLC-RM-Version</code>. OSLC Providers <strong>MUST NOT</strong> use this HTTP header.
-</p>
+<p>This specification follows the specification version guidelines given in [[!OSLCCore3]].</p>
 </section>
 
 <section id="namespaces">
 <h2>Namespaces</h2>
 
-<p> In addition to the namespace URIs and namespace prefixes <code>oslc</code>, <code>rdf</code>, <code>dcterms</code> and <code>foaf</code> defined in the [OSLCCore3], OSLC RM defines the namespace URI of <code>http://open-services.net/ns/rm#</code> with a preferred namespace prefix of <code>oslc_rm</code>.</p>
+<p> In addition to the namespace URIs and namespace prefixes <code>oslc</code>, <code>rdf</code>, <code>dcterms</code> and <code>foaf</code> defined in the [[!OSLCCore3]], OSLC RM defines the namespace URI of <code>http://open-services.net/ns/rm#</code> with a preferred namespace prefix of <code>oslc_rm</code>.</p>
 
 </section>
 
@@ -488,14 +482,14 @@ In addition to the resource formats defined above, Servers MAY support additiona
 <section id="creationfactories">
 <h3>Creation Factories</h3>
 
-<p>RM Servers supporting resource creation MUST do so through <code>oslc:CreationFactory</code> resources, as defined by <a class="twikiAnchorLink" href="/bin/view/Main/OslcCoreSpecification#Creation_Factories">Core Specification Version 2.0 - Creation Factories</a>. Any such factory resources MUST be discoverable through <code>oslc:Service</code> resources. Providers SHOULD provide <code>oslc:ResourceShape</code> resources on <code>oslc:CreationFactory</code> resources as defined by <a class="twikiAnchorLink" href="/bin/view/Main/OSLCCoreSpecAppendixA#oslc_ResourceShape_Resource">OSLC Core Specification Appendix A: Common Properties - Resource Shapes</a>.</p>
+<p>RM Servers supporting resource creation MUST do so through <code>oslc:CreationFactory</code> resources, as defined by [[!OSLCCore3]]. Any such factory resources MUST be discoverable through <code>oslc:Service</code> resources. Servers SHOULD provide <code>oslc:ResourceShape</code> resources on <code>oslc:CreationFactory</code> resources as defined by <a class="twikiAnchorLink" href="/bin/view/Main/OSLCCoreSpecAppendixA#oslc_ResourceShape_Resource">OSLC Core Specification Appendix A: Common Properties - Resource Shapes</a>.</p>
 
 </section>
 
 <section id="querycapabilities">
 <h3 id="querycapabilities">Query Capabilities</h3>
 
-<p>RM Servers MUST support query capabilities, as defined by <a class="twikiAnchorLink" href="/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Core Specification Version 2.0 - Query Capabilities</a>. Servers SHOULD provide <code>oslc:ResourceShape</code> on <code>oslc:QueryCapability</code> resources as defined by <a class="twikiAnchorLink" href="/bin/view/Main/OSLCCoreSpecAppendixA#oslc_ResourceShape_Resource">OSLC Core Specification Appendix A: Common Properties - Resource Shapes</a>.
+<p>RM Servers MUST support query capabilities, as defined by [[!OSLCCore3]]. Servers SHOULD provide <code>oslc:ResourceShape</code> on <code>oslc:QueryCapability</code> resources as defined by <a class="twikiAnchorLink" href="/bin/view/Main/OSLCCoreSpecAppendixA#oslc_ResourceShape_Resource">OSLC Core Specification Appendix A: Common Properties - Resource Shapes</a>.
 </p>
 
 <p>The Query Capability, if supported, MUST support these parameters: <ul>
@@ -517,17 +511,17 @@ The stability of query results is OPTIONAL (see <a class="twikiLink" href="/bin/
 <section id="delegatedUIs">
 <h3>Delegated UIs</h3>
 
-<p>RM Servers MUST support the selection and creation of resources by delegated web-based user interface dialogs <a class="twikiAnchorLink" href="/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a> as defined by OSLC Core.
+<p>RM Servers MUST support the selection and creation of resources by delegated web-based user interface dialogs <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a> as defined by [[!OSLCCore3]].
 </p>
 
-<p>RM Servers MAY support the pre-filling of creation dialogs based on the definition at <a class="twikiAnchorLink" href="/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a>.</p>
+<p>RM Servers MAY support the pre-filling of creation dialogs based on the definition at <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a>.</p>
 
 </section>
 
 <section id="usageidentifiers">
 <h3>Usage Identifiers</h3>
 
-<p>RM Servers MAY identify the usage of various services with additional property values for the <a class="twikiAnchorLink" href="/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">OSLC Core</a> defined <code>oslc:usage</code> property on <code>oslc:Dialog</code>, <code>CreationFactory</code> and <code>QueryCapability</code>. The <code>oslc:usage</code> property value of <code>http://open-services.net/ns/core#default</code> SHOULD be used to designate the default or primary service to be used by consumers when multiple entries are found.
+<p>RM Servers MAY identify the usage of various services with additional property values for the <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">OSLC Core</a> defined <code>oslc:usage</code> property on <code>oslc:Dialog</code>, <code>CreationFactory</code> and <code>QueryCapability</code>. The <code>oslc:usage</code> property value of <code>http://open-services.net/ns/core#default</code> SHOULD be used to designate the default or primary service to be used by consumers when multiple entries are found.
 </p>
 There are no additional usage identifiers defined by this specification. RM Servers MAY provide their own usage URIs. Such usage URIs MUST be in a non-OSLC namespace.
 </p>
