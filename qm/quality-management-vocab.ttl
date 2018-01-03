@@ -4,6 +4,43 @@
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rddl:  <http://www.rddl.org/> .
 
+<http://open-services.net/ns/qm#TestPlan>
+        a                 rdfs:Class ;
+        rdfs:comment      "The QM Test Plan resource" ;
+        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
+        rdfs:label        "TestPlan" ;
+        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestPlan> .
+
+<http://open-services.net/ns/qm#TestScript>
+        a                 rdfs:Class ;
+        rdfs:comment      "The QM Test Script resource" ;
+        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
+        rdfs:label        "TestScript" ;
+        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestScript> .
+
+<http://open-services.net/ns/qm#TestCase>
+        a                 rdfs:Class ;
+        rdfs:comment      "The QM Test Case resource" ;
+        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
+        rdfs:label        "TestCase" ;
+        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestCase> .
+
+<http://open-services.net/ns/qm#TestExecutionRecord>
+        a                 rdfs:Class ;
+        rdfs:comment      "The QM Test Execution Record resource" ;
+        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
+        rdfs:label        "TestExecutionRecord" ;
+        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestExecutionRecord> .
+
+<http://open-services.net/ns/qm#TestResult>
+        a                 rdfs:Class ;
+        rdfs:comment      "The QM Test Result resource" ;
+        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
+        rdfs:label        "TestResult" ;
+        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestResult> .
+
+
+
 <http://open-services.net/ns/qm#affectedByChangeRequest>
         a                 rdf:Property ;
         rdfs:comment      "Change request that affects the Test Result. It is likely that the target resource will be an oslc_cm:ChangeRequest but that is not necessarily the case." ;
@@ -52,13 +89,6 @@
         rdfs:range        <http://open-services.net/ns/qm#TestResult> ;
         rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestResult> .
 
-<http://open-services.net/ns/qm#TestPlan>
-        a                 rdfs:Class ;
-        rdfs:comment      "The QM Test Plan resource" ;
-        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
-        rdfs:label        "TestPlan" ;
-        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestPlan> .
-
 <http://open-services.net/ns/qm#usesTestCase>
         a                 rdf:Property ;
         rdfs:comment      "Test Case used by the Test Plan. It is likely that the target resource will be an oslc_qm:TestCase but that is not necessarily the case." ;
@@ -69,13 +99,6 @@
 
 <http://open-services.net/ns/qm/qm.rdf>
         rddl:nature  rdfs: .
-
-<http://open-services.net/ns/qm#TestExecutionRecord>
-        a                 rdfs:Class ;
-        rdfs:comment      "The QM Test Execution Record resource" ;
-        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
-        rdfs:label        "TestExecutionRecord" ;
-        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestExecutionRecord> .
 
 <http://open-services.net/ns/qm#validatesRequirementCollection>
         a                 rdf:Property ;
@@ -91,13 +114,6 @@
         rdfs:seeAlso         <http://open-services.net/ns/qm/qm.rdf> , <http://open-services.net/bin/view/Main/QmSpecificationV2> , <http://open-services.net/bin/view/Main/QmHome> ;
         dcterms:description  "\n      All vocabulary URIs defined in the OSLC Quality Management (QM) namespace.\n    "^^rdf:XMLLiteral ;
         dcterms:title        "The OSLC Quality Management(QM) Vocabulary" .
-
-<http://open-services.net/ns/qm#TestScript>
-        a                 rdfs:Class ;
-        rdfs:comment      "The QM Test Script resource" ;
-        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
-        rdfs:label        "TestScript" ;
-        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestScript> .
 
 <http://open-services.net/ns/qm#blockedByChangeRequest>
         a                 rdf:Property ;
@@ -146,20 +162,6 @@
         rdfs:label        "reportsOnTestCase" ;
         rdfs:range        <http://open-services.net/ns/qm#TestResult> ;
         rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestResult> .
-
-<http://open-services.net/ns/qm#TestResult>
-        a                 rdfs:Class ;
-        rdfs:comment      "The QM Test Result resource" ;
-        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
-        rdfs:label        "TestResult" ;
-        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestResult> .
-
-<http://open-services.net/ns/qm#TestCase>
-        a                 rdfs:Class ;
-        rdfs:comment      "The QM Test Case resource" ;
-        rdfs:isDefinedBy  <http://open-services.net/ns/qm#> ;
-        rdfs:label        "TestCase" ;
-        rdfs:seeAlso      <http://open-services.net/bin/view/Main/QmSpecificationV2#Resource_TestCase> .
 
 <http://open-services.net/ns/qm#executionInstructions>
         a                 rdf:Property ;
