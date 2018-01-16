@@ -125,7 +125,7 @@
 </head>
 <body>
 <section id="abstract">
-<p>This specification defines a vocabulary and resource shapes for the requirements-management domain.</p>
+<p>This specification defines a vocabulary and resource shapes for the OSLC Requirements Management domain.</p>
 </section>
 
   <section id='toc'></section>
@@ -135,22 +135,15 @@
 <section id="introduction" class="informative">
 <h2>Introduction</h2>
 
-<p>This specification defines a vocabulary and resource shapes for common
-    requirements-management resources. The intent is to define resources needed to
+<p>This specification defines a vocabulary and resource shapes for the OSLC
+    Requirements Management resources. The intent is to define resources needed to
     support common integration scenarios and not to provide a comprehensive
-    definition of a Change Request. The resource formats may not match exactly
-    the native models supported by change management service providers, but are
+    definition of a Requirement. The resource formats may not match exactly
+    the native models supported by requirement management service providers, but are
     intended to be compatible with them. The approach to supporting these
     scenarios is to delegate operations, as driven by service provider
     contributed user interfaces, as much as possible and not require a service
     provider to expose its complete data model and application logic.</p>
-
-<figure>
-  <img src="OSLCV3_CM.png" />
-  <figcaption>OSLC requirements-management 2.0 Overview</figcaption>
-</figure>
-
-
 
 <section id="terminology">
 <h1>Terminology</h1>
@@ -182,9 +175,9 @@
 </section>
 
 <section id="rmVocab">
-  <h2>requirements-management Vocabulary Terms</h2>
+  <h2>Requirements Management Vocabulary Terms</h2>
   <p>This specification defines the **root** superclass, and a number of specific, commonly occurring subclasses, properties and values. Servers may define additional **root** subclasses and provide additional properties as needed.</p>
-    <div title='RDF Vocabulary for OSLC requirements-management Domain'
+    <div title='RDF Vocabulary for OSLC Requirements Management Domain'
         data-include='./requirements-management-vocab.ttl'
         data-oninclude='vocabToSpec'
         data-include-sync='true' 
@@ -193,23 +186,16 @@
 </section>
   
 <section id="resourceDefinitions">
-<h2>requirements-management Resource Constraints</h2>
-<p />
-The meaning of Requirement resource properties are defined in the tables below, together with their multiplicity constraints. Requirement resource properties are not limited to the ones defined in this specification, service providers may provide additional properties. It is strongly recommended that any additional properties be defined in XML namespaces distinct from those defined by OSLC in these specifications. Requirement creation through a Creation Factory resource in the Service Description is <strong>REQUIRED</strong> by this specification.
-<p />
-Any <strong>resource</strong> asserted to be of <code>rdf:type</code> <code>http://open-services.net/ns/rm#Requirement</code> <strong>MUST</strong> conform to the constraints and meaning of properties defined below. Notice that partial representations of a requirement resource are admitted by this specification (for example, in query results, or where <code>oslc.properties</code> has been used), and such partial representations will in general not conform to these constraints.
-<p /> <ul>
-<li> <strong>Name:</strong> <code>Requirement</code>
-</li> <li> <strong>Type URI</strong> <code>http://open-services.net/ns/rm#Requirement</code>
-</li></ul> 
-<p />
+<h2>Requirements Management Resource Constraints</h2>
 
 <section id="requirement">
 <h3>Resource: Requirement</h3>
-
-<p>The meaning of Requirement resource properties are defined in the tables below, together with their multiplicity constraints. Requirement resource properties are not limited to the ones defined in this specification, service providers may provide additional properties. It is strongly recommended that any additional properties be defined in XML namespaces distinct from those defined by OSLC in these specifications. Requirement creation through a Creation Factory resource in the Service Description is required by this specification.
-<p></p>
-Any resource asserted to be of rdf:type http://open-services.net/ns/rm#Requirement must conform to the constraints and meaning of properties defined below. Notice that partial representations of a requirement resource are admitted by this specification (for example, in query results, or where oslc.properties has been used), and such partial representations will in general not conform to these constraints.</p>
+<p>
+The meaning of Requirement resource properties are defined in the tables below, together with their multiplicity constraints. Requirement resource properties are not limited to the ones defined in this specification, service providers may provide additional properties. It is strongly recommended that any additional properties be defined in XML namespaces distinct from those defined by OSLC in these specifications. Requirement creation through a Creation Factory resource in the Service Description is REQUIRED by this specification.
+</p>
+<p>
+Any <strong>resource</strong> asserted to be of <code>rdf:type</code> <code>http://open-services.net/ns/rm#Requirement</code> MUST conform to the constraints and meaning of properties defined below. Notice that partial representations of a requirement resource are admitted by this specification (for example, in query results, or where <code>oslc.properties</code> has been used), and such partial representations will in general not conform to these constraints.
+</p> 
 
 <div title='Shape for oslc_rm:Requirement'
         data-include='./requirements-management-shapes.ttl#Requirement'
@@ -222,10 +208,11 @@ Any resource asserted to be of rdf:type http://open-services.net/ns/rm#Requireme
 
 <section id="requirementCollection">
 <h3>Resource: RequirementCollection</h3>
-
-<p>The meaning of RequirementCollection resource properties are defined in the tables below, together with their multiplicity constraints. RequirementCollection resource properties are not limited to the ones defined in this specification, service providers may provide additional properties. It is strongly recommended that any additional properties be defined in XML namespaces distinct from those defined by OSLC in these specifications. RequirementCollection creation through a Creation Factory resource in the Service Description is optional in this specification.
-<p></p>
-Any resource asserted to be of rdf:type http://open-services.net/ns/rm#RequirementCollection must conform to the constraints and meaning of properties defined below. Notice that partial representations of a requirement collection resource are admitted by this specification (for example, in query results, or where oslc.properties has been used), and such partial representations will in general not conform to these constraints.</p>
+<p>The meaning of RequirementCollection resource properties are defined in the tables below, together with their multiplicity constraints. RequirementCollection resource properties are not limited to the ones defined in this specification, service providers may provide additional properties. It is strongly recommended that any additional properties be defined in XML namespaces distinct from those defined by OSLC in these specifications. RequirementCollection creation through a Creation Factory resource in the Service Description is OPTIONAL in this specification.
+</p>
+<p>
+Any <strong>resource</strong> asserted to be of <code>rdf:type</code> <code>http://open-services.net/ns/rm#RequirementCollection</code> MUST conform to the constraints and meaning of properties defined below. Notice that partial representations of a requirement collection resource are admitted by this specification (for example, in query results, or where <code>oslc.properties</code> has been used), and such partial representations will in general not conform to these constraints.
+</p>
 
 <div title='Shape for oslc_rm:RequirementCollection'
         data-include='./requirements-management-shapes.ttl#RequirementCollection'
