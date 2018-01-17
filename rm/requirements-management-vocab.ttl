@@ -18,7 +18,7 @@ oslc_rm:
   dcterms:title "The OSLC Requirements Management(RM) Vocabulary" ;
   dcterms:description "All vocabulary URIs defined in the OSLC Requirements Management (RM) namespace."^^rdf:XMLLiteral ;
   dcterms:source <https://github.com/oasis-tcs/oslc-domains/blob/master/rm/requirements-management-vocab.ttl> ;
-  vann:preferredNamespacePrefix "rm" ;
+  vann:preferredNamespacePrefix "oslc_rm" ;
   rdfs:label "Requirements Management(RM)" .
 
 # ******** Classes ********

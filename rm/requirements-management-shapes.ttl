@@ -52,7 +52,7 @@ satisfy a contract, standard, specification, or other formally imposed documents
     a                       oslc:ResourceShape ;
     dcterms:title           "A collection of Requirements." ;
     dcterms:description     "A grouping or collection of related requirements for any purpose."^^rdf:XMLLiteral ;
-    oslc:describes          oslc_rm:Requirement ;
+    oslc:describes          oslc_rm:RequirementCollection ;
     oslc:property
         <#type>,
         <#identifier>,
@@ -85,50 +85,52 @@ satisfy a contract, standard, specification, or other formally imposed documents
 
 <#contributor>  a                 oslc:Property ;
         oslc:name                "contributor" ;
-        oslc:range               foaf:Person ;
+        oslc:range               oslc:AnyResource ;
         oslc:occurs              oslc:Zero-or-many ;
         oslc:propertyDefinition  dcterms:contributor ;
         oslc:valueType           oslc:AnyResource ;
         oslc:representation      oslc:Either ;
-        dcterms:description      "Contributor or contributors to the resource. It is likely that the target resource will be a foaf:Person but that is not necessarily the case. "^^rdf:XMLLiteral .
+        dcterms:description      "Contributor(s) to resource (reference: Dublin Core). It is likely that the target resource will be an foaf:Person but that is not necessarily the case."^^rdf:XMLLiteral .
 
 <#creator>  a                 oslc:Property ;
         oslc:name                "creator" ;
-        oslc:range               foaf:Person ;
+        oslc:range               oslc:AnyResource ;
         oslc:occurs              oslc:Zero-or-many ;
         oslc:propertyDefinition  dcterms:creator ;
         oslc:valueType           oslc:AnyResource ;
         oslc:representation      oslc:Either ;
-        dcterms:description      "Creator or creators of the resource. It is likely that the target resource will be a foaf:Person but that is not necessarily the case."^^rdf:XMLLiteral .
+        dcterms:description      "Creator(s) of resource (reference: Dublin Core). It is likely that the target resource will be an foaf:Person but that is not necessarily the case."^^rdf:XMLLiteral .
 
 <#created>  a                 oslc:Property ;
         oslc:name                "created" ;
         oslc:occurs              oslc:Zero-or-one ;
         oslc:propertyDefinition  dcterms:created ;
         oslc:valueType           xsd:dateTime ;
-        dcterms:description      "Timestamp of resource creation "^^rdf:XMLLiteral .
+        oslc:readOnly            true ;
+        dcterms:description      "Timestamp of resource creation (reference: Dublin Core). "^^rdf:XMLLiteral .
 
 # Dublin Core Properties
 <#description> a oslc:Property ;
     oslc:name "description" ;
     oslc:propertyDefinition dcterms:description ;
-    oslc:occurs oslc:Zero-or-many;
-    dcterms:description "Descriptive text about resource represented as rich text in XHTML content."^^rdf:XMLLiteral ;
+    oslc:occurs oslc:Zero-or-one;
+    dcterms:description "Descriptive text (reference: Dublin Core) about resource represented as rich text in XHTML content. SHOULD include only content that is valid and suitable inside an XHTML &lt;div&gt element."^^rdf:XMLLiteral ;
     oslc:valueType rdf:XMLLiteral .
 
 <#identifier> a oslc:Property ;
     oslc:name "identifier" ;
     oslc:propertyDefinition dcterms:identifier ;
-    oslc:occurs oslc:Zero-or-many;
-    dcterms:description """A unique identifier for a resource. Typically read-only and assigned by the 
-service provider when a resource is created. Not typically intended for end-user display."""^^rdf:XMLLiteral ;
+    oslc:occurs oslc:Zero-or-one;
+    dcterms:description "An identifier for a resource. This identifier may be unique with a scope that is defined by the RM provider. Assigned by the service provider when a resource is created. Not intended for end-user display."^^rdf:XMLLiteral ;
+    oslc:readOnly            true ;
     oslc:valueType xsd:string .
 
 <#modified> a oslc:Property ;
     oslc:name "modified" ;
     oslc:propertyDefinition dcterms:modified   ;
-    oslc:occurs oslc:Zero-or-many;
-    dcterms:description "Timestamp of latest resource modification."^^rdf:XMLLiteral ;
+    oslc:occurs oslc:Zero-or-one;
+    dcterms:description "Timestamp last latest resource modification (reference: Dublin Core). "^^rdf:XMLLiteral ;
+    oslc:readOnly            true ;
     oslc:valueType xsd:dateTime .
 
 <#subject> a oslc:Property ;
@@ -136,19 +138,19 @@ service provider when a resource is created. Not typically intended for end-user
     oslc:propertyDefinition dcterms:subject   ;
     oslc:occurs oslc:Zero-or-many;
     dcterms:description "Tag or keyword for a resource. Each occurrence of a dcterms:subject property denotes an additional tag for the resource."^^rdf:XMLLiteral ;
+    oslc:readOnly            false ;
     oslc:valueType xsd:string .
 
 <#title> a oslc:Property ;
     oslc:name "title" ;
     oslc:propertyDefinition dcterms:title   ;
-    oslc:occurs oslc:Zero-or-many;
-    dcterms:description "Title of the resource represented as rich text in XHTML content."^^rdf:XMLLiteral ;
+    oslc:occurs oslc:exactly-one;
+    dcterms:description "Title (reference: Dublin Core) of the resource represented as rich text in XHTML content. SHOULD include only content that is valid inside an XHTML &lt;span&gt element. "^^rdf:XMLLiteral ;
     oslc:valueType rdf:XMLLiteral .
 
 # RDF Properties
 <#type> a oslc:Property ;
     oslc:name "type" ;
-    oslc:range rdfs:Class ;
     oslc:propertyDefinition rdf:type  ;
     oslc:occurs oslc:Zero-or-many;
     dcterms:description "The resource type URIs."^^rdf:XMLLiteral ;
@@ -161,9 +163,7 @@ service provider when a resource is created. Not typically intended for end-user
     oslc:propertyDefinition oslc:serviceProvider  ;
     oslc:range oslc:ServiceProvider ;
     oslc:occurs oslc:Zero-or-many;
-    dcterms:description """A link to the resource's OSLC Service Provider. There may be cases when the 
-subject resource is available from a service provider that implements multiple domain 
-specifications, which could result in multiple values for this property."""^^rdf:XMLLiteral ;
+    dcterms:description "The scope of a resource is a URI for the resource's OSLC Service Provider"^^rdf:XMLLiteral ;
     oslc:valueType oslc:Resource ;
     oslc:representation oslc:Reference .
 
@@ -171,19 +171,15 @@ specifications, which could result in multiple values for this property."""^^rdf
     oslc:name "instanceShape" ;
     oslc:propertyDefinition oslc:instanceShape  ;
     oslc:range oslc:ResourceShape ;
-    oslc:occurs oslc:Zero-or-many;
-    dcterms:description """The URI of a Resource Shape that describes the possible properties, occurrence, 
-value types, allowed values and labels. This shape information is useful in displaying the subject
-resource as well as guiding clients in performing modifications. Instance shapes may be specific 
-to the authenticated user associated with the request that retrieved the resource, the current 
-state of the resource and other factors and thus should not be cached."""^^rdf:XMLLiteral ;
+    oslc:occurs oslc:Zero-or-one;
+    dcterms:description "Resource Shape that provides hints as to resource property value-types and allowed values"^^rdf:XMLLiteral ;
     oslc:valueType oslc:Resource ;
     oslc:representation oslc:Reference .
 
 <#shortTitle> a oslc:Property ;
     oslc:name "shortTitle" ;
-    oslc:occurs oslc:Zero-or-many;
-    dcterms:description "Shorter form of dcterms:title for the resource represented as rich text in XHTML content."^^rdf:XMLLiteral ;
+    oslc:occurs oslc:Zero-or-one;
+    dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt element."^^rdf:XMLLiteral ;
     oslc:propertyDefinition  oslc:shortTitle ;
     oslc:valueType rdf:XMLLiteral .
 
@@ -207,8 +203,7 @@ This is modeled after dcterms:creator, but Dublin Core currently has no equivale
     oslc:range               oslc:AnyResource ;
     oslc:representation      oslc:Reference ;
     oslc:valueType           oslc:Resource ;
-    oslc:readOnly            false ;
-    dcterms:description      ""^^rdf:XMLLiteral ;
+    dcterms:description      "A collection uses a resource - the resource is in the requirement collection."^^rdf:XMLLiteral ;
     dcterms:title            "" .
 
 <#elaboratedBy> a oslc:Property ;
@@ -219,7 +214,7 @@ This is modeled after dcterms:creator, but Dublin Core currently has no equivale
     oslc:representation      oslc:Reference ;
     oslc:valueType           oslc:Resource ;
     oslc:readOnly            false ;
-    dcterms:description      ""^^rdf:XMLLiteral ;
+    dcterms:description      "The subject is elaborated by the object. For example, a user requirement is elaborated by use case."^^rdf:XMLLiteral ;
     dcterms:title            "" .
 
 <#elaborates> a oslc:Property ;
@@ -230,7 +225,7 @@ This is modeled after dcterms:creator, but Dublin Core currently has no equivale
     oslc:representation      oslc:Reference ;
     oslc:valueType           oslc:Resource ;
     oslc:readOnly            false ;
-    dcterms:description      ""^^rdf:XMLLiteral ;
+    dcterms:description      "The object is elaborated by the subject."^^rdf:XMLLiteral ;
     dcterms:title            "" .
 
 <#specifiedBy> a oslc:Property ;
@@ -241,7 +236,7 @@ This is modeled after dcterms:creator, but Dublin Core currently has no equivale
     oslc:representation      oslc:Reference ;
     oslc:valueType           oslc:Resource ;
     oslc:readOnly            false ;
-    dcterms:description      ""^^rdf:XMLLiteral ;
+    dcterms:description      "The subject is specified by the object. For example, a requirement is elaborated by a model element."^^rdf:XMLLiteral ;
     dcterms:title            "" .
 
 <#specifies> a oslc:Property ;
@@ -252,7 +247,7 @@ This is modeled after dcterms:creator, but Dublin Core currently has no equivale
     oslc:representation      oslc:Reference ;
     oslc:valueType           oslc:Resource ;
     oslc:readOnly            false ;
-    dcterms:description      "A collection uses a resource - the resource is in the requirement collection."^^rdf:XMLLiteral ;
+    dcterms:description      "The object is specified by the subject."^^rdf:XMLLiteral ;
     dcterms:title            "specifies" .
 
 <#affectedBy> a oslc:Property ;
@@ -285,7 +280,7 @@ This is modeled after dcterms:creator, but Dublin Core currently has no equivale
     oslc:representation      oslc:Reference ;
     oslc:valueType           oslc:Resource ;
     oslc:readOnly            false ;
-    dcterms:description      "hange request, which implements this requirement."^^rdf:XMLLiteral ;
+    dcterms:description      "Resource, such as a change request, which implements this requirement."^^rdf:XMLLiteral ;
     dcterms:title            "implementedBy" .
 
 <#validatedBy> a oslc:Property ;
