@@ -28,70 +28,62 @@ oslc_rm:Requirement
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "Requirement" ;
         oslc:hasBasicShape   oslc_rm:requirementShape ;
-        dcterms:description  "Statement of need." .
+        rdfs:comment  "Statement of need." .
 
 oslc_rm:RequirementCollection
         a                    rdfs:Class ;
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "RequirementCollection" ;
         oslc:hasBasicShape   <http://open-services-net/shapes/rm#requirementCollectionShape> ;
-        dcterms:description  "Collection of requirements. A collection uses zero or more requirements." .
+        rdfs:comment  "Collection of requirements. A collection uses zero or more requirements." .
 
 
 # ******** Properties ********
 
 oslc_rm:implementedBy
         a                    rdf:Property ;
-        rdfs:comment         "An entity which is a necessary or desirable aspect of an implementation." ;
+        rdfs:comment         "Expresses an implementation relationship between entities, where the object entity is a necessary or desirable aspect of an implementation of the subject entity." ;
         rdfs:isDefinedBy     oslc_rm: ;
-        rdfs:label           "implementedBy" ;
-        dcterms:description  "Expresses an implementation relationship between entities." .
+        rdfs:label           "implementedBy" .
 
 oslc_rm:trackedBy
         a                    rdf:Property ;
-        rdfs:comment         "An entity which in some way tracks or governs the evolution of an entity." ;
+        rdfs:comment         "Expresses a tracking relationship between entities, where the object entity in some way tracks or governs the evolution of the subject entity. For example, a change request may be said to track a requirement, in that it governs the changes to a requirement according to some process machinery." ;
         rdfs:isDefinedBy     oslc_rm: ;
-        rdfs:label           "trackedBy" ;
-        dcterms:description  "Expresses a tracking relationship between entities. For example, a change request may be said to track a requirement, in that it governs the changes to a requirement according to some process machinery." .
+        rdfs:label           "trackedBy" .
 
 oslc_rm:uses
         a                    rdf:Property ;
-        rdfs:comment         "An entity which is used by another resource." ;
+        rdfs:comment         "Expresses a use relationship between entities, where the object entity is used by the subject entity. For example, a requirement collection may use a requirement." ;
         rdfs:isDefinedBy     oslc_rm: ;
-        rdfs:label           "uses" ;
-        dcterms:description  "Expresses a use relationship between entities. For example, a requirement collection may use a requirement." .
+        rdfs:label           "uses" .
 
 oslc_rm:elaboratedBy
         a                    rdf:Property ;
-        rdfs:comment         "An entity which elaborates." ;
+        rdfs:comment         "Expresses an elaboration relationship between entities, where the object entity elaborates the subject entity. For example, a model element can elaborate a requirement." ;
         rdfs:isDefinedBy     oslc_rm: ;
-        rdfs:label           "elaboratedBy" ;
-        dcterms:description  "Expresses an elaboration relationship between entities. For example, a model element can elaborate a requirement." .
+        rdfs:label           "elaboratedBy" .
 
 oslc_rm:specifiedBy
         a                    rdf:Property ;
-        rdfs:comment         "An entity which further clarifies or specifies." ;
+        rdfs:comment         "Expresses a specification relationship between entities, where the object entity further clarifies or specifies the subject entity. For example, a model element can specifiy a requirement." ;
         rdfs:isDefinedBy     oslc_rm: ;
-        rdfs:label           "specifiedBy" ;
-        dcterms:description  "Expresses a specification relationship between entities. For example, a model element can specifiy a requirement." .
+        rdfs:label           "specifiedBy" .
 
 oslc_rm:satisfiedBy
         a                    rdf:Property ;
-        rdfs:comment         "An entity which further clarifies or specifies." ;
+        rdfs:comment         "The subject is satisfied by the object. For example, a user requirement is satisfied by a system requirement." ;
         rdfs:isDefinedBy     oslc_rm: ;
-        rdfs:label           "satisfiedBy" ;
-        dcterms:description  "The subject is satisfied by the object. For example, a user requirement is satisfied by a system requirement." .
+        rdfs:label           "satisfiedBy" .
 
 oslc_rm:affectedBy
         a                    rdf:Property ;
-        rdfs:comment         "An entity which in some way affects the object entity." ;
+        rdfs:comment         "Expresses an affects relationship between entities, where the object entity in some way affects the subject entity. For example, a defect may be said to affect a requirement." ;
         rdfs:isDefinedBy     oslc_rm: ;
-        rdfs:label           "affectedBy" ;
-        dcterms:description  "Expresses an affects relationship between entities. For example, a defect may be said to affect a requirement." .
+        rdfs:label           "affectedBy" .
 
 oslc_rm:validatedBy
         a                    rdf:Property ;
-        rdfs:comment         "An entity which in some way validates." ;
+        rdfs:comment         "Expresses a validation relationship between entities, where the object entity in some way validates the subject entity. For example, a test plan may be said to validated a requirement collection." ;
         rdfs:isDefinedBy     oslc_rm: ;
-        rdfs:label           "validatedBy" ;
-        dcterms:description  "Expresses a validation relationship between entities. For example, a test plan may be said to validated a requirement collection." .
+        rdfs:label           "validatedBy" .
