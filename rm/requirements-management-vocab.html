@@ -88,8 +88,8 @@
 
     // Other parts of multi-part spec
     additionalArtifacts : [
-      { title: "OSLC Requirements Management Version 2.1. Part 1: Specification (this document)", href: "http://docs.oasis-open.org/oslc-domains/rm/v2.1/csprd01/part1-requirements-management/rm-v2.1-csprd01-part1-requirements-management.html" },
-      { title: "OSLC Requirements Management Version 2.1. Part 2: Vocabulary", href: "http://docs.oasis-open.org/oslc-domains/rm/v2.1/csprd01/part2-requirements-management-vocab/rm-v2.1-csprd01-part2-requirements-management-vocab.html" },
+      { title: "OSLC Requirements Management Version 2.1. Part 1: Specification", href: "http://docs.oasis-open.org/oslc-domains/rm/v2.1/csprd01/part1-requirements-management/rm-v2.1-csprd01-part1-requirements-management.html" },
+      { title: "OSLC Requirements Management Version 2.1. Part 2: Vocabulary (this document)", href: "http://docs.oasis-open.org/oslc-domains/rm/v2.1/csprd01/part2-requirements-management-vocab/rm-v2.1-csprd01-part2-requirements-management-vocab.html" },
     ],
 
     relatedWork : [
@@ -151,7 +151,12 @@
     contributed user interfaces, as much as possible and not require a service
     provider to expose its complete data model and application logic.</p>
 
-<section id="terminology">
+<section id="conventions">
+<p>In addition to the namespace URIs and namespace prefixes <code>oslc</code>, <code>rdf</code>, <code>dcterms</code> and <code>foaf</code> defined in the <a href="http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part1-overview.html">OSLC Core specification</a>, OSLC RM defines the namespace URI of <code>http://open-services.net/ns/rm#</code> with a namespace prefix of <code>oslc_rm</code></p>
+
+</section>
+
+<section id="terminology" class='informative'>
 <h1>Terminology</h1>
 <p>Terminology is based on OSLC Core Overview [[!OSLCCore3]], W3C Linked Data
     Platform [[!LDP]], W3C's Architecture of the World Wide Web [[WEBARCH]],
@@ -165,18 +170,6 @@
 </section>
 
 <section id='references'><h3>References</h3></section>
-
-
-<section id="conventions">
-<p>In addition to the namespace URIs and namespace prefixes <code>oslc</code>, <code>rdf</code>, <code>dcterms</code> and <code>foaf</code> defined in the <a href="http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part1-overview.html">OSLC Core specification</a>, OSLC rm defines the namespace URI of <code>http://open-services.net/ns/rm#</code> with a namespace prefix of <code>oslc_rm</code></p>
-
-<p>This specification also uses these namespace prefix definitions:</p>
-
-<ul>
-<li>oslc_rm : <code>http://open-services.net/ns/rm#</code> [[OSLCRM]]</li>
-<li>oslc_qm : <code>http://open-services.net/ns/qm#</code> [[OSLCQM]]</li>
-</ul>
-</section>
 
 </section>
 
@@ -197,7 +190,7 @@
 <section id="requirement">
 <h3>Resource: Requirement</h3>
 <p>
-The meaning of Requirement resource properties are defined in the tables below, together with their multiplicity constraints. Requirement resource properties are not limited to the ones defined in this specification, service providers may provide additional properties. It is strongly recommended that any additional properties be defined in XML namespaces distinct from those defined by OSLC in these specifications. Requirement creation through a Creation Factory resource in the Service Description is REQUIRED by this specification.
+The meaning of Requirement resource properties are defined in the tables below, together with their multiplicity constraints. Requirement resource properties are not limited to the ones defined in this specification. Service providers may provide additional properties. It is strongly recommended that any additional properties be defined in XML namespaces distinct from those defined by OSLC in these specifications. Requirement creation through a Creation Factory resource in the Service Description is REQUIRED by this specification.
 </p>
 <p>
 Any <strong>resource</strong> asserted to be of <code>rdf:type</code> <code>http://open-services.net/ns/rm#Requirement</code> MUST conform to the constraints and meaning of properties defined below. Notice that partial representations of a requirement resource are admitted by this specification (for example, in query results, or where <code>oslc.properties</code> has been used), and such partial representations will in general not conform to these constraints.
