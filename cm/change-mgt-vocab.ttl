@@ -25,7 +25,7 @@ oslc_cm:ChangeRequest
   a rdfs:Class ;
   rdfs:isDefinedBy oslc_cm: ;
   rdfs:label "ChangeRequest" ;
-  rdfs:comment "The CM Change Request resource" .
+  rdfs:comment "The CM Change Request resource." .
 
 oslc_cm:ChangeNotice
   a rdfs:Class ;
@@ -66,7 +66,7 @@ oslc_cm:Task
 
 # ******** Properties ********
 
-oslc_cm:authorizor
+oslc_cm:authorizer
   a rdf:Property ;
   rdfs:isDefinedBy oslc_cm: ;
   rdfs:label "authorizer" ;
@@ -95,7 +95,7 @@ oslc_cm:Priority.""" .
 oslc_cm:severity
   a rdf:Property ;
   rdfs:isDefinedBy oslc_cm: ;
-  rdfs:label "sererity" ;
+  rdfs:label "severity" ;
   rdfs:comment """Used to indicate the severity or potential impact of a defect.
 It is likely that the target resource will be an oslc_cm:Severity.""" .
 
@@ -151,6 +151,13 @@ oslc_cm:tracksChangeSet
 target resource will be an oslc_config:ChangeSet.""" .
 
 # Individuals (enumerands)
+
+oslc_cm:state
+  a rdf:Property ;
+  rdfs:isDefinedBy oslc_cm: ;
+  rdfs:label "state" ;
+  rdfs:comment "Used to indicate the status of the change request." .
+
 
 # oslc_cm:state allowed values
 
@@ -300,7 +307,7 @@ oslc_cm:testedByTestCase
   vs:term_status "archaic" ;
   rdfs:label "testedByTestCase" ;
   rdfs:comment """Test case by which this change request is tested. It is
-likely that the target resource will be an oslc_qm:TestCase. """ .
+likely that the target resource will be an oslc_qm:TestCase.""" .
 
 oslc_cm:affectsTestResult
   a rdf:Property ;
@@ -342,7 +349,7 @@ oslc_cm:relatedTestPlan
   vs:term_status "archaic" ;
   rdfs:label "relatedTestPlan" ;
   rdfs:comment """Related test plan resource. It is likely that the
-target resource will be an oslc_qm:TestPlan. """ .
+target resource will be an oslc_qm:TestPlan.""" .
 
 oslc_cm:relatedTestScript
   a rdf:Property ;
@@ -402,4 +409,9 @@ oslc_cm:reviewed
   rdfs:isDefinedBy oslc_cm: ;
   rdfs:label "reviewed" ;
   rdfs:comment "Whether or not the Change Request has been reviewed." .
+
+oslc_cm:verified
+  rdfs:isDefinedBy oslc_cm: ;
+  rdfs:label "verified" ;
+  rdfs:comment "Whether or not the resolution or fix of the Change Request has been verified." .
 

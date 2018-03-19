@@ -188,7 +188,7 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 
 <body>
 <section id='abstract'>
-  <p></p>
+  <p>This specification defines the OSLC Architecture Management domain, a RESTful web services interface for the management of architectural resources and relationships between those and related resources such as product change requests, activities, tasks  requirements or test cases. To support these scenarios, this specification defines a set of HTTP-based RESTful interfaces in terms of HTTP methods: GET, POST, PUT and DELETE, HTTP response codes, content type handling and resource formats.</p>
 </section>
 
 <section id='toc'></section>
@@ -263,10 +263,10 @@ This specification is a [[!OSLCCore3]] compliant specification, as such most of 
 
 
     <dt>AM Client</dt>
-    <dd>An implementation of the OSLC Architecture Management specifications as a client. OSLC AM Clients consume services provided by servers.</dd>
+    <dd>An implementation of the OSLC Architecture Management specifications as a client. OSLC AM Clients consume services provided by AM servers.</dd>
 
     <dt>AM Server</dt>
-    <dd>An implementation of the OSLC Architecture Management specifications as a server. OSLC AM clients consume services provided by Servers. The use of the terms Client and Server are intended to distinguish typical consumers and providers of OSLC resources in a distributed environment based on REST. A particular application component could be a client for some OSLC domain services and a server for the same or another domain.</dd>
+    <dd>A server implementing the OSLC Architecture Management domain specifications. OSLC AM clients consume services provided by AM Servers. The use of the terms Client and Server are intended to distinguish typical consumers and providers of OSLC resources in a distributed environment based on REST. A particular application component could be a client for some OSLC domain services and a server for the same or another domain.</dd>
   </dl>
   </section>
   <section id='references'><h3>References</h3></section>
@@ -284,7 +284,7 @@ This specification is a [[!OSLCCore3]] compliant specification, as such most of 
 <tr>
   <th><strong>Requirement</strong></th>
   <th><strong>Level</strong></th>
-  <th><strong>Comment</strong></th>
+  <th><strong>Meaning</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -441,11 +441,9 @@ This specification is a [[!OSLCCore3]] compliant specification, as such most of 
 <h2>Namespaces</h2>
 
 <p>In addition to the namespace URIs and namespace prefixes oslc, rdf, dcterms 
-  and foaf defined in the <a 
-  href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core 
-  specification</a>, this specification defines 
-  the namespace URI http://open-services.net/ns/am# with a namespace prefix of 
-  oslc_am.</p>
+  and foaf defined in the [[!OSLCCore3]], this specification defines 
+  the namespace URI <code>http://open-services.net/ns/am#</code> with a preferred namespace prefix of 
+  <code>oslc_am</code>.</p>
 
 </section>
 
@@ -493,8 +491,7 @@ This specification is a [[!OSLCCore3]] compliant specification, as such most of 
 <h2>Pagination</h2>
 
 <p>OSLC AM Servers SHOULD support pagination of query results and MAY 
-  support pagination of a single resource's properties as defined by the OSLC 
-  Core Specification.</p>
+  support pagination of a single resource's properties as defined by [!OSLCCore3]].</p>
 </section>
 
 <section id="requestProps">
@@ -503,9 +500,9 @@ This specification is a [[!OSLCCore3]] compliant specification, as such most of 
 <section id="requestSubset">
 <h4>Requesting a Subset of Properties</h4>
 
-<p>A service provider MAY support the oslc.properties URL parameter on a HTTP 
+<p>A service provider MAY support the <code>oslc.properties</code> URL query parameter on a HTTP 
   GET request on individual resource request or a collection of resources by 
-  query. If the oslc.properties parameter is omitted on the request, then all 
+  query. If the <code>oslc.properties</code> query parameter is omitted on the request, then all 
   resource properties MUST be provided in the response.</p>
 </section>
 
@@ -513,7 +510,7 @@ This specification is a [[!OSLCCore3]] compliant specification, as such most of 
 <h4>Updating a Subset of Properties</h4>
 
 <p>A client MAY request that a subset of a resource's properties be updated by 
-  identifying those properties to be modified using the oslc.properties URL 
+  identifying those properties to be modified using the <code>oslc.properties</code> URL 
   parameter on a HTTP PUT request.</p>
 
 </section>
@@ -533,16 +530,10 @@ This specification is a [[!OSLCCore3]] compliant specification, as such most of 
 <h2>Vocabulary Terms and Constraints</h2>
   <p><a href="architecture-management-vocab.html">OSLC Architecture Management Resources 2.1</a>
     Defines the vocabulary terms and constraints for OSLC Change Management resources.
-    These terms and constraints are specified according to [[!OSLCCoreVocab]].</p>
-
-
-
-
-
+    These terms and constraints are specified according to [[!OSLCCore3]].</p>
 </section>
 
- </section>
-
+</section>
 
 
 <section id="capabilities">

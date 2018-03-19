@@ -38,7 +38,7 @@
             <#implementsRequirement>,
             <#tracksRequirement>,
             <#type>,
-            <#authorizor>,
+            <#authorizer>,
             <#parent>,
 
             # State predicates
@@ -78,7 +78,7 @@
             <#title>,
             <#tracksChangeSet>,
             <#type>,
-            <#authorizor>,
+            <#authorizer>,
             <#parent>,
 
             # State predicates
@@ -118,7 +118,7 @@
             <#title>,
             <#tracksChangeSet>,
             <#type>,
-            <#authorizor>,
+            <#authorizer>,
             <#parent>,
 
             # State predicates
@@ -157,7 +157,7 @@
             <#title>,
             <#tracksChangeSet>,
             <#type>,
-            <#authorizor>,
+            <#authorizer>,
             <#parent>,
 
             # State predicates
@@ -197,7 +197,7 @@
             <#tracksChangeSet>,
             <#tracksRequirement>,
             <#type>,
-            <#authorizor>,
+            <#authorizer>,
             <#parent>,
 
             # State predicates
@@ -236,7 +236,7 @@
             <#title>,
             <#tracksChangeSet>,
             <#type>,
-            <#authorizor>,
+            <#authorizer>,
             <#parent>,
 
             # State predicates
@@ -247,11 +247,11 @@
             <#reviewed>
         .
 
-<#authorizor>  a                 oslc:Property ;
-        oslc:name                "authorizor" ;
+<#authorizer>  a                 oslc:Property ;
+        oslc:name                "authorizer" ;
         oslc:range               foaf:Agent ;
         oslc:occurs              oslc:Zero-or-many ;
-        oslc:propertyDefinition  oslc_cm:authorizor ;
+        oslc:propertyDefinition  oslc_cm:authorizer ;
         oslc:valueType           oslc:AnyResource ;
         oslc:representation      oslc:Either ;
         dcterms:description      "Agents who are responsible authorizing and/or has authorized effort to be expended to address a set of child change requests."^^rdf:XMLLiteral .
