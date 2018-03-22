@@ -1,6 +1,6 @@
 @prefix oslc_qm:  <http://open-services.net/ns/qm#> .
 
-@prefix acc:     <http://open-services.net/ns/core/acc#> .
+@prefix oslc_acc:     <http://open-services.net/ns/core/acc#> .
 
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 
@@ -563,7 +563,7 @@
 
                 oslc:propertyDefinition
 
-                        acc:accessContext ;
+                        oslc_acc:accessContext ;
 
                 oslc:readOnly "true"^^xsd:boolean ;
 
