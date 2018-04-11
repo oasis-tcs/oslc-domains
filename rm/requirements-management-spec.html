@@ -152,8 +152,7 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 </head>
 <body>
 <section id='abstract'>
-  <p>This specification defines the OSLC Requirements Management domain, a RESTful web
-    services interface for the management of Requirements, Requirements Collections and supporting resources defined in the OSLC Core specification. To support these scenarios, this specification
+  <p>This specification defines the OSLC Requirements Management domain. The specification supports key RESTful web service interfaces for the management of Requirements, Requirements Collections and supporting resources defined in the OSLC Core specification. To support these scenarios, this specification
     defines a set of HTTP-based RESTful interfaces in terms of HTTP methods: GET,
     POST, PUT and DELETE, HTTP response codes, content type handling and resource
     formats.</p>
@@ -168,9 +167,9 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 <h2>Introduction</h2>
 <p>This specification defines the OSLC Requirements Management domain, also known as OSLC RM. The specification supports key RESTful web service interfaces for software Requirements Management systems. OSLC takes an open, loosely coupled approach to specific lifecycle integration scenarios. The scenarios and this specification were created by the OASIS OSLC Lifecycle Integration for Domains TC.</p>
  
-<p>This specification builds on the Open Services for Lifecycle Collaboration Core Specification [[!OSLCCore3]] to define the resources, properties and operations supported by an OSLC Requirements Definition and Management (OSLC-RM) provider.</p>
+<p>This specification builds on the Open Services for Lifecycle Collaboration Core Specification [[!OSLCCore3]] to define the resources, properties and operations supported by an OSLC Requirements Definition and Management (OSLC-RM) server.</p>
 
-<p>Requirements Management resources include Requirements, Requirements Collections and supporting resources defined in the OSLC Core specification. The properties defined describe these resources and the relationships between resources. Operations are defined in terms of HTTP methods and MIME type handling. The resources, properties and operations defined do not form a comprehensive interface to Requirements Definition and Management, but instead target specific integration use cases documented by the OSLC-RM workgroup.</p>
+<p>Requirements Management resources include Requirements, Requirements Collections and supporting resources defined in the OSLC Core specification. The properties defined describe these resources and the relationships between resources. Operations are defined in terms of HTTP methods and MIME type handling. The resources, properties and operations defined do not form a comprehensive interface to Requirements Definition and Management, but instead target specific integration use cases documented by the OASIS OSLC Lifecycle Integration for Domains TC.</p>
 
 <section id="iprPolicy">
   <h2>IPR Policy</h2>
@@ -230,7 +229,7 @@ requirements.</p>
 </thead>
 <tbody>
 <tr>
-  <td>Unknown properties and content</a></td>
+  <td>Unknown properties and content</td>
   <td>MAY/MUST</td>
   <td>OSLC servers MAY ignore unknown content and OSLC clients MUST preserve unknown content</td>
 </tr>
@@ -349,20 +348,21 @@ requirements.</p>
 </li> <li> RM Servers MUST support XML representations with media-type <code>application/xml</code>. The XML representations MUST follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a> to maintain compatibility with [[!OSLCCore2]].
 </li> <li> RM Servers MAY support JSON representations with media-type <code>application/json</code>. The JSON representations MUST follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a> to maintain compatibility with [[!OSLCCore2]].
 </li></ul> 
-</p>
-Additionally, for HTTP GET, <ul>
+
+<p>Additionally, for HTTP GET,</p>
+<ul>
 <li> RM Servers SHOULD provide an [X]HTML representation and a user interface (UI) preview as defined by <a href="http://open-services.net/bin/view/Main/OslcCoreUiPreview">UI Preview Guidance</a>
 </li></ul> 
-</p>
-For HTTP GET response formats for Query requests, <ul>
+
+<p>For HTTP GET response formats for Query requests,</p> <ul>
 <li> RM Servers MUST support RDF/XML representations with meda-type <code>application/rdf+xml</code>.
 </li> <li> RM Servers MUST support XML representations with media-type <code>application/xml</code>.
 </li> <li> RM Servers MAY support JSON representations with media-type <code>application/json</code>.
 </li></ul> 
+
+<p>OSLC Servers MAY refuse to accept RDF/XML documents which do not have a top-level rdf:RDF document element. The OSLC Core describes an example, non-normative algorithm for generating RDF/XML representations of OSLC Defined Resources.
 </p>
-OSLC Servers MAY refuse to accept RDF/XML documents which do not have a top-level rdf:RDF document element. The OSLC Core describes an example, non-normative algorithm for generating RDF/XML representations of OSLC Defined Resources.
-</p>
-In addition to the resource formats defined above, Servers MAY support additional resource formats; the meaning and usage of these resource formats is not defined by this specification.
+<p>In addition to the resource formats defined above, Servers MAY support additional resource formats; the meaning and usage of these resource formats is not defined by this specification.
 </p>
 
 </section>
@@ -414,12 +414,12 @@ In addition to the resource formats defined above, Servers MAY support additiona
 <section id="labels" class='informative'>
 <h3>Labels for Relationships</h3>
 
-<p>Requirement Management relationships to other resources are represented by RDF properties. Instances of a relationship - often called links - are RDF triples with a subject URI, a predicate that is the property, and a value (or object) that is the URI of target resource. When a link is to be presented in a user interface, it may be helpful to display an informative and useful textual label instead of, or in addition to, the URI of the predicate and/or object. There are three items that clients could display:
+<p>Requirement Management relationships to other resources are represented by RDF properties. Instances of a relationship - often called links - are RDF triples with a subject URI, a predicate that is the property, and a value (or object) that is the URI of target resource. When a link is to be presented in a user interface, it may be helpful to display an informative and useful textual label instead of, or in addition to, the URI of the predicate and/or object. There are three items that clients could display:</p>
 <ul>
   <li><b>The property</b>: OSLC recommends using the rdfs:label property of the rdf:Property from the vocabulary to display the property.</li>
   <li><b>The value, or object of the triple</b>: OSLC recommends using OSLC resource preview [[!OSLCResourcePreview]] to obtain an appropriate icon and label, and possibly a small and/or large dialog for displaying the object.</li>
   <li><b>The link</b>: The link is a combination of the subject, predicate and object of the triple (RDF statement or assertion). In the case where the link requires a unique label that is not available from the target resource, only then OSLC servers may support a dcterms:title on a reified statement to provide a label for a link that describes the assertion itself.</li>
-</ul></p> 
+</ul>
 
 <p>Turtle example using a reified statement:</p>
 
@@ -496,25 +496,24 @@ In addition to the resource formats defined above, Servers MAY support additiona
 </section>
 
 <section id="querycapabilities">
-<h3 id="querycapabilities">Query Capabilities</h3>
+<h3>Query Capabilities</h3>
 
 <p>RM Servers MUST support query capabilities, as defined by [[!OSLCCore3]]. Servers SHOULD provide <code>oslc:ResourceShape</code> on <code>oslc:QueryCapability</code> resources as defined by <a class="twikiAnchorLink" href="/bin/view/Main/OSLCCoreSpecAppendixA#oslc_ResourceShape_Resource">OSLC Core Specification Appendix A: Common Properties - Resource Shapes</a>.
 </p>
 
-<p>The Query Capability, if supported, MUST support these parameters: <ul>
+<p>The Query Capability, if supported, MUST support these parameters: </p><ul>
 <li> <code>oslc.where</code>
 </li> <li> <code>oslc.select</code>
 </li> <li> <code>oslc.properties</code>
 </li> <li> <code>oslc.prefix</code>
 </li></ul> 
-</p>
 
-<p>Where <code>oslc:ResourceShape</code> is not supported by the Query Capability, Servers SHOULD use the following guidance to represent query results: <ul>
+<p>Where <code>oslc:ResourceShape</code> is not supported by the Query Capability, Servers SHOULD use the following guidance to represent query results: </p><ul>
 <li> For RDF/XML and XML, use <code>rdf:Description</code> and <code>rdfs:member</code> as defined by <a class="twikiAnchorLink" href="/bin/view/Main/OSLCCoreSpecAppendixRepresentations#RDF_XML_Examples">Core Specification Appendix B:Representations and Examples - RDF/XML Examples</a>.
 </li> <li> For JSON the query results are contained within <code>oslc:results</code> array. See <a class="twikiAnchorLink" href="/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_JSON">Core Specification Appendix B: Representations and Examples - Guidelines for JSON</a>.
 </li></ul> 
-</p>
-The stability of query results is OPTIONAL (see <a class="twikiLink" href="/bin/view/Main/OslcCoreSpecification">Core Specification Version 2.0 - Stable Paging</a>).</p>
+
+<p>The stability of query results is OPTIONAL (see <a class="twikiLink" href="/bin/view/Main/OslcCoreSpecification">Core Specification Version 2.0 - Stable Paging</a>).</p>
 </section>
 
 <section id="delegatedUIs">
@@ -532,7 +531,7 @@ The stability of query results is OPTIONAL (see <a class="twikiLink" href="/bin/
 
 <p>RM Servers MAY identify the usage of various services with additional property values for the <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">OSLC Core</a> defined <code>oslc:usage</code> property on <code>oslc:Dialog</code>, <code>CreationFactory</code> and <code>QueryCapability</code>. The <code>oslc:usage</code> property value of <code>http://open-services.net/ns/core#default</code> SHOULD be used to designate the default or primary service to be used by consumers when multiple entries are found.
 </p>
-There are no additional usage identifiers defined by this specification. RM Servers MAY provide their own usage URIs. Such usage URIs MUST be in a non-OSLC namespace.
+<p>There are no additional usage identifiers defined by this specification. RM Servers MAY provide their own usage URIs. Such usage URIs MUST be in a non-OSLC namespace.
 </p>
 
 </section>
@@ -542,7 +541,7 @@ There are no additional usage identifiers defined by this specification. RM Serv
 <h2>Version Compatibility </h2>
 <h3>Version Compatibility with 2.0 Specifications </h3>
 <p>
-The specification is modified to build on the [[!OSLCCore3]] Specification. 
+The specification is updated to be based on the [[!OSLCCore3]] Specification. The changes are all upward compatible additions and therefore do not introduce incompatibilities with version 2.0. 
 </p>
 
 <h3>Version Compatibility with 1.0 Specifications </h3>
