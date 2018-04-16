@@ -48,7 +48,7 @@ oslc_rm:implementedBy
 
 oslc_rm:trackedBy
         a                    rdf:Property ;
-        rdfs:comment         "Expresses a tracking relationship between entities, where the object entity in some way tracks or governs the evolution of the subject entity. For example, a change request may be said to track a requirement, in that it governs the changes to a requirement according to some process machinery." ;
+        rdfs:comment         "Expresses a tracking relationship between entities, where the object entity in some way tracks or governs the evolution of the subject entity. For example, a requirement may be said to be tracked by a change request, in that it governs the changes to a requirement according to some process machinery." ;
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "trackedBy" .
 
@@ -60,13 +60,13 @@ oslc_rm:uses
 
 oslc_rm:elaboratedBy
         a                    rdf:Property ;
-        rdfs:comment         "Expresses an elaboration relationship between entities, where the object entity elaborates the subject entity. For example, a model element can elaborate a requirement." ;
+        rdfs:comment         "Expresses an elaboration relationship between entities, where the object entity elaborates the subject entity. For example, a requirement is elaborated by a model element." ;
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "elaboratedBy" .
 
 oslc_rm:specifiedBy
         a                    rdf:Property ;
-        rdfs:comment         "Expresses a specification relationship between entities, where the object entity further clarifies or specifies the subject entity. For example, a model element can specifiy a requirement." ;
+        rdfs:comment         "Expresses a specification relationship between entities, where the object entity further clarifies or specifies the subject entity. For example, a requirement is specified by a model element." ;
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "specifiedBy" .
 
@@ -78,12 +78,12 @@ oslc_rm:satisfiedBy
 
 oslc_rm:affectedBy
         a                    rdf:Property ;
-        rdfs:comment         "Expresses an affects relationship between entities, where the object entity in some way affects the subject entity. For example, a defect may be said to affect a requirement." ;
+        rdfs:comment         "Expresses an affects relationship between entities, where the object entity in some way affects the subject entity. For example, a requirement is affected by a defect." ;
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "affectedBy" .
 
 oslc_rm:validatedBy
         a                    rdf:Property ;
-        rdfs:comment         "Expresses a validation relationship between entities, where the object entity in some way validates the subject entity. For example, a test plan may be said to validated a requirement collection." ;
+        rdfs:comment         "Expresses a validation relationship between entities, where the object entity in some way validates the subject entity. For example, a requirement collection may be said to be validated by a test plan." ;
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "validatedBy" .

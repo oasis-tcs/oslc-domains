@@ -298,26 +298,6 @@ requirements.</p>
   <td>MAY</td>
   <td>OSLC Servers MAY provide error responses using Core defined error formats</td>
 </tr>
-<tr>
-  <td>RDF/XML Representations</td>
-  <td>MUST</td>
-  <td>OSLC servers MUST support RDF/XML representations for OSLC Defined Resources</td>
-</tr>
-<tr>
-  <td>XML Representations</td>
-  <td>MUST</td>
-  <td>OSLC servers MUST support XML representations that conform to the OSLC Core Guidelines for XML</td>
-</tr>
-<tr>
-  <td>JSON Representations</td>
-  <td>MAY/MUST</td>
-  <td>OSLC servers MAY support JSON representations; those which do MUST conform to the OSLC Core Guidelines for JSON</td>
-</tr>
-<tr>
-  <td>HTML Representations</td>
-  <td>MAY</td>
-  <td>OSLC servers MAY provide HTML representations for GET requests</td>
-</tr>
 </tbody>
 </table>
 </section>
@@ -338,32 +318,7 @@ requirements.</p>
 <section id="formats">
 <h2>Resource Formats</h2>
 
-<p>In addition to the requirements for resource representations in [[!OSLCCore3]], this section outlines further refinements and restrictions.</p>
-
-<p>For HTTP GET/PUT/POST requests on all OSLC RM and OSLC Core defined resource types,
-</p> 
-
-<ul>
-<li> RM Servers MUST support RDF/XML representations with media-type <code>application/rdf+xml</code>. RM Clients MUST be prepared to deal with any valid RDF/XML document.
-</li> <li> RM Servers MUST support XML representations with media-type <code>application/xml</code>. The XML representations MUST follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a> to maintain compatibility with [[!OSLCCore2]].
-</li> <li> RM Servers MAY support JSON representations with media-type <code>application/json</code>. The JSON representations MUST follow the guidelines outlined in the <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a> to maintain compatibility with [[!OSLCCore2]].
-</li></ul> 
-
-<p>Additionally, for HTTP GET,</p>
-<ul>
-<li> RM Servers SHOULD provide an [X]HTML representation and a user interface (UI) preview as defined by <a href="http://open-services.net/bin/view/Main/OslcCoreUiPreview">UI Preview Guidance</a>
-</li></ul> 
-
-<p>For HTTP GET response formats for Query requests,</p> <ul>
-<li> RM Servers MUST support RDF/XML representations with meda-type <code>application/rdf+xml</code>.
-</li> <li> RM Servers MUST support XML representations with media-type <code>application/xml</code>.
-</li> <li> RM Servers MAY support JSON representations with media-type <code>application/json</code>.
-</li></ul> 
-
-<p>OSLC Servers MAY refuse to accept RDF/XML documents which do not have a top-level rdf:RDF document element. The OSLC Core describes an example, non-normative algorithm for generating RDF/XML representations of OSLC Defined Resources.
-</p>
-<p>In addition to the resource formats defined above, Servers MAY support additional resource formats; the meaning and usage of these resource formats is not defined by this specification.
-</p>
+<p>[[!OSLCCore3]] specifies the requirements for resource representations.</p>
 
 </section>
   
