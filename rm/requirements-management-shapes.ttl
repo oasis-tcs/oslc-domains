@@ -16,9 +16,9 @@
     a                       oslc:ResourceShape ;
     oslc:describes          oslc_rm:Requirement ;
 	dcterms:title           "Statement of need." ;
-	dcterms:description     """A condition or capability needed by a stakeholder, or possed by a solution component, 
+	dcterms:description     """A condition or capability needed by a stakeholder, or imposed by a solution component, 
 to address a need, solve a problem, achieve an objective,
-satisfy a contract, standard, specification, or other formally imposed documents."""^^rdf:XMLLiteral ;
+or to satisfy a contract, standard, specification, or other formally imposed documents."""^^rdf:XMLLiteral ;
 	oslc:property
         <#type>,
         <#identifier>,
