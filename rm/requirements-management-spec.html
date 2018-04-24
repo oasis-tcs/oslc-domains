@@ -546,18 +546,23 @@ requirements.</p>
 
 <section id="versioncompatibility" class="appendix">
 <h2>Version Compatibility </h2>
-<h3>Version Compatibility with 2.0 Specifications </h3>
+
+<section id="versioncompatibility2" class="informative">
+  <h3>Version Compatibility with 2.0 Specifications </h3>
 <p>
 The specification is updated to be based on the [[!OSLCCore3]] Specification. The changes are all upward compatible additions and therefore do not introduce incompatibilities with version 2.0. 
 </p>
+</section>
 
-<h3>Version Compatibility with 1.0 Specifications </h3>
+<section id="versioncompatibility1" class="informative">
+  <h3>Version Compatibility with 1.0 Specifications </h3>
 <p>
 The goal is to provide a smooth transition to 2.0 for both Clients and Servers. This section will clarify the usage of 1.0 media types so that Servers can support both 1.0 and 2.0 Clients when HTTP requests are made for a resource with the same URI.
 </p>
 <p>
 Network addressable resource URIs used for 1.0 resources for these types: Requirement, RequirementCollection, ServiceDescriptor and ServiceProviderCatalog, should not have to change. Clients who support both 1.0 and 2.0, should only preserve these resource URIs. When a Server starts to serve 2.0 resource formats, for instance the ServiceProvider resource, it is recommended to update its locally stored or cached information about the contents of the ServiceProvider resource as the URIs to various capabilities may have changed (query, delegated UIs, factories, etc.).
 </p>
+</section>
 
 </section>
 
