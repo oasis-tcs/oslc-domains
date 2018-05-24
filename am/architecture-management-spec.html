@@ -197,20 +197,11 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 
 <section id='intro' class='informative'>
   <h2>Introduction</h2>
-  <p>The general approach taken by the Architecture Management (AM) workgroup 
- follows the OSLC Change Management team's lead by not attempting to re-define 
- model storage formats or even model or other architecture management resource 
- notations, but rather extract out a least common denominator, that could be 
- managed by an AM server, and still be useful to the overall goal of 
- architecture management in a collaborative ALM environment. This does not 
- prevent knowledgeable clients from getting and making use of internal resource 
- content.</p>
+  <p>This specification defines a RESTful web services interface for Architecture Management (AM), the management of product design artifiacts, and models requests and relationships between those and related resources such as requirements, testing resources and change requestes. To support these scenarios, this specification defines a set of HTTP-based RESTful interfaces in terms of HTTP methods: GET, POST, PUT and DELETE, HTTP response codes, content type handling and resource formats..</p>
 
-  <p>The intent of this specification is to define the capabilities needed to support integration scenarios defined by the Architecture Management working group and not to provide a comprehensive interface to Architecture Management. The resource formats and operations may not match exactly the native artifacts supported by architecture management AM Servers but are intended to be compatible with them. The approach to supporting these scenarios is to delegate operations, as driven by service provider contributed user interfaces, as much as possible and not require a service provider to expose its complete data model and application logic</p> 
-  <p>
-This specification is a [[!OSLCCore3]] compliant specification, as such most of its content are references to 
-[[!OSLCCore3]].
-</p>
+  <p>The intent of this specification is to define the capabilities needed to support integration scenarios defined by the Architecture Management working group and not to provide a comprehensive interface to Architecture Management. The resource formats and operations may not match exactly the native artifacts supported by architecture management AM Servers but are intended to be compatible with them. The approach to supporting these scenarios is to delegate operations, as driven by service provider contributed user interfaces, as much as possible and not require a service provider to expose its complete data model and application logic.</p> 
+ 
+  <p>This specification is a [[!OSLCCore3]] compliant specification, and such most of its content are references to [[!OSLCCore3]].</p>
 
 <section id="iprPolicy">
   <h2>IPR Policy</h2>
@@ -244,7 +235,7 @@ This specification is a [[!OSLCCore3]] compliant specification, as such most of 
         defined by property in an RDF schema.</dd>
 
 
-         <dt><dfn>Link Type (LT)</dfn></dt>
+         <dt><dfn>Link type (LT)</dfn></dt>
       <dd>A URI that represents the type of a link. In semantic web terminology it is the predicate of an 
         RDF triple. It clarifies the type of relationship between two resources. 
         Link Type URIs may be defined locally, within the OSLC, or externally 
@@ -300,12 +291,12 @@ requirements.</p>
 <tr>
   <td>Absolute URIs</a></td>
   <td>MUST</td>
-  <td>AM Servers must use absolute URIs for all references to resources by properties</td>
+  <td>AM Servers MUST use absolute URIs for all references to resources by properties</td>
 </tr>
 <tr>
   <td>Unknown properties and content</a></td>
   <td>MAY/MUST</td>
-  <td>AM Servers MAY ignore unknown content and OSLC clients MUST preserve unknown content. AM Servers may discard such properties and continue the POST or PUT operation without warning to the client.</td>
+  <td>AM Servers MAY ignore unknown content and AM clients MUST preserve unknown content. AM Servers may discard such properties and continue the POST or PUT operation without warning to the client.</td>
 </tr>
 <tr>
   <td>Resource Operations</td>
@@ -313,7 +304,7 @@ requirements.</p>
   <td>AM Servers MUST support resource operations via standard HTTP operations</td>
 </tr>
 <tr>
-  <td>HTTP PUT and DELETE</td>
+  <td>Update and Delete</td>
   <td>SHOULD/MAY</td>
   <td>AM Servers SHOULD support resource modifications with standard HTTP PUT and DELETE methods. AM Servers MAY limit modifications</td>
 </tr>
@@ -330,12 +321,12 @@ requirements.</p>
 <tr>
   <td>Partial Resource Representations</td>
   <td>MAY</td>
-  <td>Am Servers MAY support request for a subset of a resource's properties via the oslc.properties URL parameter retrieval via HTTP GET and MAY support via HTTP PUT</td> 
+  <td>Am Servers MAY support request for a subset of a resource's properties via the oslc.properties URL parameter retrieval via HTTP GET</td> 
 </tr>
 <tr>
   <td>Partial Update</td>
   <td>MAY</td>
-  <td>AM Servers MAY support partial update of resources using [[LDPPatch]].</td>
+  <td>AM Servers MAY support partial update of resources via the oslc.properties URL parameter retrieval via HTTP  PUT and or using [[LDPPatch]].</td>
 </tr>
 <tr>
   <td>Discovery</td>
@@ -368,19 +359,14 @@ requirements.</p>
   <td>AM Services SHOULD offer resource previews for resources that may be referenced by other resources </td>
 </tr>
 <tr>
-  <td>HTTP Basic Authentication</td>
-  <td>MAY</td>
-  <td>AM Servers MAY support Basic Authentication and SHOULD only do so only over HTTPS</td>
-</tr>
-<tr>
-  <td>OAuth Authentication</td>
-  <td>MAY</td>
-  <td>AM Server MAY support OAuth and MAY indicate the required OAuth URLs via the service provider resource</td>
+  <td>Authentication</td>
+  <td>SHOULD</td>
+  <td>OSLC Services should follow the recommendations for Authentication specified in [[!OSLCCore3]]</td>
 </tr>
 <tr>
   <td>Error Responses</td>
   <td>SHOULD</td>
-  <td>AM Servers SHOULD provide error responses using Core defined error formats</td>
+  <td>AM Servers SHOULD provide error responses using OSLC Core defined error formats</td>
 </tr>
 <tr>
   <td>RDF/XML Representations</td>
