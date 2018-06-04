@@ -15,7 +15,7 @@
     specStatus: "CSPRD",
     thisVersion : "http://docs.oasis-open.org/oslc-domains/am/v2.1/csprd01/part2-architecture-management-vocab/am-v2.1-csprd01-part2-architecture-management-vocab.html",
     latestVersion : "http://docs.oasis-open.org/oslc-domains/am/v2.1/am-v2.1-part2-architecture-management-vocab.html",
-    prevVersion : "N/A",
+    prevVersion : "",
 
     // the specification's short name, as in http://www.w3.org/TR/short-name/
     shortName: "oslc-am",
@@ -104,7 +104,9 @@
     ],
 
     relatedWork : [
-      { title: "OSLC Architecture Management Specification Version 2.0", href: "http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-2.0/" }
+      { title: "OSLC Architecture Management Specification Version 2.0",
+        status: "Work in progress. Current draft", 
+        href: "http://open-services.net/wiki/architecture-management/OSLC-Architecture-Management-Specification-Version-2.0/" }
     ],
 
     localBiblio:  {
@@ -142,7 +144,7 @@
 </head>
 <body>
 <section id="abstract">
-<p>This specification defines a vocabulary and resource shapes for the OSLC Architecture Management domain.</p>
+This specification defines a vocabulary and resource shapes for the OSLC Architecture Management domain.
 </section>
 
   <section id='toc'></section>
@@ -224,8 +226,9 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   <section id="vocabulary">
   <h2>Vocabulary Terms</h2>
   <p>This specification defines a number of specific, commonly occurring vocabulary terms (OWL classes), properties and values. Servers may define additional classes and provide additional properties as needed.</p>
+
     <div title='RDF Vocabulary for OSLC Architecture Management Domain'
-        data-include='architecture-management-vocab.ttl'
+        data-include='./architecture-management-vocab.ttl'
         data-oninclude='vocabToSpec'
         data-include-sync='true' 
         data-include-replace='true'
@@ -245,7 +248,7 @@ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     <p>An Architecture Management Resource (AMR) is a generic resource format that can be used to represent any type of specific architecture resource such as a UML Class, Use Case, or Business Process Diagram.</p>
 
   <div title='Shapes for Architecture Management'
-        data-include='architecture-management-shapes.ttl#Resource'
+        data-include='./architecture-management-shapes.ttl#Resource'
         data-oninclude='shapeToSpec'
         data-include-sync='true'
         data-include-replace='true'
