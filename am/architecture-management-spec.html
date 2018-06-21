@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+g<!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <meta charset='utf-8' />
 <head>
@@ -181,7 +181,7 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 </head>
 <body>
 <section id='abstract'>
-  <p>This specification defines the OSLC Architecture Management domain, a RESTful web services interface for the management of architectural resources and relationships between those and related resources such as product change requests, activities, tasks  requirements or test cases. To support these scenarios, this specification defines a set of HTTP-based RESTful interfaces in terms of HTTP methods: GET, POST, PUT and DELETE, HTTP response codes, content type handling and resource formats.</p>
+  <p>This specification defines the OSLC Architecture Management domain, a RESTful web services interface for the management of architectural resources and relationships between those and related resources such as product change requests, activities, tasks  requirements or test cases. To support these scenarios, this specification defines a set of HTTP-based RESTful interfaces in terms of HTTP methods: GET, POST, PUT and DELETE, as well as HTTP response codes, content type handling and resource formats.</p>
 </section>
 
 <section id='toc'></section>
@@ -191,11 +191,11 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 
 <section id='intro' class='informative'>
   <h2>Introduction</h2>
-  <p>This specification defines a RESTful web services interface for Architecture Management (AM), the management of product design artifiacts, and models requests and relationships between those and related resources such as requirements, testing resources and change requestes. To support these scenarios, this specification defines a set of HTTP-based RESTful interfaces in terms of HTTP methods: GET, POST, PUT and DELETE, HTTP response codes, content type handling and resource formats..</p>
+  <p>This specification defines a RESTful web services interface for the Architecture Management (AM) domain. This domain addresses the management of product design artifacts including models, and relationships with other resources such as requirements, testing resources and change requests. To support these scenarios, this specification defines a set of HTTP-based RESTful interfaces in terms of HTTP methods: GET, POST, PUT and DELETE, HTTP response codes, content type handling and resource formats..</p>
 
   <p>The intent of this specification is to define the capabilities needed to support integration scenarios defined by the Architecture Management working group and not to provide a comprehensive interface to Architecture Management. The resource formats and operations may not match exactly the native artifacts supported by architecture management AM Servers but are intended to be compatible with them. The approach to supporting these scenarios is to delegate operations, as driven by service provider contributed user interfaces, as much as possible and not require a service provider to expose its complete data model and application logic.</p> 
  
-  <p>This specification is a [[!OSLCCore3]] compliant specification, and such most of its content are references to [[!OSLCCore3]].</p>
+  <p>This specification is a [[!OSLCCore3]] compliant specification, and as such most of its content are references to [[!OSLCCore3]].</p>
 
 <section id="iprPolicy">
   <h2>IPR Policy</h2>
@@ -259,132 +259,8 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 
 <section id="baseRequirements">
 <h2>Base Requirements</h2>
-<section id="compliance">
-<h2>Compliance</h2>
- <p>This specification is based on [[!OSLCCore3]]. OSLC AM clients and servers
-MUST be compliant with both the core specification and this AM
-specification, and SHOULD follow all the guidelines and recommendations in both of 
-these specifications.</p>
 
-<p>The following table summarizes the requirements from OSLC Core Specification
-as well as some additional requirements specific to the AM domain. Note that
-this specification further restricts some of the requirements for OSLC Core
-Specification. See subsequent sections in this specification or the
-OSLC Core Specification to get further details on each of these
-requirements.</p>
-
-<table border="1" cellspacing="0" cellpadding="5">
-<thead>
-<tr>
-  <th>Requirement</th>
-  <th>Level</th>
-  <th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>Absolute URIs</a></td>
-  <td>MUST</td>
-  <td>AM Servers MUST use absolute URIs for all references to resources by properties</td>
-</tr>
-<tr>
-  <td>Unknown properties and content</a></td>
-  <td>MAY/MUST</td>
-  <td>AM Servers MAY ignore unknown content and AM clients MUST preserve unknown content. AM Servers may discard such properties and continue the POST or PUT operation without warning to the client.</td>
-</tr>
-<tr>
-  <td>Resource Operations</td>
-  <td>MUST</td>
-  <td>AM Servers MUST support resource operations via standard HTTP operations</td>
-</tr>
-<tr>
-  <td>Update and Delete</td>
-  <td>SHOULD/MAY</td>
-  <td>AM Servers SHOULD support resource modifications with standard HTTP PUT and DELETE methods. AM Servers MAY limit modifications</td>
-</tr>
-<tr>
-  <td>HTTP If-Match use</td>
-  <td>MUST</td>
-  <td>If AM Servers support update and delete of resources MUST support the standard HTTP If-Match header in PUT and DELETE for concurrency protection of resources.</td>
-</tr>
-<tr>
-  <td>Resource Paging</td>
-  <td>MAY</td>
-  <td>AM Servers MAY provide paging for resources but only when specifically requested by client</td>
-</tr>
-<tr>
-  <td>Partial Resource Representations</td>
-  <td>MAY</td>
-  <td>Am Servers MAY support request for a subset of a resource's properties via the oslc.properties URL parameter retrieval via HTTP GET</td> 
-</tr>
-<tr>
-  <td>Partial Update</td>
-  <td>MAY</td>
-  <td>AM Servers MAY support partial update of resources via the oslc.properties URL parameter retrieval via HTTP  PUT and or using [[LDPPatch]].</td>
-</tr>
-<tr>
-  <td>Discovery</td>
-  <td>MAY/MUST</td>
-  <td>AM Servers MAY provide a Service Provider Catalog, MUST provide a Service Provider resource, and MAY provide other forms of discovery described in Core 3.0 Discovery.</td>
-</tr>
-<tr>
-  <td>Creation Factories</td>
-  <td>MAY</td>
-  <td>AM Servers MAY provide creation factories for resource formats that it supports. AM Servers MAY support creation factories for OSLC AM defined resources formatted as application/rdf+xml. AM Servers MAY support creation factories for other formats, and indicate such creation factories with a non-default identifier in the oslc:usage property of the creation factory definition in the service provider document</td>
-</tr>
-<tr>
-  <td>Query Capabilities</td>
-  <td>MUST</td>
-  <td>AM Servers MUST provide query capabilities on oslc_am:Resource resources to enable clients to query for resources. AM Servers SHOULD support a query interface for oslc_am:LinkType resources that support a GET for all LinkType resources. Such a GET does not require any simple query syntax parameters. AM Servers MAY support the full query syntax for LinkType resources. </td>
-</tr>
-<tr>
-  <td>Query Syntax</td>
-  <td>MUST</td>
-  <td>OSLC query capabilities MUST support the OSLC Core Query Syntax</td>
-</tr>
-<tr>
-  <td>Delegated Dialogs</td>
-  <td>SHOULD/MAY</td>
-  <td>AM Services SHOULD offer selection delegated dialogs and MAY offer creation delegated dialogs specified via service provider resource</td>
-</tr>
-<tr>
-  <td>Resource Preview</td>
-  <td>SHOULD</td>
-  <td>AM Services SHOULD offer resource previews for resources that may be referenced by other resources </td>
-</tr>
-<tr>
-  <td>Authentication</td>
-  <td>SHOULD</td>
-  <td>OSLC Services should follow the recommendations for Authentication specified in [[!OSLCCore3]]</td>
-</tr>
-<tr>
-  <td>Error Responses</td>
-  <td>SHOULD</td>
-  <td>AM Servers SHOULD provide error responses using OSLC Core defined error formats</td>
-</tr>
-<tr>
-  <td>RDF/XML Representations</td>
-  <td>MUST</td>
-  <td>AM Servers MUST support RDF/XML representations for OSLC Defined Resources</td>
-</tr>
-<tr>
-  <td>XML Representations</td>
-  <td>MUST</td>
-  <td>AM Servers MUST support XML representations that conform to the OSLC Core Guidelines for XML</td>
-</tr>
-<tr>
-  <td>JSON Representations</td>
-  <td>MAY/MUST</td>
-  <td>AM Servers MAY support JSON representations; those which do MUST conform to the OSLC Core Guidelines for JSON</td>
-</tr>
-<tr>
-  <td>HTML Representations</td>
-  <td>MAY</td>
-  <td>AM Servers MAY provide HTML representations for GET requests</td>
-</tr>
-</tbody>
-</table>
-</section>
+<p>The following sub-sections define the mandatory and optional requirements for an OSLC Architecture Management (OSLC AM) server.</p>
 
 <section id="versioning">
 <h2 id="specificationversioningspec_versioning">Specification Versioning</h2>
@@ -403,7 +279,7 @@ requirements.</p>
 
 <p>In addition to the requirements for resource representations in [[!OSLCCore3]], this section outlines further refinements and restrictions.</p>
 
-<p>For HTTP GET/PUT/POST requests on all OSLC RM and OSLC Core defined resource types,
+<p>For HTTP GET/PUT/POST requests on all OSLC AM and OSLC Core defined resource types,
 </p> 
 
 <ul>
@@ -419,7 +295,7 @@ requirements.</p>
   <section id="resourceOps">
 <h2>Resource Operations</h2>
 
-<p>OSLC AM Clients MUST include the OSLC Core Version header (OSLC-Core-Version: 2.0) in all HTTP request to OSLC AM Servers.</p>
+<p>OSLC AM Clients MAY include the OSLC Core Version header (OSLC-Core-Version: 2.0) in all HTTP request to OSLC AM Servers.</p>
 
 <p>OSLC AM Servers MUST support HTTP GET requests on Architecture Management Resources (AMR), with an Accept header of <code>application/rdf+xml</code>, and return the RDF/XML representation of the resource.</p>
 
@@ -427,11 +303,9 @@ requirements.</p>
 
 <p>OSLC AM Servers SHOULD support HTTP GET requests for user interface (UI) preview of Architecture Management Resources (AMR) as defined by [[!OSLCPreview]].</p>
 
-<p>OSLC AM Servers SHOULD support resource modifications on Architecture Management Resources (AMR) with standard HTTP PUT and DELETE methods. AM Servers MAY limit modifications in any way they want. For example a service provider may limit updates to resources to simple link properties of link types already defined in the provider. Modification methods MUST use the If-Match header for concurency management. Providers MAY discard such properties and continue a PUT operation without warning to the client.</p>
+<p>OSLC AM Servers SHOULD support resource modifications on Architecture Management Resources (AMR) with standard HTTP PUT and DELETE methods. AM Servers MAY limit modifications in any way they want. For example a service provider may limit updates to resources to simple link properties of link types already defined in the provider. Modification methods MUST use the If-Match header for concurrency management. Providers MAY discard such properties and continue a PUT operation without warning to the client.</p>
 
-<p>OSLC AM Servers SHOULD support resource modifications on LinkType Resources (LTR) with standard HTTP PUT and DELETE methods. AM Servers MAY limit modifications in any way they want. For example a service provider may not support additional properties. Modification methods SHOULD use the If-Match header for concurency management.</p>
-
-
+<p>OSLC AM Servers SHOULD support resource modifications on LinkType Resources (LTR) with standard HTTP PUT and DELETE methods. AM Servers MAY limit modifications in any way they want. For example a service provider may not support additional properties. Modification methods SHOULD use the If-Match header for concurrency management.</p>
 </section>
 
 
@@ -499,7 +373,7 @@ requirements.</p>
 
 
 <section id="capabilities">
-<h2>AM Service Provider Capabilities</h2>
+<h2>AM Server Capabilities</h2>
 
 <section id="resourceShapes1">
 <h3>Resource Shapes</h3>
@@ -561,7 +435,155 @@ requirements.</p>
 <p>In <code>oslc:Dialog</code> elements, the two optional child elements; <code>oslc:hintWidth</code> and <code>oslc:hintHeight</code> specify the suggested size of the dialog or frame to render the HTML content in. Expected for the size values are defined by <a href="http://www.w3.org/TR/CSS1/#length-units">CSS length units</a>.</p>
 
 </section>
+</section>
 
+<section id="compliance">
+<h2>Compliance</h2>
+<p>This specification is based on [[!OSLCCore3]]. OSLC AM servers
+MUST be compliant with both the core specification,  MUST follow all the mandatory requirements in the normative sections of this specification, and SHOULD follow all the guidelines and recommendations in both
+these specifications.</p>
+
+<p>An OSLC AM server MUST implement the domain vocabulary defined in <a href="http://docs.oasis-open.org/oslc-domains/am/v2.1/am-v2.1-part2-architecture-management-vocab.html">OSLC Architecture Management Version 2.1. Part 2: Vocabulary</a>
+
+<p>The following table summarizes the requirements from OSLC Core Specification
+as well as some additional requirements specific to the AM domain. Note that
+this specification further restricts some of the requirements for OSLC Core
+Specification. See the previous sections in this specification or the
+OSLC Core Specification to get further details on each of these
+requirements.</p>
+
+<table border="1" cellspacing="0" cellpadding="5">
+<thead>
+<tr>
+  <th>Number</th>
+  <th>Requirement</th>
+  <th>Level</th>
+  <th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>AM-1</td>
+  <td>Absolute URIs</a></td>
+  <td>MUST</td>
+  <td>AM Servers MUST use absolute URIs for all references to resources by properties</td>
+</tr>
+<tr>
+  <td>AM-2</td>
+  <td>Unknown properties and content</a></td>
+  <td>MAY/MUST</td>
+  <td>AM Servers MAY ignore unknown content and AM clients MUST preserve unknown content. AM Servers may discard such properties and continue the POST or PUT operation without warning to the client.</td>
+</tr>
+<tr>
+  <td>AM-3</td>
+  <td>Resource Operations</td>
+  <td>MUST</td>
+  <td>AM Servers MUST support resource operations via standard HTTP operations</td>
+</tr>
+<tr>
+  <td>AM-4</td>
+  <td>Update and Delete</td>
+  <td>SHOULD/MAY</td>
+  <td>AM Servers SHOULD support resource modifications with standard HTTP PUT and DELETE methods. AM Servers MAY limit modifications</td>
+</tr>
+<tr>
+  <td>AM-5</td>
+  <td>HTTP If-Match use</td>
+  <td>MUST</td>
+  <td>If AM Servers support update and delete of resources MUST support the standard HTTP If-Match header in PUT and DELETE for concurrency protection of resources.</td>
+</tr>
+<tr>
+  <td>AM-6</td>
+  <td>Resource Paging</td>
+  <td>MAY</td>
+  <td>AM Servers MAY provide paging for resources but only when specifically requested by client</td>
+</tr>
+<tr>
+  <td>AM-7</td>
+  <td>Partial Resource Representations</td>
+  <td>MAY</td>
+  <td>Am Servers MAY support request for a subset of a resource's properties via the oslc.properties URL parameter retrieval via HTTP GET</td> 
+</tr>
+<tr>
+  <td>AM-8</td>
+  <td>Partial Update</td>
+  <td>MAY</td>
+  <td>AM Servers MAY support partial update of resources via the oslc.properties URL parameter retrieval via HTTP  PUT and or using [[LDPPatch]].</td>
+</tr>
+<tr>
+  <td>AM-9</td>
+  <td>Discovery</td>
+  <td>MAY/MUST</td>
+  <td>AM Servers MAY provide a Service Provider Catalog, MUST provide a Service Provider resource, and MAY provide other forms of discovery described in Core 3.0 Discovery.</td>
+</tr>
+<tr>
+  <td>AM-10</td>
+  <td>Creation Factories</td>
+  <td>MAY</td>
+  <td>AM Servers MAY provide creation factories for resource formats that it supports. AM Servers MAY support creation factories for OSLC AM defined resources formatted as application/rdf+xml. AM Servers MAY support creation factories for other formats, and indicate such creation factories with a non-default identifier in the oslc:usage property of the creation factory definition in the service provider document</td>
+</tr>
+<tr>
+  <td>AM-11</td>
+  <td>Query Capabilities</td>
+  <td>MUST</td>
+  <td>AM Servers MUST provide query capabilities on oslc_am:Resource resources to enable clients to query for resources. AM Servers SHOULD support a query interface for oslc_am:LinkType resources that support a GET for all LinkType resources. Such a GET does not require any simple query syntax parameters. AM Servers MAY support the full query syntax for LinkType resources. </td>
+</tr>
+<tr>
+  <td>AM-12</td>
+  <td>Query Syntax</td>
+  <td>MUST</td>
+  <td>OSLC query capabilities MUST support the OSLC Core Query Syntax</td>
+</tr>
+<tr>
+  <td>AM-13</td>
+  <td>Delegated Dialogs</td>
+  <td>SHOULD/MAY</td>
+  <td>AM Services SHOULD offer selection delegated dialogs and MAY offer creation delegated dialogs specified via service provider resource</td>
+</tr>
+<tr>
+  <td>AM-14</td>
+  <td>Resource Preview</td>
+  <td>SHOULD</td>
+  <td>AM Services SHOULD offer resource previews for resources that may be referenced by other resources </td>
+</tr>
+<tr>
+  <td>AM-15</td>
+  <td>Authentication</td>
+  <td>SHOULD</td>
+  <td>OSLC Services should follow the recommendations for Authentication specified in [[!OSLCCore3]]</td>
+</tr>
+<tr>
+  <td>AM-16</td>
+  <td>Error Responses</td>
+  <td>SHOULD</td>
+  <td>AM Servers SHOULD provide error responses using OSLC Core defined error formats</td>
+</tr>
+<tr>
+  <td>AM-17</td>
+  <td>RDF/XML Representations</td>
+  <td>MUST</td>
+  <td>AM Servers MUST support RDF/XML representations for OSLC Defined Resources</td>
+</tr>
+<tr>
+  <td>AM-18</td>
+  <td>XML Representations</td>
+  <td>MUST</td>
+  <td>AM Servers MUST support XML representations that conform to the OSLC Core Guidelines for XML</td>
+</tr>
+<tr>
+  <td>AM-19</td>
+  <td>JSON Representations</td>
+  <td>MAY/MUST</td>
+  <td>AM Servers MAY support JSON representations; those which do MUST conform to the OSLC Core Guidelines for JSON</td>
+</tr>
+<tr>
+  <td>AM-20</td>
+  <td>HTML Representations</td>
+  <td>MAY</td>
+  <td>AM Servers MAY provide HTML representations for GET requests</td>
+</tr>
+</tbody>
+</table>
 </section>
 
 <section id="samples" class="appendix">

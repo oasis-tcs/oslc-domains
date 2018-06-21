@@ -163,7 +163,7 @@
                 status : "Working Group Note",
                 publisher : "http://www.w3.org/",
             },
-            "OSLCShape": {
+            "OSLCShapes": {
                 title : "OSLC Resource Shape 3.0",
                 href : "https://tools.oasis-open.org/version-control/svn/oslc-core/trunk/specs/resource-shape.html",
                 authors : [ "Arthur Ryman", "Jim Amsden" ],
@@ -220,8 +220,7 @@
       (<a href='{{tcBaseURI}}/{{wgShortName}}/ipr.php'>{{tcBaseURI}}/{{wgShortName}}/ipr.php</a>).
     </p>
 </section>
-<section id="terminology">
-  
+
   <section id='terminology' class='informative'>
     <h3>Terminology</h3>
     <p>Terminology is based on OSLC Core Overview [[OSLCCore3]],
@@ -256,122 +255,7 @@
 <section id="baseRequirements">
 <h2>Base Requirements</h2>
 
-<section id="compliance">
-<h2>Compliance</h2>
-<p>This specification is based on [[!OSLCCore3]]. OSLC RM clients and servers
-MUST be compliant with both the core specification and this RM
-specification, and SHOULD follow all the guidelines and recommendations in both of 
-these specifications.</p>
-
-<p>The following table summarizes the requirements from OSLC Core Specification
-as well as some additional requirements specific to the RM domain. Note that
-this specification further restricts some of the requirements for OSLC Core
-Specification. See subsequent sections in this specification or the
-OSLC Core Specification to get further details on each of these
-requirements.</p>
-
-<table border="1" cellspacing="0" cellpadding="5">
-<thead>
-<tr>
-  <th><strong>Requirement</strong></th>
-  <th><strong>Level</strong></th>
-  <th><strong>Meaning</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>Unknown properties and content</a></td>
-  <td>MAY/MUST</td>
-  <td>OSLC servers MAY ignore unknown content and OSLC clients MUST preserve unknown content</td>
-</tr>
-<tr>
-  <td>Resource Operations</td>
-  <td>MUST</td>
-  <td>OSLC servers MUST support resource operations via standard HTTP operations</td>
-</tr>
-<tr>
-  <td>Resource Paging</td>
-  <td>MAY</td>
-  <td>OSLC servers MAY provide paging for resources but only when specifically requested by client</td>
-</tr>
-<tr>
-  <td>Partial Resource Representations</td>
-  <td>MUST/MAY</td>
-  <td>OSLC servers MUST support request for a subset of a resource's properties via the oslc.properties URL parameter retrieval via HTTP GET and MAY support via HTTP PUT</td> 
-</tr>
-<tr>
-  <td>Partial Update</td>
-  <td>MAY</td>
-  <td>OSLC servers MAY support partial update of resources using [[LDPPatch]].</td>
-</tr>
-<tr>
-  <td>Discovery</td>
-  <td>MAY/MUST</td>
-  <td>OSLC servers MAY provide a Service Provider Catalog, MUST provide a Service Provider resource, and MAY provide other forms of discovery described in Core 3.0 Discovery.</td>
-</tr>
-<tr>
-  <td>Creation Factories</td>
-  <td>MUST/MAY</td>
-  <td>OSLC servers MUST provide at least one creation factory resource for requirements and MAY provide creation factory resources for requirement collections</td>
-</tr>
-<tr>
-  <td>Query Capabilities</td>
-  <td>MUST</td>
-  <td>OSLC servers MUST provide query capabilities to enable clients to query for resources </td>
-</tr>
-<tr>
-  <td>Query Syntax</td>
-  <td>MUST</td>
-  <td>OSLC query capabilities MUST support the OSLC Core Query Syntax</td>
-</tr>
-<tr>
-  <td>Delegated UI Dialogs</td>
-  <td>MUST</td>
-  <td>OSLC Services MUST offer delegated UI dialogs (for both creation and selection) specified via service provider resource</td>
-</tr>
-<tr>
-  <td>UI Preview</td>
-  <td>SHOULD</td>
-  <td>OSLC Services SHOULD offer UI previews for resources that may be referenced by other resources </td>
-</tr>
-<tr>
-  <td>HTTP Basic Authentication</td>
-  <td>MAY</td>
-  <td>OSLC Servers MAY support Basic Authentication and SHOULD only do so only over HTTPS</td>
-</tr>
-<tr>
-  <td>OAuth Authentication</td>
-  <td>MAY</td>
-  <td>OSLC Server MAY support OAuth and MAY indicate the required OAuth URLs via the service provider resource</td>
-</tr>
-<tr>
-  <td>Error Responses</td>
-  <td>MAY</td>
-  <td>OSLC Servers MAY provide error responses using Core defined error formats</td>
-</tr>
-<tr>
-  <td>RDF/XML Representations</td>
-  <td>MUST</td>
-  <td>OSLC servers MUST support RDF/XML representations for OSLC Defined Resources</td>
-</tr>
-<tr>
-  <td>XML Representations</td>
-  <td>MUST</td>
-  <td>OSLC servers MUST support XML representations that conform to the OSLC Core Guidelines for XML</td>
-</tr>
-<tr>
-  <td>JSON Representations</td>
-  <td>MAY/MUST</td>
-  <td>OSLC servers MAY support JSON representations; those which do MUST conform to the OSLC Core Guidelines for JSON</td>
-</tr>
-<tr>
-  <td>HTML Representations</td>
-  <td>MAY</td>
-  <td>OSLC servers MAY provide HTML representations for GET requests</td>
-</tr>
-</tbody>
-</table>
-</section>
+<p>The following sub-sections define the mandatory and optional requirements for an OSLC domain-name (OSLC domain-short-name) server.</p>
 
 <section id="versioning">
 <h2 id="specificationversioningspec_versioning">Specification Versioning</h2>
@@ -613,6 +497,144 @@ The stability of query results is OPTIONAL (see <a class="twikiLink" href="https
 </section>
 </section>
 
+<section id="compliance">
+<h2>Compliance</h2>
+
+<p>This specification is based on [[!OSLCCore3]]. OSLC domain-short-name servers
+MUST be compliant with both the core specification,  MUST follow all the mandatory requirements in the normative sections of this specification, and SHOULD follow all the guidelines and recommendations in both
+these specifications.</p>
+
+<p>An OSLC domain-short-name server MUST implement the domain vocabulary defined in <a href="">OSLC domain-name Version 2.1. Part 2: Vocabulary</a>
+
+<p>The following table summarizes the requirements from OSLC Core Specification
+as well as some additional requirements specific to the RM domain. Note that
+this specification further restricts some of the requirements for OSLC Core
+Specification. See the previous sections in this specification or the
+OSLC Core Specification to get further details on each of these
+requirements.</p>
+
+
+<table border="1" cellspacing="0" cellpadding="5">
+<thead>
+<tr>
+  <th><strong>Number</strong></th>
+  <th><strong>Requirement</strong></th>
+  <th><strong>Level</strong></th>
+  <th><strong>Meaning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Unknown properties and content</a></td>
+  <td>MAY/MUST</td>
+  <td>OSLC servers MAY ignore unknown content and OSLC clients MUST preserve unknown content</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Resource Operations</td>
+  <td>MUST</td>
+  <td>OSLC servers MUST support resource operations via standard HTTP operations</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Resource Paging</td>
+  <td>MAY</td>
+  <td>OSLC servers MAY provide paging for resources but only when specifically requested by client</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Partial Resource Representations</td>
+  <td>MUST/MAY</td>
+  <td>OSLC servers MUST support request for a subset of a resource's properties via the oslc.properties URL parameter retrieval via HTTP GET and MAY support via HTTP PUT</td> 
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Partial Update</td>
+  <td>MAY</td>
+  <td>OSLC servers MAY support partial update of resources using [[LDPPatch]].</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Discovery</td>
+  <td>MAY/MUST</td>
+  <td>OSLC servers MAY provide a Service Provider Catalog, MUST provide a Service Provider resource, and MAY provide other forms of discovery described in Core 3.0 Discovery.</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Creation Factories</td>
+  <td>MUST/MAY</td>
+  <td>OSLC servers MUST provide at least one creation factory resource for requirements and MAY provide creation factory resources for requirement collections</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Query Capabilities</td>
+  <td>MUST</td>
+  <td>OSLC servers MUST provide query capabilities to enable clients to query for resources </td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Query Syntax</td>
+  <td>MUST</td>
+  <td>OSLC query capabilities MUST support the OSLC Core Query Syntax</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Delegated UI Dialogs</td>
+  <td>MUST</td>
+  <td>OSLC Services MUST offer delegated UI dialogs (for both creation and selection) specified via service provider resource</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>UI Preview</td>
+  <td>SHOULD</td>
+  <td>OSLC Services SHOULD offer UI previews for resources that may be referenced by other resources </td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>HTTP Basic Authentication</td>
+  <td>MAY</td>
+  <td>OSLC Servers MAY support Basic Authentication and SHOULD only do so only over HTTPS</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>OAuth Authentication</td>
+  <td>MAY</td>
+  <td>OSLC Server MAY support OAuth and MAY indicate the required OAuth URLs via the service provider resource</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>Error Responses</td>
+  <td>MAY</td>
+  <td>OSLC Servers MAY provide error responses using Core defined error formats</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>RDF/XML Representations</td>
+  <td>MUST</td>
+  <td>OSLC servers MUST support RDF/XML representations for OSLC Defined Resources</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>XML Representations</td>
+  <td>MUST</td>
+  <td>OSLC servers MUST support XML representations that conform to the OSLC Core Guidelines for XML</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>JSON Representations</td>
+  <td>MAY/MUST</td>
+  <td>OSLC servers MAY support JSON representations; those which do MUST conform to the OSLC Core Guidelines for JSON</td>
+</tr>
+<tr>
+  <td>domain-short-name-1</td>
+  <td>HTML Representations</td>
+  <td>MAY</td>
+  <td>OSLC servers MAY provide HTML representations for GET requests</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="versionCompability" class="appendix">
 <h2>Version Compatibility with 2.0 Specifications</h2>
 <p></p>
