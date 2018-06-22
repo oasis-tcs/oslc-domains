@@ -295,7 +295,7 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
   <section id="resourceOps">
 <h2>Resource Operations</h2>
 
-<p>OSLC AM Clients MAY include the OSLC Core Version header (OSLC-Core-Version: 2.0) in all HTTP request to OSLC AM Servers.</p>
+<p>OSLC AM Clients MAY include the OSLC Core Version header (OSLC-Core-Version: 2.0) in all HTTP request to OSLC AM Servers as specified in [[!OSLCCore3]].</p>
 
 <p>OSLC AM Servers MUST support HTTP GET requests on Architecture Management Resources (AMR), with an Accept header of <code>application/rdf+xml</code>, and return the RDF/XML representation of the resource.</p>
 
@@ -318,7 +318,7 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 <section id="errors">
 <h2>Error Responses</h2>
 
-<p>See See [[!OSLCCore3]], OSLC AM puts no additional constraints on error 
+<p>See [[!OSLCCore3]], OSLC AM puts no additional constraints on error 
   responses</p>
 </section>
 
@@ -353,12 +353,17 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 <section id="updatingMultiValueProps">
 <h4>Updating Multi-Valued Properties</h4>
 
-<p>A client MAY request that a subset of a resource's properties be updated by using the [[LDPPatch]] <code>PATCH</code> method.</p>
+<p>An OSLC AM Server MAY support updating a subset of a resource's properties by using the [[LDPPatch]] <code>PATCH</code> method.</p>
 
-<p>For compatibility with [[!OSLCCore2]], a Server MAY also support partial update by identifying those properties to be modified using the <code>oslc.properties</code> URL parameter on a HTTP PUT request.</p>
+<p>For compatibility with [[!OSLCCore2]], an AM Server MAY also support partial update by identifying those properties to be modified using the <code>oslc.properties</code> URL parameter on a HTTP PUT request.</p>
 
 <p>If the parameter <code>oslc.properties</code> contains a valid resource property on the request that is not provided in the content, the server MUST set the resource's property to a null or empty value. If the parameter <code>oslc.properties</code> contains an invalid resource property, then a <code>409 Conflict</code> MUST be returned.</p>
 </section> 
+<section id="updatingMultiValueProps">
+<h4>Updating Multi-Valued Properties</h4>
+
+<p>For multi-valued properties that contain a large number of values, it may be difficult and inefficient to add or remove property values. OSLC RM servers MAY provide support for a partial update of the multi-valued properties as defined by draft specification [[LDPPatch]]. RM servers MAY also support partial updates through HTTP PUT where only the updated properties are included in the entity request body.</p>
+</section>
 </section>
 </section> 
 
@@ -378,7 +383,7 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 <section id="resourceShapes1">
 <h3>Resource Shapes</h3>
 
-  <p>OSLC AM services providers SHOULD support <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">Resource Shapes</a> as defined in <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">OSLC Core Specification</a></p>
+  <p>OSLC AM services providers SHOULD support Resource Shapes as defined in [[!OSLCShapes]].</p>
 
 </section>
 
@@ -400,11 +405,11 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 <h3>Creation Factories</h3>
 
 <p>OSLC AM Servers MAY support <a 
- href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Creation Factories</a> as defined by OSLC Core.</p>
+ href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Creation Factories</a> as defined by [[!OSLCCore3]].</p>
 
 <p>OSLC AM Servers MAY discard properties it does not recognize and continue the POST operation without warning to the client. The returned resource will contain the accepted properties (and server generated properties like the dcterms:identifer) so clients will be able to confirm if required what was accepted.</p>
 
-<p>If OSLC AM Servers support the creation of resources from the OSLC defined <code>oslc_am:Resource</code> format, there MUST be at least one <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Creation Factory</a> entry in the Services definition, and its <code>oslc:usage</code> property MUST be set to <code>http://open-services/ns/core#default</code>. The <code>oslc:resourceType</code> MUST be set to <code>http://open-services.net/ns/am#Resource</code>.</p>
+<p>If OSLC AM Servers support the creation of resources from the OSLC defined <code>oslc_am:Resource</code> format, there MUST be at least one Creation Factory entry in the Services definition, and its <code>oslc:usage</code> property MUST be set to <code>http://open-services/ns/core#default</code>. The <code>oslc:resourceType</code> MUST be set to <code>http://open-services.net/ns/am#Resource</code>.</p>
 
 <p>If OSLC AM Servers support the creation of resources from a resource other than <code>oslc_am:Resource</code>, there MUST be a separate creation services definition whose <code>oslc:usage</code> property MUST NOT be set to <code>http://open-services/ns/core#default</code>.</p>
 
@@ -413,24 +418,24 @@ rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
 <section id="querycapabilities">
 <h3 id="querycapabilities">Query Capabilities</h3>
 
-<p>OSLC AM Servers SHOULD support the <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Query Capabilities</a> as defined by OSLC Core for both <a href="#Resource_Architecture_Management">oslc_am:Resource </a> and <a href="#Resource_Link_Type_Resource_LTR">oslc_am:LinkType </a> resources.</p>
+<p>OSLC AM Servers SHOULD support the Query Capabilities as defined by [[!OSLCCore3]] for both <code>oslc_am:Resource</code> and <code>oslc_am:LinkType</code> resources.</p>
 
-<p>If the service provider supports query capability for <a href="#Resource_Architecture_Management">oslc_am:Resource </a> resources, it MUST support the following query parameters:</p>
+<p>If the service provider supports query capability for <code>oslc_am:Resource</code> resources, it MUST support the following query parameters:</p>
 
 <ul>
 <li><code>oslc.where</code></li>
 <li><code>oslc.searchTerms</code></li>
 </ul>
 
-<p>OSLC AM Servers SHOULD support query capability for <a href="#Resource_Link_Type_Resource_LTR">oslc_am:LinkType </a> resources. If supported then AM Servers MUST support a simple GET without any simple query parameters that returns all link type resources. AM Servers SHOULD support the full simple query syntax.</p>
+<p>OSLC AM Servers SHOULD support query capability for <code>oslc_am:LinkType</code> resources. If supported then AM Servers MUST support a simple GET without any simple query parameters that returns all link type resources. AM Servers SHOULD support the full simple query syntax.</p>
 </section>
 
 <section id="delegatedUIs">
 <h3>Delegated UIs</h3>
 
-<p>OSLC AM Servers SHOULD support the selection of resources by delegated web-based user interface dialogs <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a> as defined by OSLC Core.</p>
+<p>OSLC AM Servers SHOULD support the selection of resources by delegated web-based user interface delegated selection dialogs as defined by [[!OSLCCore3]].</p>
 
-<p>OSLC AM Servers MAY support the creation of resources by delegated web-based user interface dialogs <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a> as defined by OSLC Core.</p>
+<p>OSLC AM Servers MAY support the creation of resources by delegated web-based user interface delegated creation dialog as defined by [[!OSLCCore3]].</p>
 
 <p>In <code>oslc:Dialog</code> elements, the two optional child elements; <code>oslc:hintWidth</code> and <code>oslc:hintHeight</code> specify the suggested size of the dialog or frame to render the HTML content in. Expected for the size values are defined by <a href="http://www.w3.org/TR/CSS1/#length-units">CSS length units</a>.</p>
 
@@ -472,7 +477,7 @@ requirements.</p>
   <td>AM-2</td>
   <td>Unknown properties and content</a></td>
   <td>MAY/MUST</td>
-  <td>AM Servers MAY ignore unknown content and AM clients MUST preserve unknown content. AM Servers may discard such properties and continue the POST or PUT operation without warning to the client.</td>
+  <td>AM Servers MAY ignore unknown content and AM clients MUST preserve unknown content when PUTing updates to resources, or POSTing creation of resources. AM Servers may discard such content and continue the POST or PUT operation without warning to the client.</td>
 </tr>
 <tr>
   <td>AM-3</td>
@@ -496,7 +501,7 @@ requirements.</p>
   <td>AM-6</td>
   <td>Resource Paging</td>
   <td>MAY</td>
-  <td>AM Servers MAY provide paging for resources but only when specifically requested by client</td>
+  <td>AM Servers MAY provide paging of HTTP entity response bodies, but only when specifically requested by client</td>
 </tr>
 <tr>
   <td>AM-7</td>
@@ -538,7 +543,7 @@ requirements.</p>
   <td>AM-13</td>
   <td>Delegated Dialogs</td>
   <td>SHOULD/MAY</td>
-  <td>AM Services SHOULD offer selection delegated dialogs and MAY offer creation delegated dialogs specified via service provider resource</td>
+  <td>AM Servers SHOULD offer selection delegated dialogs and MAY offer creation delegated dialogs specified via service provider resource</td>
 </tr>
 <tr>
   <td>AM-14</td>
@@ -550,7 +555,7 @@ requirements.</p>
   <td>AM-15</td>
   <td>Authentication</td>
   <td>SHOULD</td>
-  <td>OSLC Services should follow the recommendations for Authentication specified in [[!OSLCCore3]]</td>
+  <td>OSLC Servers should follow the recommendations for Authentication specified in [[!OSLCCore3]]</td>
 </tr>
 <tr>
   <td>AM-16</td>

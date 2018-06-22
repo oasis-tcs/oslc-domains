@@ -52,7 +52,7 @@ resource like a UML Class, Use Case, or Business Process Diagram."""^^rdf:XMLLit
 
 <#contributor>  a                 oslc:Property ;
         oslc:name                "contributor" ;
-        oslc:range               foaf:Person ;
+        oslc:range               oslc:AnyResource ;
         oslc:occurs              oslc:Zero-or-many ;
         oslc:propertyDefinition  dcterms:contributor ;
         oslc:valueType           oslc:AnyResource ;
@@ -61,7 +61,7 @@ resource like a UML Class, Use Case, or Business Process Diagram."""^^rdf:XMLLit
 
 <#creator>  a                 oslc:Property ;
         oslc:name                "creator" ;
-        oslc:range               foaf:Person ;
+        oslc:range               oslc:AnyResource ;
         oslc:occurs              oslc:Zero-or-many ;
         oslc:propertyDefinition  dcterms:creator ;
         oslc:valueType           oslc:AnyResource ;
