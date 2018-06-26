@@ -379,7 +379,7 @@
 
 <#identifier>  
         a                 oslc:Property ;
-        oslc:name                "created" ;
+        oslc:name                "identifier" ;
         oslc:occurs              oslc:Exactly-one ;
         oslc:propertyDefinition  dcterms:identifier ;
         oslc:readOnly            true ;
