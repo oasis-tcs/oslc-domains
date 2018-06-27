@@ -256,338 +256,6 @@
   <section id="baseRequirements">
     <h2>Base Requirements</h2>
 
-    <section id="compliance">
-      <h3>Compliance</h3>
-      <p>This specification is based on
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core Specification</a>. OSLC Performance Monitoring consumers and service providers MUST be compliant with both
-        the core specification and this Performance Monitoring specification, and SHOULD follow all the guidelines and recommendations
-        in both these specifications.</p>
-
-      <p>The following table summarizes the requirements from OSLC Core Specification as well as some (but not all) additional
-        requirements specific to Performance Monitoring. See the full content of the Performance Monitoring specification
-        for all requirements. Note that this specification further restricts some of the requirements for OSLC Core Specification
-        as noted in the Origin column of the compliance table. See further sections in this specification or the OSLC Core
-        Specification to get further details on each of these requirements.</p>
-
-      <p>Any consumer or service provider behaviors are allowed unless explicitly prohibited by this or dependent specifications;
-        conditional permissive requirements, especially those qualified with &ldquo;MAY&rdquo;, are implicitly covered by
-        the preceding clause. While technically redundant in light of that broad permission, OSLC specifications do still
-        make explicit MAY-qualified statements in cases where the editors believe doing so is likely to add clarity.</p>
-
-      <section id='Requirements-on-OSLC-Consumers'>
-        <h4>Requirements on OSLC Consumers</h4>
-
-        <table border="1" cellspacing="0" cellpadding="5">
-          <thead>
-            <tr>
-              <th>
-                <strong>Requirement</strong>
-              </th>
-              <th>
-                <strong>Level</strong>
-              </th>
-              <th>
-                <strong>Origin(s)</strong>
-              </th>
-              <th>
-                <strong>Meaning</strong>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Unknown properties and content</td>
-              <td>MUST</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Unknown_properties_and_content">Core</a>
-              </td>
-              <td>OSLC clients MUST preserve unknown content</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section id='Requirements-on-OSLC-Service-Providers'>
-        <h4>Requirements on OSLC Service Providers</h4>
-
-        <table border="1" cellspacing="0" cellpadding="5">
-          <thead>
-            <tr>
-              <th>
-                <strong>Requirement</strong>
-              </th>
-              <th>
-                <strong>Level</strong>
-              </th>
-              <th>
-                <strong>Origin(s)</strong>
-              </th>
-              <th>
-                <strong>Meaning</strong>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Unknown properties and content</td>
-              <td>MAY</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Unknown_properties_and_content">Core</a>
-              </td>
-              <td>OSLC service providers MAY ignore unknown content</td>
-            </tr>
-            <tr>
-              <td>Unknown properties and content</td>
-              <td>MUST</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Unknown_properties_and_content">Core</a>
-              </td>
-              <td>OSLC service providers MUST return an error code if recognized content is invalid.</td>
-            </tr>
-            <tr>
-              <td>Resource Operations</td>
-              <td>MUST</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Operations">Core</a>
-              </td>
-              <td>OSLC service providers MUST support resource operations via standard HTTP operations</td>
-            </tr>
-            <tr>
-              <td>Resource Paging</td>
-              <td>MAY</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Paging">Core</a>
-              </td>
-              <td>OSLC services MAY provide paging for resources</td>
-            </tr>
-            <tr>
-              <td>Partial Resource Representations</td>
-              <td>MAY</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Selective_Property_Values">Core</a>
-              </td>
-              <td>OSLC service providers MAY support HTTP GET requests for retrieval of a subset of a resource&#8217;s properties
-                via the oslc.properties URL parameter</td>
-            </tr>
-            <tr>
-              <td>Partial Resource Representations</td>
-              <td>MAY</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Selective_Property_Values">Core</a>
-              </td>
-              <td>OSLC service providers MAY support HTTP PUT requests for updating a subset of a resource&#8217;s properties
-                via the oslc.properties URL parameter</td>
-            </tr>
-            <tr>
-              <td>Service Provider Resources</td>
-              <td>MAY</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Core</a>
-              </td>
-              <td>OSLC service providers MAY provide a Service Provider Catalog resource</td>
-            </tr>
-            <tr>
-              <td>Service Provider Resources</td>
-              <td>MUST</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Core</a>
-              </td>
-              <td>OSLC service providers MUST provide a Service Provider resource</td>
-            </tr>
-            <tr>
-              <td>Creation Factories</td>
-              <td>MAY</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Core</a>
-              </td>
-              <td>OSLC service providers MAY provide creation factories to enable resource creation via HTTP POST</td>
-            </tr>
-            <tr>
-              <td>Query Capabilities</td>
-              <td>SHOULD
-                <sup>1</sup>
-              </td>
-              <td>
-                <a href="#Query-Capabilities">Perf Mon</a>,
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Core</a>
-              </td>
-              <td>OSLC service providers SHOULD provide query capabilities to enable clients to query for resources</td>
-            </tr>
-            <tr>
-              <td>Query Syntax</td>
-              <td>MUST
-                <sup>2</sup>
-              </td>
-              <td>
-                <a href="#Query-Capabilities">Perf Mon</a>,
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Syntax">Core</a>
-              </td>
-              <td>If a service provider supports a OSLC query capability, its query capabilities MUST support the OSLC Core Query
-                Syntax
-              </td>
-            </tr>
-            <tr>
-              <td>Delegated UI Dialogs</td>
-              <td>SHOULD</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Core</a>
-              </td>
-              <td>OSLC service providers SHOULD allow clients to discover, via their service provider resources, any Delegated
-                UI Dialogs they offer.</td>
-            </tr>
-            <tr>
-              <td>Delegated UI Dialogs</td>
-              <td>SHOULD</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Core</a>
-              </td>
-              <td>OSLC service providers SHOULD offer delegated UI dialogs for resource creation</td>
-            </tr>
-            <tr>
-              <td>Delegated UI Dialogs</td>
-              <td>SHOULD</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Core</a>
-              </td>
-              <td>OSLC service providers SHOULD offer delegated UI dialogs for resource selection</td>
-            </tr>
-            <tr>
-              <td>UI Preview</td>
-              <td>SHOULD</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#User_Interface_Previews">Core</a>
-              </td>
-              <td>OSLC Services SHOULD offer UI previews for resources that may be referenced by other resources</td>
-            </tr>
-            <tr>
-              <td>HTTP Basic Authentication</td>
-              <td>MAY</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#HTTP_Basic_Authentication">Core</a>
-              </td>
-              <td>OSLC Services MAY support Basic Auth</td>
-            </tr>
-            <tr>
-              <td>HTTP Basic Authentication</td>
-              <td>SHOULD</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#HTTP_Basic_Authentication">Core</a>
-              </td>
-              <td>OSLC Services SHOULD support Basic Auth only over HTTPS</td>
-            </tr>
-            <tr>
-              <td>OAuth Authentication</td>
-              <td>MAY</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OAuth_Authentication">Core</a>
-              </td>
-              <td>OSLC service providers MAY support OAuth</td>
-            </tr>
-            <tr>
-              <td>OAuth Authentication</td>
-              <td>SHOULD</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OAuth_Authentication">Core</a>
-              </td>
-              <td>OSLC service providers that support OAuth SHOULD allow clients to discover the required OAuth URLs via their
-                service provider resource</td>
-            </tr>
-            <tr>
-              <td>Error Responses</td>
-              <td>MAY</td>
-              <td>
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Error_Responses">Core</a>
-              </td>
-              <td>OSLC service providers MAY provide error responses using Core-defined error formats</td>
-            </tr>
-            <tr>
-              <td>RDF/XML Representations</td>
-              <td>MUST
-                <sup>3</sup>
-              </td>
-              <td>
-                <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
-                <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_application_rdf_x">Core</a>
-              </td>
-              <td>OSLC service providers MUST offer an RDF/XML representation for HTTP GET responses</td>
-            </tr>
-            <tr>
-              <td>RDF/XML Representations</td>
-              <td>MUST
-                <sup>3</sup>
-              </td>
-              <td>
-                <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
-                <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_application_rdf_x">Core</a>
-              </td>
-              <td>OSLC service providers MUST accept RDF/XML representations on PUT requests.</td>
-            </tr>
-            <tr>
-              <td>RDF/XML Representations</td>
-              <td>MUST
-                <sup>3</sup>
-              </td>
-              <td>
-                <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
-                <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_application_rdf_x">Core</a>
-              </td>
-              <td>RDF/XML representations on POST requests whose semantic intent is to create a new resource instance.</td>
-            </tr>
-            <tr>
-              <td>XML Representations</td>
-              <td>MAY
-                <sup>3</sup>
-              </td>
-              <td>
-                <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
-                <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_application_xml">Core</a>
-              </td>
-              <td>OSLC service providers MAY provide a XML representation for HTTP GET, POST and PUT requests that conform to
-                the Core Guidelines for XML.</td>
-            </tr>
-            <tr>
-              <td>JSON Representations</td>
-              <td>MAY
-                <sup>3</sup>
-              </td>
-              <td>
-                <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
-                <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_JSON">Core</a>
-              </td>
-              <td>OSLC service providers MAY provide JSON representations for HTTP GET, POST and PUT requests that conform to
-                the Core Guidelines for JSON</td>
-            </tr>
-            <tr>
-              <td>HTML Representations</td>
-              <td>SHOULD
-                <sup>3</sup>
-              </td>
-              <td>
-                <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OSLC_Defined_Resource_Representa">Core</a>
-              </td>
-              <td>OSLC service providers SHOULD provide HTML representations for HTTP GET requests</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <ul>
-          <li>
-            <sup>1</sup>The OSLC Core Specification indicates service providers MAY provide Query Capabilities. This specification
-            strengthens the requirement.</li>
-          <li>
-            <sup>2</sup>The OSLC Core Specification indicates service providers MAY support the OSLC Query Syntax. This specification
-            makes OSLC Query Syntax support a MUST requirement for service providers providing query capabilities.</li>
-          <li>
-            <sup>3</sup>Support for all common HTTP methods is not required for all resources defined by this specification. See
-            the
-            <a href="#Service_Provider_HTTP_Method_Sup">HTTP Method support table</a> for details.</li>
-        </ul>
-
-
-      </section>
-    </section>
-
     <section id="versioning">
       <h3>Specification Versioning</h3>
 
@@ -905,8 +573,373 @@
 
   </section>
 
+  <section id="conformance">
+    <h3>Conformance</h3>
+    <p>This specification is based on
+      <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification">OSLC Core Specification</a>. OSLC Performance Monitoring consumers and service providers MUST be compliant with both
+      the core specification and this Performance Monitoring specification, and SHOULD follow all the guidelines and recommendations
+      in both these specifications.</p>
+
+    <p>The following table summarizes the requirements from OSLC Core Specification as well as some (but not all) additional
+      requirements specific to Performance Monitoring. See the full content of the Performance Monitoring specification for
+      all requirements. Note that this specification further restricts some of the requirements for OSLC Core Specification
+      as noted in the Origin column of the compliance table. See further sections in this specification or the OSLC Core
+      Specification to get further details on each of these requirements.</p>
+
+    <p>Any consumer or service provider behaviors are allowed unless explicitly prohibited by this or dependent specifications;
+      conditional permissive requirements, especially those qualified with &ldquo;MAY&rdquo;, are implicitly covered by the
+      preceding clause. While technically redundant in light of that broad permission, OSLC specifications do still make
+      explicit MAY-qualified statements in cases where the editors believe doing so is likely to add clarity.</p>
+
+    <section id='Requirements-on-OSLC-Consumers'>
+      <h4>Requirements on OSLC Consumers</h4>
+
+      <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+          <tr>
+            <th>
+              <strong>Number</strong>
+            </th>
+            <th>
+              <strong>Requirement</strong>
+            </th>
+            <th>
+              <strong>Level</strong>
+            </th>
+            <th>
+              <strong>Origin(s)</strong>
+            </th>
+            <th>
+              <strong>Meaning</strong>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Perfmon-1</td>
+            <td>Unknown properties and content</td>
+            <td>MUST</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Unknown_properties_and_content">Core</a>
+            </td>
+            <td>OSLC clients MUST preserve unknown content</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id='Requirements-on-OSLC-Service-Providers'>
+      <h4>Requirements on OSLC Service Providers</h4>
+
+      <table border="1" cellspacing="0" cellpadding="5">
+        <thead>
+          <tr>
+            <th>
+              <strong>Number</strong>
+            </th>
+            <th>
+              <strong>Requirement</strong>
+            </th>
+            <th>
+              <strong>Level</strong>
+            </th>
+            <th>
+              <strong>Origin(s)</strong>
+            </th>
+            <th>
+              <strong>Meaning</strong>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Perfmon-2</td>
+            <td>Unknown properties and content</td>
+            <td>MAY</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Unknown_properties_and_content">Core</a>
+            </td>
+            <td>OSLC service providers MAY ignore unknown content</td>
+          </tr>
+          <tr>
+            <td>Perfmon-3</td>
+            <td>Unknown properties and content</td>
+            <td>MUST</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Unknown_properties_and_content">Core</a>
+            </td>
+            <td>OSLC service providers MUST return an error code if recognized content is invalid.</td>
+          </tr>
+          <tr>
+            <td>Perfmon-4</td>
+            <td>Resource Operations</td>
+            <td>MUST</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Operations">Core</a>
+            </td>
+            <td>OSLC service providers MUST support resource operations via standard HTTP operations</td>
+          </tr>
+          <tr>
+            <td>Perfmon-5</td>
+            <td>Resource Paging</td>
+            <td>MAY</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Paging">Core</a>
+            </td>
+            <td>OSLC services MAY provide paging for resources</td>
+          </tr>
+          <tr>
+            <td>Perfmon-6</td>
+            <td>Partial Resource Representations</td>
+            <td>MAY</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Selective_Property_Values">Core</a>
+            </td>
+            <td>OSLC service providers MAY support HTTP GET requests for retrieval of a subset of a resource&#8217;s properties
+              via the oslc.properties URL parameter</td>
+          </tr>
+          <tr>
+            <td>Perfmon-7</td>
+            <td>Partial Resource Representations</td>
+            <td>MAY</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Selective_Property_Values">Core</a>
+            </td>
+            <td>OSLC service providers MAY support HTTP PUT requests for updating a subset of a resource&#8217;s properties via
+              the oslc.properties URL parameter</td>
+          </tr>
+          <tr>
+            <td>Perfmon-8</td>
+            <td>Service Provider Resources</td>
+            <td>MAY</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Core</a>
+            </td>
+            <td>OSLC service providers MAY provide a Service Provider Catalog resource</td>
+          </tr>
+          <tr>
+            <td>Perfmon-9</td>
+            <td>Service Provider Resources</td>
+            <td>MUST</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Core</a>
+            </td>
+            <td>OSLC service providers MUST provide a Service Provider resource</td>
+          </tr>
+          <tr>
+            <td>Perfmon-10</td>
+            <td>Creation Factories</td>
+            <td>MAY</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Core</a>
+            </td>
+            <td>OSLC service providers MAY provide creation factories to enable resource creation via HTTP POST</td>
+          </tr>
+          <tr>
+            <td>Perfmon-11</td>
+            <td>Query Capabilities</td>
+            <td>SHOULD
+              <sup>1</sup>
+            </td>
+            <td>
+              <a href="#Query-Capabilities">Perf Mon</a>,
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Core</a>
+            </td>
+            <td>OSLC service providers SHOULD provide query capabilities to enable clients to query for resources</td>
+          </tr>
+          <tr>
+            <td>Perfmon-12</td>
+            <td>Query Syntax</td>
+            <td>MUST
+              <sup>2</sup>
+            </td>
+            <td>
+              <a href="#Query-Capabilities">Perf Mon</a>,
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Syntax">Core</a>
+            </td>
+            <td>If a service provider supports a OSLC query capability, its query capabilities MUST support the OSLC Core Query
+              Syntax
+            </td>
+          </tr>
+          <tr>
+            <td>Perfmon-13</td>
+            <td>Delegated UI Dialogs</td>
+            <td>SHOULD</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Core</a>
+            </td>
+            <td>OSLC service providers SHOULD allow clients to discover, via their service provider resources, any Delegated
+              UI Dialogs they offer.</td>
+          </tr>
+          <tr>
+            <td>Perfmon-14</td>
+            <td>Delegated UI Dialogs</td>
+            <td>SHOULD</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Core</a>
+            </td>
+            <td>OSLC service providers SHOULD offer delegated UI dialogs for resource creation</td>
+          </tr>
+          <tr>
+            <td>Perfmon-15</td>
+            <td>Delegated UI Dialogs</td>
+            <td>SHOULD</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Core</a>
+            </td>
+            <td>OSLC service providers SHOULD offer delegated UI dialogs for resource selection</td>
+          </tr>
+          <tr>
+            <td>Perfmon-16</td>
+            <td>UI Preview</td>
+            <td>SHOULD</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#User_Interface_Previews">Core</a>
+            </td>
+            <td>OSLC Services SHOULD offer UI previews for resources that may be referenced by other resources</td>
+          </tr>
+          <tr>
+            <td>Perfmon-17</td>
+            <td>HTTP Basic Authentication</td>
+            <td>MAY</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#HTTP_Basic_Authentication">Core</a>
+            </td>
+            <td>OSLC Services MAY support Basic Auth</td>
+          </tr>
+          <tr>
+            <td>Perfmon-18</td>
+            <td>HTTP Basic Authentication</td>
+            <td>SHOULD</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#HTTP_Basic_Authentication">Core</a>
+            </td>
+            <td>OSLC Services SHOULD support Basic Auth only over HTTPS</td>
+          </tr>
+          <tr>
+            <td>Perfmon-19</td>
+            <td>OAuth Authentication</td>
+            <td>MAY</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OAuth_Authentication">Core</a>
+            </td>
+            <td>OSLC service providers MAY support OAuth</td>
+          </tr>
+          <tr>
+            <td>Perfmon-20</td>
+            <td>OAuth Authentication</td>
+            <td>SHOULD</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OAuth_Authentication">Core</a>
+            </td>
+            <td>OSLC service providers that support OAuth SHOULD allow clients to discover the required OAuth URLs via their
+              service provider resource</td>
+          </tr>
+          <tr>
+            <td>Perfmon-21</td>
+            <td>Error Responses</td>
+            <td>MAY</td>
+            <td>
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Error_Responses">Core</a>
+            </td>
+            <td>OSLC service providers MAY provide error responses using Core-defined error formats</td>
+          </tr>
+          <tr>
+            <td>Perfmon-22</td>
+            <td>RDF/XML Representations</td>
+            <td>MUST
+              <sup>3</sup>
+            </td>
+            <td>
+              <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
+              <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_application_rdf_x">Core</a>
+            </td>
+            <td>OSLC service providers MUST offer an RDF/XML representation for HTTP GET responses</td>
+          </tr>
+          <tr>
+            <td>Perfmon-23</td>
+            <td>RDF/XML Representations</td>
+            <td>MUST
+              <sup>3</sup>
+            </td>
+            <td>
+              <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
+              <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_application_rdf_x">Core</a>
+            </td>
+            <td>OSLC service providers MUST accept RDF/XML representations on PUT requests.</td>
+          </tr>
+          <tr>
+            <td>Perfmon-24</td>
+            <td>RDF/XML Representations</td>
+            <td>MUST
+              <sup>3</sup>
+            </td>
+            <td>
+              <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
+              <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_application_rdf_x">Core</a>
+            </td>
+            <td>RDF/XML representations on POST requests whose semantic intent is to create a new resource instance.</td>
+          </tr>
+          <tr>
+            <td>Perfmon-25</td>
+            <td>XML Representations</td>
+            <td>MAY
+              <sup>3</sup>
+            </td>
+            <td>
+              <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
+              <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_application_xml">Core</a>
+            </td>
+            <td>OSLC service providers MAY provide a XML representation for HTTP GET, POST and PUT requests that conform to the
+              Core Guidelines for XML.</td>
+          </tr>
+          <tr>
+            <td>Perfmon-26</td>
+            <td>JSON Representations</td>
+            <td>MAY
+              <sup>3</sup>
+            </td>
+            <td>
+              <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
+              <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_JSON">Core</a>
+            </td>
+            <td>OSLC service providers MAY provide JSON representations for HTTP GET, POST and PUT requests that conform to the
+              Core Guidelines for JSON</td>
+          </tr>
+          <tr>
+            <td>Perfmon-27</td>
+            <td>HTML Representations</td>
+            <td>SHOULD
+              <sup>3</sup>
+            </td>
+            <td>
+              <a href="#Service_Provider_HTTP_Method_Sup">Perf Mon</a>,
+              <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OSLC_Defined_Resource_Representa">Core</a>
+            </td>
+            <td>OSLC service providers SHOULD provide HTML representations for HTTP GET requests</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ul>
+        <li>
+          <sup>1</sup>The OSLC Core Specification indicates service providers MAY provide Query Capabilities. This specification
+          strengthens the requirement.</li>
+        <li>
+          <sup>2</sup>The OSLC Core Specification indicates service providers MAY support the OSLC Query Syntax. This specification
+          makes OSLC Query Syntax support a MUST requirement for service providers providing query capabilities.</li>
+        <li>
+          <sup>3</sup>Support for all common HTTP methods is not required for all resources defined by this specification. See
+          the
+          <a href="#Service_Provider_HTTP_Method_Sup">HTTP Method support table</a> for details.</li>
+      </ul>
+
+
+    </section>
+  </section>
+
   <section id="versionCompability" class="appendix">
-    <h2>Version Compatibility with 2.0 Specifications</h2>
+    <h2>Version Compatibility</h2>
     <p></p>
   </section>
 
@@ -971,7 +1004,7 @@
       <br> Graham Bachelor, IBM (Chair)
       <br>Janet Andersen
       <br>Jim Conallen
-      <br>John Arwe 
+      <br>John Arwe
       <br>Julie Bielski
       <br>Michael Fiedler
       <br>Steve Speicher

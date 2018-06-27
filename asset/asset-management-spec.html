@@ -295,132 +295,6 @@
   <section id="baseRequirements">
     <h2>Base Requirements</h2>
 
-    <section id="compliance">
-      <h3>Compliance</h3>
-      <p>This specification is based on [[!OSLCCore2]]. OSLC Asset Management 2.0 consumers and service providers MUST be compliant
-        with both the core specification and this Asset Management specification, and SHOULD follow all the guidelines and
-        recommendations in both these specifications.</p>
-
-      <p>The following table summarizes the requirements from OSLC Core Specification as well as some additional specific to
-        Asset Management. Note that this specification further restricts some of the requirements for OSLC Core Specification.
-        See further sections in this specification or the OSLC Core Specification to get further details on each of these
-        requirements.
-      </p>
-
-      <table border="1" cellspacing="0" cellpadding="5">
-        <thead>
-          <tr>
-            <th>
-              <strong>Requirement</strong>
-            </th>
-            <th>
-              <strong>Level</strong>
-            </th>
-            <th>
-              <strong>Meaning</strong>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Unknown properties and content</td>
-            <td>MAY / MUST</td>
-            <td>OSLC services MAY ignore unknown content and OSLC clients MUST preserve unknown content</td>
-          </tr>
-          <tr>
-            <td>Resource Operations</td>
-            <td>MUST</td>
-            <td>OSLC service MUST support resource operations via standard HTTP operations</td>
-          </tr>
-          <tr>
-            <td>Resource Paging</td>
-            <td>MAY</td>
-            <td>OSLC services MAY provide paging for resources but only when specifically requested by client</td>
-          </tr>
-          <tr>
-            <td>Partial Resource Representations</td>
-            <td>MAY / MUST</td>
-            <td>OSLC services MUST support request for a subset of a resource&#8217;s properties via the oslc.properties URL
-              parameter retrieval via HTTP GET and MAY support via HTTP PUT</td>
-          </tr>
-          <tr>
-            <td>Partial Update</td>
-            <td>MAY</td>
-            <td>OSLC services MAY support partial update of resources using patch semantics</td>
-          </tr>
-          <tr>
-            <td>Service Provider Resources</td>
-            <td>MAY / MUST</td>
-            <td>OSLC service providers MAY provide a Service Provider Catalog and MUST provide a Service Provider resource</td>
-          </tr>
-          <tr>
-            <td>Creation Factories</td>
-            <td>MUST</td>
-            <td>OSLC service providers MUST provide creation factories to enable resource creation via HTTP POST</td>
-          </tr>
-          <tr>
-            <td>Query Capabilities</td>
-            <td>MUST</td>
-            <td>OSLC service providers MUST provide query capabilities to enable clients to query for resources</td>
-          </tr>
-          <tr>
-            <td>Query Syntax</td>
-            <td>MUST</td>
-            <td>OSLC query capabilities MUST support the OSLC Core Query Syntax and MAY use other query syntax</td>
-          </tr>
-          <tr>
-            <td>Delegated UI Dialogs</td>
-            <td>MUST</td>
-            <td>OSLC Services MUST offer delegated UI dialogs (creation and selections) specified via service provider resource</td>
-          </tr>
-          <tr>
-            <td>UI Preview</td>
-            <td>SHOULD</td>
-            <td>OSLC Services SHOULD offer UI previews for resources that may be referenced by other resources</td>
-          </tr>
-          <tr>
-            <td>HTTP Basic Authentication</td>
-            <td>MAY</td>
-            <td>OSLC Services MAY support Basic Auth and should do so only over HTTPS</td>
-          </tr>
-          <tr>
-            <td>OAuth Authentication</td>
-            <td>SHOULD</td>
-            <td>OSLC Services SHOULD support OAuth and can indicate the required OAuth URLs via the service provider resource</td>
-          </tr>
-          <tr>
-            <td>Error Responses</td>
-            <td>MAY</td>
-            <td>OSLC Services MAY provide error responses using Core defined error formats</td>
-          </tr>
-          <tr>
-            <td>RDF/XML Representations</td>
-            <td>MUST</td>
-            <td>OSLC services MUST provide an RDF/XML representation for HTTP GET requests and MUST support RDF/XML representations
-              on POST and PUT requests.</td>
-          </tr>
-          <tr>
-            <td>XML Representations</td>
-            <td>MAY</td>
-            <td>OSLC services MAY provide a XML representation for HTTP GET, POST and PUT requests that conform to the Core Guidelines
-              for XML.</td>
-          </tr>
-          <tr>
-            <td>JSON Representations</td>
-            <td>SHOULD</td>
-            <td>OSLC services SHOULD provide JSON representations for HTTP GET, POST and PUT requests that conform to the Core
-              Guidelines for JSON</td>
-          </tr>
-          <tr>
-            <td>HTML Representations</td>
-            <td>SHOULD</td>
-            <td>OSLC services SHOULD provide HTML representations for HTTP GET requests</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </section>
-
     <section id="versioning">
       <h3>Specification Versioning</h3>
 
@@ -774,31 +648,177 @@
 
   </section>
 
-  <section id='Version-Compatibility-with-1.0-Specifications'>
-    <h2>Version Compatibility with 1.0 Specifications</h2>
+  <section id="conformance">
+    <h3>Conformance</h3>
+    <p>This specification is based on [[!OSLCCore2]]. OSLC Asset Management 2.0 consumers and service providers MUST be compliant
+      with both the core specification and this Asset Management specification, and SHOULD follow all the guidelines and
+      recommendations in both these specifications.</p>
 
-    <p>The goal is to provide a smooth transition to 2.0 for both Consumers and Providers. This section will clarify the usage
-      of 1.0 media types so that Providers can support both 1.0 and 2.0 Consumers when HTTP requests are made for a resource
-      with the same URI.</p>
+    <p>The following table summarizes the requirements from OSLC Core Specification as well as some additional specific to Asset
+      Management. Note that this specification further restricts some of the requirements for OSLC Core Specification. See
+      further sections in this specification or the OSLC Core Specification to get further details on each of these requirements.
+    </p>
 
-    <section id='Media-Types'>
-      <h3>Media Types</h3>
-
-      <p>For an Asset Resource format identification of RDF/XML and XML, the media type used for this representation SHOULD
-        be
-        <code>application/rdf+xml</code> or
-        <code>application/xml</code>.</p>
-
-      <p>For an Asset Resource format identification of JSON, the media type used for this representation SHOULD be
-        <code>application/json</code>.</p>
-
-    </section>
+    <table border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+          <th>
+            <strong>Number</strong>
+          </th>
+          <th>
+            <strong>Requirement</strong>
+          </th>
+          <th>
+            <strong>Level</strong>
+          </th>
+          <th>
+            <strong>Meaning</strong>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Asset-1</td>
+          <td>Unknown properties and content</td>
+          <td>MAY / MUST</td>
+          <td>OSLC services MAY ignore unknown content and OSLC clients MUST preserve unknown content</td>
+        </tr>
+        <tr>
+          <td>Asset-2</td>
+          <td>Resource Operations</td>
+          <td>MUST</td>
+          <td>OSLC service MUST support resource operations via standard HTTP operations</td>
+        </tr>
+        <tr>
+          <td>Asset-3</td>
+          <td>Resource Paging</td>
+          <td>MAY</td>
+          <td>OSLC services MAY provide paging for resources but only when specifically requested by client</td>
+        </tr>
+        <tr>
+          <td>Asset-4</td>
+          <td>Partial Resource Representations</td>
+          <td>MAY / MUST</td>
+          <td>OSLC services MUST support request for a subset of a resource&#8217;s properties via the oslc.properties URL parameter
+            retrieval via HTTP GET and MAY support via HTTP PUT</td>
+        </tr>
+        <tr>
+          <td>Asset-5</td>
+          <td>Partial Update</td>
+          <td>MAY</td>
+          <td>OSLC services MAY support partial update of resources using patch semantics</td>
+        </tr>
+        <tr>
+          <td>Asset-6</td>
+          <td>Service Provider Resources</td>
+          <td>MAY / MUST</td>
+          <td>OSLC service providers MAY provide a Service Provider Catalog and MUST provide a Service Provider resource</td>
+        </tr>
+        <tr>
+          <td>Asset-7</td>
+          <td>Creation Factories</td>
+          <td>MUST</td>
+          <td>OSLC service providers MUST provide creation factories to enable resource creation via HTTP POST</td>
+        </tr>
+        <tr>
+          <td>Asset-8</td>
+          <td>Query Capabilities</td>
+          <td>MUST</td>
+          <td>OSLC service providers MUST provide query capabilities to enable clients to query for resources</td>
+        </tr>
+        <tr>
+          <td>Asset-9</td>
+          <td>Query Syntax</td>
+          <td>MUST</td>
+          <td>OSLC query capabilities MUST support the OSLC Core Query Syntax and MAY use other query syntax</td>
+        </tr>
+        <tr>
+          <td>Asset-10</td>
+          <td>Delegated UI Dialogs</td>
+          <td>MUST</td>
+          <td>OSLC Services MUST offer delegated UI dialogs (creation and selections) specified via service provider resource</td>
+        </tr>
+        <tr>
+          <td>Asset-11</td>
+          <td>UI Preview</td>
+          <td>SHOULD</td>
+          <td>OSLC Services SHOULD offer UI previews for resources that may be referenced by other resources</td>
+        </tr>
+        <tr>
+          <td>Asset-12</td>
+          <td>HTTP Basic Authentication</td>
+          <td>MAY</td>
+          <td>OSLC Services MAY support Basic Auth and should do so only over HTTPS</td>
+        </tr>
+        <tr>
+          <td>Asset-13</td>
+          <td>OAuth Authentication</td>
+          <td>SHOULD</td>
+          <td>OSLC Services SHOULD support OAuth and can indicate the required OAuth URLs via the service provider resource</td>
+        </tr>
+        <tr>
+          <td>Asset-14</td>
+          <td>Error Responses</td>
+          <td>MAY</td>
+          <td>OSLC Services MAY provide error responses using Core defined error formats</td>
+        </tr>
+        <tr>
+          <td>Asset-15</td>
+          <td>RDF/XML Representations</td>
+          <td>MUST</td>
+          <td>OSLC services MUST provide an RDF/XML representation for HTTP GET requests and MUST support RDF/XML representations
+            on POST and PUT requests.</td>
+        </tr>
+        <tr>
+          <td>Asset-16</td>
+          <td>XML Representations</td>
+          <td>MAY</td>
+          <td>OSLC services MAY provide a XML representation for HTTP GET, POST and PUT requests that conform to the Core Guidelines
+            for XML.</td>
+        </tr>
+        <tr>
+          <td>Asset-17</td>
+          <td>JSON Representations</td>
+          <td>SHOULD</td>
+          <td>OSLC services SHOULD provide JSON representations for HTTP GET, POST and PUT requests that conform to the Core
+            Guidelines for JSON</td>
+        </tr>
+        <tr>
+          <td>Asset-18</td>
+          <td>HTML Representations</td>
+          <td>SHOULD</td>
+          <td>OSLC services SHOULD provide HTML representations for HTTP GET requests</td>
+        </tr>
+      </tbody>
+    </table>
 
   </section>
 
   <section id="versionCompability" class="appendix">
-    <h2>Version Compatibility with 2.0 Specifications</h2>
-    <p></p>
+      <h2>Version Compatibility</h2>
+
+    <section id='Version-Compatibility-with-1.0-Specifications'>
+      <h3>Version Compatibility with 1.0 Specifications</h3>
+
+      <p>The goal is to provide a smooth transition to 2.0 for both Consumers and Providers. This section will clarify the usage
+        of 1.0 media types so that Providers can support both 1.0 and 2.0 Consumers when HTTP requests are made for a resource
+        with the same URI.</p>
+
+      <section id='Media-Types'>
+        <h4>Media Types</h4>
+
+        <p>For an Asset Resource format identification of RDF/XML and XML, the media type used for this representation SHOULD
+          be
+          <code>application/rdf+xml</code> or
+          <code>application/xml</code>.</p>
+
+        <p>For an Asset Resource format identification of JSON, the media type used for this representation SHOULD be
+          <code>application/json</code>.</p>
+
+      </section>
+
+    </section>
+
   </section>
 
   <section id='Appendix-A.3A-Samples' class="appendix informative">
