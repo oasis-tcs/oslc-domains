@@ -31,12 +31,12 @@
         dcterms:description      "The version of the asset. Possible values may include ‘1.0’, ‘2.0’, etc."^^rdf:XMLLiteral .
 
 <#creator>  a                    oslc:Property ;
-        oslc:Representation      oslc:Reference , oslc:Inline , oslc:Either ;
+        oslc:Representation      oslc:Either ;
         oslc:name                "creator" ;
         oslc:occurs              oslc:Zero-or-many ;
         oslc:propertyDefinition  dcterms:creator ;
         oslc:range               oslc:Any ;
-        oslc:valueType           oslc:Resource , oslc:LocalResource , oslc:Either ;
+        oslc:valueType           oslc:AnyResource ;
         dcterms:description      "Creator or creators of resource (reference: Dublin Core). It is likely that the target resource will be an  foaf:Person but that is not necessarily the case."^^rdf:XMLLiteral .
 
 <#subject>  a                    oslc:Property ;
@@ -115,12 +115,12 @@
         dcterms:description      "The resource type URIs. One reference should have the value of http://open-services.net/ns/asset#Artifact."^^rdf:XMLLiteral .
 
 <#state>  a                      oslc:Property ;
-        oslc:Representation      oslc:Inline , oslc:Either , oslc:Reference ;
+        oslc:Representation      oslc:Either ;
         oslc:name                "state" ;
         oslc:occurs              oslc:Zero-or-one ;
         oslc:propertyDefinition  oslc_asset:state ;
         oslc:range               oslc:Any ;
-        oslc:valueType           oslc:Resource , oslc:Either , oslc:LocalResource ;
+        oslc:valueType           oslc:AnyResource ;
         dcterms:description      "Used to indicate the state of the asset based on values defined by the service provider. This specification does not define the resource for this property, however it should contain a dcterms:title property."^^rdf:XMLLiteral .
 
 <#artifact>  a                   oslc:Property ;
@@ -191,21 +191,21 @@
         dcterms:description      "The media resource reference URI (the artifact bytes)."^^rdf:XMLLiteral .
 
 <#contributor>  a                oslc:Property ;
-        oslc:Representation      oslc:Either , oslc:Reference , oslc:Inline ;
+        oslc:Representation      oslc:Either ;
         oslc:name                "contributor" ;
         oslc:occurs              oslc:Zero-or-many ;
         oslc:propertyDefinition  dcterms:contributor ;
         oslc:range               oslc:Any ;
-        oslc:valueType           oslc:Either , oslc:Resource , oslc:LocalResource ;
+        oslc:valueType           oslc:AnyResource ;
         dcterms:description      "The person(s) who are responsible for this asset. (reference: Dublin Core). It is likely that the target resource will be a  foaf:Person but that is not necessarily the case."^^rdf:XMLLiteral .
 
 <#categorization>  a             oslc:Property ;
-        oslc:Representation      oslc:Either , oslc:Reference , oslc:Inline ;
+        oslc:Representation      oslc:Either ;
         oslc:name                "categorization" ;
         oslc:occurs              oslc:Zero-or-many ;
         oslc:propertyDefinition  oslc_asset:categorization ;
         oslc:range               oslc:Any ;
-        oslc:valueType           oslc:LocalResource , oslc:Resource , oslc:Either ;
+        oslc:valueType           oslc:AnyResource ;
         dcterms:description      "A categorization to classify an asset. The category schema values are defined by the service provider. This specification does not define the resource for this property, however it should contain a dcterms:title property."^^rdf:XMLLiteral .
 
 <#relation>  a                   oslc:Property ;
@@ -226,12 +226,12 @@
         dcterms:description      "The mime type of the artifact media resource."^^rdf:XMLLiteral .
 
 <#relationshipType>  a           oslc:Property ;
-        oslc:Representation      oslc:Either , oslc:Inline , oslc:Reference ;
+        oslc:Representation      oslc:Either ;
         oslc:name                "relationshipType" ;
         oslc:occurs              oslc:Zero-or-one ;
         oslc:propertyDefinition  oslc_asset:relationshipType ;
         oslc:range               oslc:Any ;
-        oslc:valueType           oslc:Resource , oslc:Either , oslc:LocalResource ;
+        oslc:valueType           oslc:AnyResource ;
         dcterms:description      "The type of this relationship from the perspective of the dcterms:relation resource based on values defined by the service provider. This specification does not define the resource for this property, however it should contain a dcterms:title property."^^rdf:XMLLiteral .
 
 <#title>  a                      oslc:Property ;
