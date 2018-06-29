@@ -87,11 +87,11 @@
       //    ],
       // Other parts of multi-part spec
       additionalArtifacts: [
-        { title: "OSLC Automation Version 2.1 Part 1: Specification (this document)", href: "http://docs.oasis-open.org/oslc-domains/domain-short-name/v2.1/csprd01/part1-domain-short-name/domain-short-name-v2.1-csprd01-part1-domain-name-spec.html" },
-        { title: "OSLC Automation Version 2.1 Part 2: Vocabulary", href: "http://docs.oasis-open.org/oslc-domains/domain-short-name/v2.1/csprd01/part2-domain-name-vocab/domain-short-name-v2.1-csprd01-part2-domain-name-vocab.html" },
+        { title: "OSLC Automation Version 2.1 Part 1: Specification (this document)", href: "http://docs.oasis-open.org/oslc-domains/oslc-auto/v2.1/csprd01/part1-automation/oslc-auto-v2.1-csprd01-part1-automation-spec.html" },
+        { title: "OSLC Automation Version 2.1 Part 2: Vocabulary", href: "http://docs.oasis-open.org/oslc-domains/oslc-auto/v2.1/csprd01/part2-automation/oslc-auto-v2.1-csprd01-part2-automation-vocab.html" },
       ],
       relatedWork: [
-        { title: "Open Services for Lifecycle Collaboration Automation Specification Version 2.1", href: "http://open-services.net/bin/view/Main/auto" }
+        { title: "Open Services for Lifecycle Collaboration Automation Specification Version 2.1", href: "http://open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.1/" }
       ],
       localBiblio: {
         "OSLCCore2": {
@@ -101,6 +101,76 @@
           status: "Finalized",
           publisher: "http://open-services.net",
         },
+        "OSLCCore2Actions": {
+          title: "OSLC Core 2.0 Actions",
+          href: "http://open-services.net/wiki/core/Actions-2.0/",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCCore2FutureActions": {
+          title: "OSLC Core 2.0 Future Actions",
+          href: "http://open-services.net/wiki/core/Exposing-arbitrary-actions-on-RDF-resources/#Future-actions",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCCore2InteractionPatterns": {
+          title: "OSLC Core 2.0 Interaction Patterns",
+          href: "http://open-services.net/wiki/core/Exposing-arbitrary-actions-on-RDF-resources/#Interaction-patterns",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCCore2RepresentationGuidance": {
+          title: "OSLC Core 2.0 - Representation Guidance",
+          href: "http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCCore2LinksGuidance": {
+          title: "OSLC Core 2.0 - Links Guidance",
+          href: "http://open-services.net/bin/view/Main/OslcCoreSpecAppendixLinks",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCCore2AppendixA": {
+          title: "OSLC Core Specification 2.0 - Appendix A",
+          href: "http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCCore2RDFXMLExamples": {
+          title: "OSLC Core Specification 2.0 - RDF/XML examples",
+          href: "http://open-services.net/bin/view/Main/OSLCCoreSpecRDFXMLExamples#Specifying_the_shape_of_a_query",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCAutomationScenarios": {
+          title: "OSLC Automation Scenarios v2.1",
+          href: "http://open-services.net/wiki/automation/Automation-Scenarios-v2.1/",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCAutomationTemporaryDeploymentScenarios": {
+          title: "OSLC Automation Temporary Deployment Scenarios",
+          href: "http://open-services.net/wiki/automation/Temporary-deployment-scenarios/",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCAutomationSamples": {
+          title: "OSLC Automation v2.1 - Samples",
+          href: "http://open-services.net/wiki/automation/OSLC-Automation-Version-2.1-Samples/",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        }, 
         "DublinCore1": {
           title: "Dublin Core Metadata Element Set, Version 1.1",
           href: "http://dublincore.org/documents/2010/10/11/dces/",
@@ -202,8 +272,20 @@
       <a href="http://open-services.net/wiki/automation/Automation-Scenarios">Automation Scenarios</a> page for examples from the build, test, deployment, and operations disciplines.
     </p>
 
+    <section id="iprPolicy">
+      <h2>IPR Policy</h2>
+      <p>
+        This Committee Specification Public Review Draft is being developed under the
+        <a href="https://www.oasis-open.org/policies-guidelines/ipr#RF-on-Limited-Mode">RF on Limited Terms</a> Mode of the
+        <a href="https://www.oasis-open.org/policies-guidelines/ipr">OASIS IPR Policy</a>, the mode chosen when the Technical Committee was established. For information on whether any
+        patents have been disclosed that may be essential to implementing this specification, and any offers of patent licensing
+        terms, please refer to the Intellectual Property Rights section of the TC’s web page (
+        <a href='https://www.oasis-open.org/committees/oslc-domains/ipr.php'>https://www.oasis-open.org/committees/oslc-domains/ipr.php</a>).
+      </p>
+    </section>
+
     <section id='terminology' class='informative'>
-      <h3>Terminology</h3>
+      <h2>Terminology</h2>
       <dl class="spaced">
         <dt>
           <dfn>Service Provider</dfn>
@@ -261,7 +343,7 @@
       <h3>Specification Versioning</h3>
 
       <p>See
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Specification_Versioning">OSLC Core Specification Versioning section</a>.</p>
+        [[!OSLCCore2]] Specification Versioning section.</p>
     </section>
 
     <section id="namespaces">
@@ -278,10 +360,10 @@
       <h3>Resource Formats</h3>
 
       <p>In addition to the requirements for
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#OSLC_Defined_Resource_Representa">OSLC Defined Resource Representations</a>, this section outlines further refinements and restrictions.</p>
+        [[!OSLCCore2]] Defined Resource Representations, this section outlines further refinements and restrictions.</p>
 
       <p>See
-        <a href="http://open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.1/#Automation_Service_Provider_HTTP">HTTP Method support table</a> for further clarification on support for HTTP methods and media types for each OSLC
+        <a href="#Automation_Service_Provider_HTTP">HTTP Method support table</a> for further clarification on support for HTTP methods and media types for each OSLC
         Automation resource.</p>
 
       <p>For HTTP GET requests on all OSLC Automation and OSLC Core defined resource types,</p>
@@ -289,19 +371,19 @@
       <ul>
         <li> Automation Providers MUST provide RDF/XML representations. The RDF/XML representation SHOULD follow the guidelines
           outlined in the
-          <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations#Guidelines_for_application_rdf_x">OSLC Core Representations Guidance for RDF/XML</a>.
+          [[!OSLCCore2RepresentationGuidance]] for RDF/XML.
         </li>
         <li> Automation Providers MAY provide XML and JSON representations. If provided, the XML and JSON representations SHOULD
           follow the guidelines outlined in the
-          <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.
+          [[!OSLCCore2RepresentationGuidance]].
         </li>
         <li> Automation Consumers requesting RDF/XML SHOULD be prepared for any valid RDF/XML document. Automation Consumers requesting
           XML SHOULD be prepared for representations that follow the guidelines outlined in the
-          <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.
+          [[!OSLCCore2RepresentationGuidance]].
         </li>
         <li>
           Automation Providers SHOULD support an [X]HTML representation and a user interface (UI) preview as defined by
-          <a href="http://open-services.net/bin/view/Main/OslcCoreUiPreview">UI Preview Guidance</a>.
+          [[!OSLCCore2RepresentationGuidance]].
         </li>
       </ul>
 
@@ -311,12 +393,12 @@
         <li>Automation Providers MUST accept RDF/XML representations and MAY accept XML representations. Automation Providers
           accepting RDF/XML SHOULD be prepared for any valid RDF/XML document. If XML is accepted, Automation Providers SHOULD
           be prepared for representations that follow the guidelines outlined in the
-          <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.
+          [[!OSLCCore2RepresentationGuidance]].
         </li>
         <li>
           Automation Providers MAY accept XML and JSON representations. Automation Providers accepting XML or JSON SHOULD be prepared
           for representations that follow the guidelines outlined in the
-          <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.
+          [[!OSLCCore2RepresentationGuidance]].
         </li>
       </ul>
 
@@ -330,10 +412,10 @@
         <li>
           <code>application/rdf+xml</code> Automation Providers MUST respond with RDF/XML representation without restrictions.</li>
         <code>application/xml</code> Automation Providers SHOULD respond with OSLC-defined abbreviated XML representation as defined in the
-        <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.</li>
+        [[!OSLCCore2RepresentationGuidance]].</li>
         <li>
           <code>application/atom+xml</code> Automation Providers SHOULD respond with Atom Syndication Format XML representation as defined in the
-          <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixRepresentations">OSLC Core Representations Guidance</a>.
+          [[!OSLCCore2RepresentationGuidance]].
         </li>
         <li>
           If supported, the Atom Syndication Format XML representation SHOULD use RDF/XML representation without restrictions for the
@@ -348,7 +430,7 @@
 
       <p>
         See
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Authentication">OSLC Core Authentication section</a>. OSLC Automation puts no additional constraints on authentication.
+        [[!OSLCCore2]] Authentication section. OSLC Automation puts no additional constraints on authentication.
       </p>
     </section>
 
@@ -356,7 +438,7 @@
       <h3>Error Responses</h3>
 
       <p>See
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Error_Responses">OSLC Core Error Responses section</a>. OSLC Automation puts no additional constraints on error responses.
+        [[!OSLCCore2]] Error Responses section. OSLC Automation puts no additional constraints on error responses.
       </p>
     </section>
 
@@ -377,7 +459,7 @@
         URI and the object resource URI, which are also candidates for presentation to a user.) To this end, OSLC providers
         MAY support a
         <code>dcterms:title</code> link property in Automation resource representations, using the anchor approach outlined in the
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecAppendixLinks">OSLC Core Links Guidance</a>.
+        [[!OSLCCore2LinksGuidance]].
       </p>
 
       <p>RDF/XML and XML example using reified statement:</p>
@@ -502,8 +584,8 @@
       <h3>Resource Shapes</h3>
 
       <p>OSLC Automation service providers MAY support
-        <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA#oslc_ResourceShape_Resource">Resource Shapes</a> as defined in
-        <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA">OSLC Core Specification Appendix A</a>
+        [[!OSLCCore2AppendixA]] Resource Shapes as defined in
+        [[!OSLCCore2AppendixA]]
       </p>
 
     </section>
@@ -512,14 +594,14 @@
       <h3>Service Provider Resource</h3>
 
       <p>OSLC Automation service providers MUST provide a
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Service Provider Resource</a> that can be retrieved at a implementation dependent URI.</p>
+        [[!OSLCCore2]] Service Provider Resource that can be retrieved at a implementation dependent URI.</p>
 
       <p>OSLC Automation service providers MAY provide a
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Service_Provider_Catalo">Service Provider Catalog Resource</a> that can be retrieved at a implementation dependent URI.</p>
+        [[!OSLCCore2]] Service Provider Catalog Resource that can be retrieved at a implementation dependent URI.</p>
 
       <p>It is RECOMMENDED that OSLC Automation service providers provide a
         <code>oslc:serviceProvider</code> property for their defined resources that will be the URI to a
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Service Provider Resource</a>.</p>
+        [[!OSLCCore2]] Service Provider Resource.</p>
 
     </section>
 
@@ -527,7 +609,7 @@
       <h3>Creation Factories</h3>
 
       <p>If an OSLC Automation service provider supports the creation of resources, there MUST be at least one
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Creation Factories</a> entry in the Services definition.</p>
+        [[!OSLCCore2]] Creation Factories entry in the Services definition.</p>
 
       <p>See
         <a href="#Automation_Service_Provider_HTTP">HTTP Method support table</a> for further clarification on support for HTTP methods and media types for each OSLC
@@ -566,7 +648,7 @@
 
       <p>If shape information is NOT present with the Query Capability, service providers SHOULD use the default properties
         defined in
-        <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecRDFXMLExamples#Specifying_the_shape_of_a_query">OSLC Core RDF/XML Examples</a> to contain the result.</p>
+        [[!OSLCCore2RDFXMLExamples]] to contain the result.</p>
 
       <section id='Selective-Property-Values'>
         <h4>Selective Property Values</h4>
@@ -581,7 +663,7 @@
       <h3>Delegated UIs</h3>
 
       <p>OSLC Automation service providers support the selection and creation of Automation resources as defined by
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">Delegated UIs</a> in OSLC Core.</p>
+        [[!OSLCCore2]] Delegated UIs in OSLC Core.</p>
 
       <p>The service providers supports requirements for delegated UIs is as follows:</p>
 
@@ -655,18 +737,18 @@
         <h4>Deferred-Execution Creation Dialog</h4>
 
         <p>A Deferred-Execution Creation Dialog is a
-          <a href="/bin/view/Main/OslcCoreSpecification#Resource_Creation_in_a_dd">resource creation delegated user interface dialog</a> that creates an Automation Request but
+          [[!OSLCCore2]] resource creation delegated user interface dialog that creates an Automation Request but
           <strong>does not</strong> make it eligible for execution. A deferred-execution creation dialog MUST comply with all Core
           requirements on
-          <a href="/bin/view/Main/OslcCoreSpecification#Resource_Creation_in_a_dd">resource creation delegated user interface dialogs</a>. One important consequence of this is that all facilities
+          [[!OSLCCore2]] resource creation delegated user interface dialogs. One important consequence of this is that all facilities
           available on resource creation delegated user interface dialogs, for example
-          <a href="/bin/view/Main/OslcCoreSpecification#Prefilling_Creation_Dialogs">pre-filling</a>, apply equally to deferred-execution creation dialogs.</p>
+          [[!OSLCCore2]] pre-filling, apply equally to deferred-execution creation dialogs.</p>
 
         <blockquote>
           <p>Non-normative note: The Automation 2.0 specification only provided a standard way to create Automation Requests
             that are eligible for execution once they are created; Automation 2.1 adds deferred-execution creation dialogs
             to allow creation without execution eligibility in a standard way. This meets
-            <a href="/wiki/automation/Automation-Scenarios-v2.1/">Automation 2.1&#8217;s template scenarios</a>, while retaining compatibility with Automation 2.0 clients by keeping
+            [[!OSLCAutomationScenarios]] template scenarios, while retaining compatibility with Automation 2.0 clients by keeping
             the behavior of
             <code>oslc:creationDialog</code> resources unchanged from 2.0.</p>
         </blockquote>
@@ -677,7 +759,7 @@
           <code>oslc_auto:DeferredExecution</code>) to allow clients to discover deferred-execution creation dialogs that an Automation provider supplies, amongst
           any other dialogs in their
           <code>oslc:Service</code> resources, as shown in
-          <a href="/wiki/automation/OSLC-Automation-Version-2.1-Samples/#immediate-and-deferred-dialog-provider">this example</a>. The corresponding resource shape is shown
+          [[!OSLCAutomationSamples]] immediate and deferred dialog provider. The corresponding resource shape is shown
           <a href="#Resource.3A-Dialog">in an earlier section</a>.</p>
 
         <p>One anticipated usage of deferred execution dialogs is to create
@@ -686,7 +768,7 @@
           the copy is used at future point(s) in time as pre-fill input to a standard 2.0 Automation Request creation factory
           or dialog. &#8220;Template&#8221; in this context refers to the client&#8217;s usage of the
           <code>AutomationRequest</code> resource, rather than implying anything about its content (see also the section in
-          <a href="/wiki/core/Actions-2.0/">Core Actions</a>). Clients typically store templates as opaque representations; this specification does nothing
+          [[!OSLCCore2Actions]]). Clients typically store templates as opaque representations; this specification does nothing
           to force or discourage any particular behavior.</p>
 
         <p>Any
@@ -711,7 +793,7 @@
           <ul>
             <li>
               <p>Provide it as input to a standard (immediately execution-eligible) Automation
-                <a href="/bin/view/Main/OslcCoreSpecification#Creation_Factories">creation factory</a>.</p>
+                [[!OSLCCore2]] creation factory.</p>
             </li>
             <li>
               <p>Provide it as input to a standard (immediately execution-eligible) Automation creation dialog that supports
@@ -754,7 +836,7 @@
             dialog using one or more
             <code>oslc:binding</code> properties on the
             <code>oslc_auto:DeferredExecution</code> dialog resource. If the deferred-execution dialog is discoverable from a Service in a
-            <a href="/bin/view/Main/OslcCoreSpecification#Service_Provider_Resources">Service Provider</a>, then the provider MUST supply at least one immediate-execution binding whose target uses
+            [[!OSLCCore2]] Service Provider, then the provider MUST supply at least one immediate-execution binding whose target uses
             the
             <a href="#pattern-autoreq-creation-factory">Automation creation factory interaction pattern</a>. If multiple
             <code>oslc:binding</code> properties are present, they MUST be equivalent alternatives to each other, as defined by Core Actions.</p>
@@ -763,13 +845,13 @@
             it uses one of the
             <code>oslc:binding</code> properties on the deferred-execution dialog to immediately execute the action (often, by creating a new Automation
             Request with a different URI). The consumer does this by following the selected
-            <a href="/wiki/core/Actions-2.0/">binding&#8217;s instructions</a>; its interaction pattern might be
+            [[!OSLCCore2Actions]] binding&#8217;s instructions</a>; its interaction pattern might be
             <a href="#OSLC-Automation-Actions-interaction-patterns">defined by this specification</a>, or might be defined by another specification. A consumer chooses which
             <code>oslc:binding</code> value to use based on which interaction patterns it understands. If there are no
             <code>oslc:binding</code> values whose interaction patterns are understood by the consumer then the Automation Request acting as a template
             cannot be used by this consumer and the consumer SHOULD indicate this to the user instead of allowing them to
             use the deferred-execution dialog. A
-            <a href="/wiki/automation/OSLC-Automation-Version-2.1-Samples/#deferred-execution-binding1">full example</a> is available in the
+            [[!OSLCAutomationSamples]] deferred execution binding1 full example is available in the
             <a href="#Appendix-A.3A-Samples">companion Samples document</a>.</p>
 
         </section>
@@ -888,7 +970,7 @@
 
         <p>For information on how to discover currently-available actions on resources and how to choose which binding to use
           for execution, see the
-          <a href="/wiki/core/Actions-2.0/">OSLC Actions 2.0 specification</a>.</p>
+          [[!OSLCCore2Actions]].</p>
       </section>
 
       <section id='Discovering-actions-that-will-be-executable-after-an-Automation-Request-completes'>
@@ -911,7 +993,7 @@
             prefer such Automation Plans over otherwise equivalent ones that lack the ability to automate cleanup after themselves,
             so in fact it can be useful to know about future actions when selecting a Plan, before any Automation Request
             has even been created. Note:
-            <a href="/wiki/core/Exposing-arbitrary-actions-on-RDF-resources/#Future-actions">Core Actions</a> mentions other uses of future actions.</p>
+            [[!OSLCCore2FutureActions]] mentions other uses of future actions.</p>
 
           <p>To enable cases like these, providers MAY link to
             <em>future actions</em> using the
@@ -952,7 +1034,7 @@
           </p>
 
           <p>See the
-            <a href="/wiki/automation/Temporary-deployment-scenarios/">Temporary deployment scenarios</a> for a worked example of future actions.</p>
+            [[!OSLCAutomationTemporaryDeploymentScenarios]] for a worked example of future actions.</p>
 
         </section>
 
@@ -1038,16 +1120,16 @@
       <h3>Automation Request interaction pattern</h3>
 
       <p>This interaction pattern is defined by the
-        <a href="http://open-services.net/wiki/core/Actions-2.0/">OSLC Actions 2.0 specification</a> (for reuse by other domain specifications).</p>
+        [[!OSLCCore2Actions]] (for reuse by other domain specifications).</p>
     </section>
 
     <section id='pattern-autoreq-creation-factory'>
       <h3>Automation Creation Factory interaction pattern</h3>
 
       <p>This section defines how to use an
-        <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">OSLC Core Creation Factory</a>
+        [[!OSLCCore2]] Creation Factory
         <strong>that creates OSLC Automation Requests eligible for immediate execution</strong> as an
-        <a href="http://open-services.net/wiki/core/Actions-2.0/">Actions 2.0</a> interaction pattern.</p>
+        [[!OSLCCore2Actions]] interaction pattern.</p>
 
       <section id='Pattern-recognition-rule'>
         <h4>Pattern recognition rule</h4>
@@ -1081,7 +1163,7 @@
         <h4>Additional provider constraints</h4>
 
         <p>The binding MUST adhere to the requirements on Creation Factories as defined by the
-          <a href="/bin/view/Main/OslcCoreSpecification#Creation_Factories">OSLC Core 2.0 specification</a>.</p>
+          [[!OSLCCore2]].</p>
 
         <blockquote>
           <p>Non-normative note: it is useful to specify
@@ -1096,7 +1178,7 @@
         <h4>Execution</h4>
 
         <p>To execute an action using this interaction pattern, a consumer follows the instructions for
-          <a href="/bin/view/Main/OslcCoreSpecification#Creating_an_OSLC_Defined_Resourc">Creating an OSLC Defined Resource</a> in the OSLC Core 2.0 specification.</p>
+          [[!OSLCCore2]] Creating an OSLC Defined Resource in the OSLC Core 2.0 specification.</p>
 
         <p>This interaction pattern does not define how the consumer forms the representation that is sent to the creation factory
           in the create request. If a consumer does not know how to construct or locate such a representation, then it MUST
@@ -1109,7 +1191,7 @@
           status codes.
           <a href="#Asynchronous-and-Synchronous-Automation-Execution">Automation permits both</a>
           single-message and multiple-message interactions, but the client MUST use the state and verdict for determining the
-          <a href="/wiki/core/Exposing-arbitrary-actions-on-RDF-resources/#Interaction-patterns">status of the client&#8217;s goal</a> when the HTTP status codes indicate that the creation was successful.
+          [[!OSLCCore2InteractionPatterns]] status of the client&#8217;s goal when the HTTP status codes indicate that the creation was successful.
           </font>
         </p>
       </section>
@@ -1121,7 +1203,7 @@
 
       <p>This section defines the
         <a href="#Deferred-Execution-Creation-Dialog">Deferred-Execution Creation Dialog</a> interaction pattern as an
-        <a href="/wiki/core/Actions-2.0/">Actions 2.0</a> interaction pattern designed to address scheduling scenarios. This interaction pattern consists of
+        [[!OSLCCore2Actions]] interaction pattern designed to address scheduling scenarios. This interaction pattern consists of
         the following stages:</p>
 
       <ol>
@@ -1202,7 +1284,7 @@
 
             <ol>
               <li>The consumer follows the requirements in the
-                <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Delegated_User_Interface_Dialogs">OSLC Core Delegated UI specification</a> to display the deferred-execution creation dialog (recall that deferred-execution
+                [[!OSLCCore2]] Delegated UI specification to display the deferred-execution creation dialog (recall that deferred-execution
                 creation dialogs are also standard creation dialogs). The dialog will either return a URI or an error code,
                 which gives the client the status of this phase of its goal.</li>
               <li>If the dialog returns a URI, then the consumer performs an HTTP GET request on that URI immediately and stores
@@ -1260,16 +1342,16 @@
 
         <ul>
           <li>
-            <a href="/wiki/core/Actions-2.0/#pattern-resource-shape">HTTP request with Resource Shape to describe the request body</a>
+            [[!OSLCCore2Actions]] HTTP request with Resource Shape to describe the request body</a>
           </li>
           <li>
-            <a href="/wiki/core/Actions-2.0/#pattern-body-repn">HTTP request with fixed body</a>
+            [[!OSLCCore2Actions]] HTTP request with fixed body</a>
           </li>
           <li>
-            <a href="/wiki/core/Actions-2.0/#pattern-autoreq">Automation Request</a>
+            [[!OSLCCore2Actions]] Automation Request</a>
           </li>
           <li>
-            <a href="/wiki/core/Actions-2.0/#pattern-immed-dialog">Delegated UI dialog for immediate execution</a>
+            [[!OSLCCore2Actions]] Delegated UI dialog for immediate execution</a>
           </li>
           <li>
             <a href="#pattern-autoreq-creation-factory">Automation Creation Factory</a>
@@ -1283,7 +1365,7 @@
 
         <ul>
           <li>
-            <a href="http://open-services.net/wiki/core/Actions-2.0/#pattern-empty-body">HTTP request with empty body</a> cannot be used because there is no conceptual input representation slot.</li>
+            [[!OSLCCore2Actions]] HTTP request with empty body</a> cannot be used because there is no conceptual input representation slot.</li>
           <li>
             <a href="#Template-Dialog-interaction-pattern">Deferred execution dialog interaction pattern</a> cannot be used because execution is deferred.</li>
         </ul>
@@ -1616,8 +1698,8 @@
       <h3>Canceling the execution of an automation request</h3>
 
       <p>The
-        <a href="#Resource_AutomationRequest">Automation Request</a> and
-        <a href="#Resource_AutomationResult">Automation Result</a> resources have an
+        <a href="http://docs.oasis-open.org/oslc-domains/oslc-auto/v2.1/csprd01/part2-automation/oslc-auto-v2.1-csprd01-part2-automation-vocab.html#Resource_AutomationRequest">Automation Request</a> and
+        <a href="http://docs.oasis-open.org/oslc-domains/oslc-auto/v2.1/csprd01/part2-automation/oslc-auto-v2.1-csprd01-part2-automation-vocab.html#Resource_AutomationResult">Automation Result</a> resources have an
         <code>oslc_auto:desiredState</code> attribute. A consumer can indicate a desire to cancel the execution of an automation by doing a PUT to the artifact
         with this attribute set to a value of
         <code>http://open-services.net/ns/auto#canceled</code>. If the service provider supports cancelation of automation executions, the receipt of a PUT with this attribute
@@ -1648,8 +1730,7 @@
 
         <p>If a service provider does not support cancelation of an automation, or if an error occurs preventing successful
           cancelation, the service provider should respond to the PUT request with an HTTP status code 500 and an
-          <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Error_Responses">
-            OSLC Error Resource </a> detailing the cause for the failed cancelation.</p>
+          [[!OSLCCore2]] Error Resource detailing the cause for the failed cancelation.</p>
 
       </section>
 
@@ -1659,8 +1740,8 @@
       <h3>State consistency</h3>
 
       <p>The
-        <a href="#Resource_AutomationRequest">Automation Request</a> and
-        <a href="#Resource_AutomationResult">Automation Result</a> resources have an
+        <a href="http://docs.oasis-open.org/oslc-domains/oslc-auto/v2.1/csprd01/part2-automation/oslc-auto-v2.1-csprd01-part2-automation-vocab.html#Resource_AutomationRequest">Automation Request</a> and
+        <a href="http://docs.oasis-open.org/oslc-domains/oslc-auto/v2.1/csprd01/part2-automation/oslc-auto-v2.1-csprd01-part2-automation-vocab.html#Resource_AutomationResult">Automation Result</a> resources have an
         <code>oslc_auto:state</code> attribute. Automation service providers should, where possible, enforce state consistency for related Automation
         Requests and Results. In general, this means an Automation Result in a final state (completed, canceled) should not
         have a related Automation Request in a non-final state. Other contradictions such as completed Automation Result

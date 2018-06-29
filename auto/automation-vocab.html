@@ -85,16 +85,23 @@
       //    ],
       // Other parts of multi-part spec
       additionalArtifacts: [
-        { title: "OSLC Automation Version 2.1 Part 1: Specification", href: "http://docs.oasis-open.org/oslc-domains/domain-short-name/v2.1/csprd01/part1-domain-short-name/domain-short-name-v2.1-csprd01-part1-domain-name-spec.html" },
-        { title: "OSLC Automation Version 2.1 Part 2: Vocabulary (this document)", href: "http://docs.oasis-open.org/oslc-domains/domain-short-name/v2.1/csprd01/part2-domain-name-vocab/domain-short-name-v2.1-csprd01-part2-domain-name-vocab.html" },
+        { title: "OSLC Automation Version 2.1 Part 1: Specification", href: "http://docs.oasis-open.org/oslc-domains/oslc-auto/v2.1/csprd01/part1-automation/oslc-auto-v2.1-csprd01-part1-automation-spec.html" },
+        { title: "OSLC Automation Version 2.1 Part 2: Vocabulary (this document)", href: "http://docs.oasis-open.org/oslc-domains/oslc-auto/v2.1/csprd01/part2-automation/oslc-auto-v2.1-csprd01-part2-automation-vocab.html" },
       ],
       relatedWork: [
-        { title: "Open Services for Lifecycle Collaboration Automation Specification Version 2.1", href: "http://open-services.net/bin/view/Main/auto" }
+        { title: "Open Services for Lifecycle Collaboration Automation Specification Version 2.1", href: "http://open-services.net/wiki/automation/OSLC-Automation-Specification-Version-2.1/" }
       ],
       localBiblio: {
         "OSLCCore2": {
           title: "OSLC Core Specification 2.0",
           href: "http://open-services.net/bin/view/Main/OslcCoreSpecification",
+          authors: ["S. Speicher", "D. Johnson"],
+          status: "Finalized",
+          publisher: "http://open-services.net",
+        },
+        "OSLCCore2AppendixA": {
+          title: "OSLC Core Specification 2.0 - Appendix A",
+          href: "http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA",
           authors: ["S. Speicher", "D. Johnson"],
           status: "Finalized",
           publisher: "http://open-services.net",
@@ -265,8 +272,7 @@
       use the namespaces defined in this specification.</p>
 
     <p>A list of properties is defined for each type of resource. Most of these properties are identified in
-      <a href="http://open-services.net/bin/view/Main/OSLCCoreSpecAppendixA">
-        OSLC Core Appendix A: Common Properties</a>. Any exceptions are noted. Relationship properties refer to other resources.
+      [[!OSLCCore2AppendixA]] Any exceptions are noted. Relationship properties refer to other resources.
       These resources may be in any OSLC domain (including Automation).</p>
 
     <p>The diagram below shows the relationships between Automation Resources.</p>
@@ -285,15 +291,15 @@
 
     <p>If no specific set of properties is requested, all properties are returned - both those defined in this specification
       as well as any provider-specific ones. See
-      <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Selective_Property_Values">Selective Property Values</a> in OSLC Core Specification.</p>
+      [[!OSLCCore2]] Selective Property Values in OSLC Core Specification.</p>
 
     <p>Consumers of OSLC Automation services should note that some resources may have a very large number of related resources,
       and that some resources may be very large and/or expensive to compute. For this reason, consumers are strongly encouraged
       to use the
       <code>oslc.properties</code> parameter to limit the properties returned from a request to the subset required. See
-      <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Selective_Property_Values">Selective Property Values</a> in OSLC Core Specification.</p>
+      [[!OSLCCore2]] Selective Property Values in OSLC Core Specification.</p>
 
-    <section id="automation-plan">
+    <section id="Resource_AutomationPlan">
       <h3>Resource: AutomationPlan</h3>
 
       <div title='Shape for oslc_auto:AutomationPlan' data-include='./automation-shapes.ttl#tb-AutomationPlan' data-oninclude='shapeToSpec'
@@ -301,7 +307,7 @@
 
     </section>
 
-    <section id="automation-request">
+    <section id="Resource_AutomationRequest">
       <h3>Resource: AutomationRequest</h3>
 
       <div title='Shape for oslc_auto:AutomationRequest' data-include='./automation-shapes.ttl#tb-AutomationRequest' data-oninclude='shapeToSpec'
@@ -309,7 +315,7 @@
 
     </section>
 
-    <section id="automation-result">
+    <section id="Resource_AutomationResult">
       <h3>Resource: AutomationResult</h3>
 
       <div title='Shape for oslc_auto:AutomationResult' data-include='./automation-shapes.ttl#tb-AutomationResult' data-oninclude='shapeToSpec'
@@ -325,7 +331,7 @@
 
     </section>
 
-    <section id="dialog">
+    <section id="Resource_Dialog">
       <h3>Resource: Dialog</h3>
 
       <div title='Shape for oslc:Dialog' data-include='./automation-shapes.ttl#tb-Dialog' data-oninclude='shapeToSpec'
