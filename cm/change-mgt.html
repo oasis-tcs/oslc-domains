@@ -125,6 +125,12 @@
           status:   "Draft",
           publisher:  "OASIS",
       },
+       "OSLCShapes": {
+        title : "OSLC Resource Shape 3.0",
+        href : "http://docs.oasis-open.org/oslc-core/oslc-core/v3.0/oslc-core-v3.0-part6-resource-shape.html",
+        authors : [ "Arthur Ryman", "Jim Amsden" ],
+        publisher : "OASIS",
+      },
       "OSLCCM20" : {
           title:    "Open Services for Lifecycle Collaboration Change Management Specification Version 2.0",
           href:     "http://open-services.net/bin/view/Main/CmSpecificationV2",
@@ -424,7 +430,7 @@ application logic.</p>
 
 <section id='termsAndConstraints'>
   <h2>Vocabulary Terms and Constraints</h2>
-  <p><a href="change-mgt-vocab.html">OSLC Change Management Resources 3.0</a>
+  <p><a href="http://docs.oasis-open.org/oslc-domains/cm/v3.0/cm-v3.0-part2-change-mgt-vocab.html">OSLC Change Management Version 3.0. Part 2: Vocabulary</a>
     Defines the vocabulary terms and constraints for OSLC Change Management resources.
     These terms and constraints are specified according to [[!OSLCCoreVocab]].</p>
 </section>
@@ -451,13 +457,13 @@ application logic.</p>
 <section id="creationfactories">
 <h3>Creation Factories</h3>
 
-<p>OSLC CM servers MUST support <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Creation Factories</a> and list them in the Service Provider Resource as defined by OSLC Core. OSLC CM servers SHOULD support <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">Resource Shapes for Creation Factories</a> as defined in <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">OSLC Core Specification</a></p>
+<p>OSLC CM servers MUST support <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Creation_Factories">Creation Factories</a> and list them in the Service Provider Resource as defined by OSLC Core. OSLC CM servers SHOULD support Resource Shapes for Creation Factories as defined in [[!OSLCShapes]]</p>
 </section>
 
 <section id="querycapabilities">
 <h3 id="querycapabilities">Query Capabilities</h3>
 
-<p>OSLC CM servers SHOULD support the <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Query Capabilities</a> as defined by [[!OSLCCore3]]. OSLC CM servers SHOULD support <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">Resource Shapes for Query Capability</a> as defined in <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Resource_Shapes">OSLC Core Specification</a></p>
+<p>OSLC CM servers SHOULD support the <a href="http://open-services.net/bin/view/Main/OslcCoreSpecification#Query_Capabilities">Query Capabilities</a> as defined by [[!OSLCCore3]]. OSLC CM servers SHOULD support Resource Shapes for Query Capability as defined in [[!OSLCShapes]]</p>
 
 <p>The Query Capability, if supported, MUST support these parameters:</p>
 
