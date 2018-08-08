@@ -4,7 +4,7 @@
 <!-- replace qm with your domains's short name, e.g., cm -->
 <head>
 <meta charset='utf-8'/>
-<title>OSLC Quality Management Version 3.0. Part 2: Vocabulary</title>
+<title>OSLC Quality Management Version 2.1. Part 2: Vocabulary</title>
 <link rel="stylesheet" type="text/css" href="../styles/oslc-styles.css" />
 <link rel="stylesheet" type="text/css" href="../styles/table-styles.css" />
 <link rel="stylesheet" type="text/css" href="../styles/definition-styles.css" />
@@ -13,8 +13,8 @@
   var respecConfig = {
     // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
     specStatus: "CSD",
-    thisVersion : "http://docs.oasis-open.org/oslc-domains/qm/v3.0/csprd01/part2-quality-management-vocab/qm-v3.0-csprd01-part2-quality-management-vocab.html",
-    latestVersion : "http://docs.oasis-open.org/oslc-domains/qm/v3.0/qm-v3.0-part2-quality-management-vocab.html",
+    thisVersion : "http://docs.oasis-open.org/oslc-domains/qm/v2.1/csprd01/part2-quality-management-vocab/qm-v2.1-csprd01-part2-quality-management-vocab.html",
+    latestVersion : "http://docs.oasis-open.org/oslc-domains/qm/v2.1/qm-v2.1-part2-quality-management-vocab.html",
     prevVersion : "N/A",
 
     // the specification's short name, as in http://www.w3.org/TR/short-name/
@@ -24,7 +24,7 @@
     revision: "01",
 
     // the document's citation label
-    citationLabel: "OSLC-qm-3.0-Part2",
+    citationLabel: "OSLC-qm-2.1-Part2",
 
     // if your specification has a subtitle that goes below the main
     // formal title, define it here
@@ -56,7 +56,7 @@
       company: "IBM",
       companyURL: "http://www.ibm.com/"
     }, {
-      name : "Graham Bachelor",
+      name : "Gray Bachelor",
       mailto: "gray_bachelor@uk.ibm.com",
       company: "IBM",
       companyURL: "http://www.ibm.com"
@@ -102,18 +102,18 @@
     // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
 
     namespaces : [ {
-            href : "http://open-services.net/ns/cm#",
+            href : "http://open-services.net/ns/qm#",
             prefix : "oslc"
     } ],
 
     // Other parts of multi-part spec
     additionalArtifacts : [
-      { title: "OSLC quality-management Version 3.0. Part 1: Specification", href: "http://docs.oasis-open.org/oslc-domains/qm/v3.0/csprd01/part1-quality-management/qm-v3.0-csprd01-part1-quality-management.html" },
-      { title: "OSLC quality-management Version 3.0. Part 2: Vocabulary (this document)", href: "http://docs.oasis-open.org/oslc-domains/qm/v3.0/csprd01/part2-quality-management-vocab/qm-v3.0-csprd01-part2-quality-management-vocab.html" },
+      { title: "OSLC Quality Management Version 2.1. Part 1: Specification", href: "http://docs.oasis-open.org/oslc-domains/qm/v2.1/csprd01/part1-quality-management/qm-v2.1-csprd01-part1-quality-management.html" },
+      { title: "OSLC Quality Management Version 2.1. Part 2: Vocabulary (this document)", href: "http://docs.oasis-open.org/oslc-domains/qm/v2.1/csprd01/part2-quality-management-vocab/qm-v2.1-csprd01-part2-quality-management-vocab.html" },
     ],
 
     relatedWork : [
-      { title: "Open Services for Lifecycle Collaboration quality-management Specification Version 2.0", href: "http://open-services.net/bin/view/Main/CmSpecificationV2" }
+      { title: "Open Services for Lifecycle Collaboration Quality Management Specification Version 2.0", href: "http://open-services.net/bin/view/Main/QmSpecificationV2" }
     ],
 
     localBiblio:  {
@@ -123,6 +123,13 @@
           authors:  ["Martin Pain", "Steve Speicher"],
           status:   "Finalization",
           publisher:  "http://open-services.net"
+      },
+	  "OSLCCM": {
+          title:    "Open Services for Lifecycle Collaboration Change Management Specification Version 2.0",
+          href:     "http://open-services.net/bin/view/Main/CmSpecificationV2",
+          authors:  ["Steve Speicher"],
+          status:   "Final",
+          publisher:  "http://open-services.net",
       },
       "OSLCRM": {
           title:    "Open Services for Lifecycle Collaboration Requirements Management Specification Version 2.0",
@@ -151,7 +158,7 @@
 </head>
 <body>
 <section id="abstract">
-<p>This specification defines a vocabulary and resource shapes for the quality-management domain.</p>
+<p>This specification defines a vocabulary and resource shapes for the quality management domain.</p>
 </section>
 
   <section id='toc'></section>
@@ -161,19 +168,19 @@
 <section id="introduction" class="informative">
 <h2>Introduction</h2>
 
-<p>This specification defines a vocabulary and resource shapes for common
-    quality-management resources. The intent is to define resources needed to
+<p>This specification defines a vocabulary and resource shapes for OSLC
+    Quality Management resources. The intent is to define resources needed to
     support common integration scenarios and not to provide a comprehensive
-    definition of a Change Request. The resource formats may not match exactly
-    the native models supported by change management service providers, but are
+    definition of quality management artefacts. The resource formats may not match exactly
+    the native models supported by quality management service providers, but are
     intended to be compatible with them. The approach to supporting these
     scenarios is to delegate operations, as driven by service provider
     contributed user interfaces, as much as possible and not require a service
     provider to expose its complete data model and application logic.</p>
 
 <figure>
-  <img src="OSLCV3_CM.png" />
-  <figcaption>OSLC quality-management 3.0 Overview</figcaption>
+  <img src="oslc_qm_resources.png" />
+  <figcaption>OSLC Quality Management 2.1 resource relationship overview</figcaption>
 </figure>
 
 
@@ -200,17 +207,17 @@
 <p>This specification also uses these namespace prefix definitions:</p>
 
 <ul>
+<li>oslc_cm : <code>http://open-services.net/ns/cm#</code> [[OSLCCM]]</li>
 <li>oslc_rm : <code>http://open-services.net/ns/rm#</code> [[OSLCRM]]</li>
-<li>oslc_qm : <code>http://open-services.net/ns/qm#</code> [[OSLCQM]]</li>
 </ul>
 </section>
 
 </section>
 
 <section id="qmVocab">
-  <h2>quality-management Vocabulary Terms</h2>
+  <h2>Quality Management Vocabulary Terms</h2>
   <p>This specification defines the **root** superclass, and a number of specific, commonly occurring subclasses, properties and values. Servers may define additional **root** subclasses and provide additional properties as needed.</p>
-    <div title='RDF Vocabulary for OSLC quality-management Domain'
+    <div title='RDF Vocabulary for OSLC Quality Management Domain'
         data-include='./quality-management-vocab.ttl'
         data-oninclude='vocabToSpec'
         data-include-sync='true' 
@@ -222,7 +229,7 @@
 
 
 <section id="resourceDefinitions">
-<h2>quality-management Resource Constraints</h2>
+<h2>Quality Management Resource Constraints</h2>
 
 <section id="testplan">
 <h3 id="resource_testplan">Resource: TestPlan</h3>
@@ -310,6 +317,12 @@
   <td>07/06/2016</td>
   <td>Jim Amsden</td>
   <td>Initial CSPRD01</td>
+ </tr>
+ <tr>
+  <td>02</td>
+  <td>08/08/2018</td>
+  <td>Gray Bachelor</td>
+  <td>Minor edits and checks for V2.1</td>
  </tr>
 </table>
 </section>
