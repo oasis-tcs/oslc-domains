@@ -158,7 +158,7 @@
 </head>
 <body>
 <section id="abstract">
-<p>This specification defines a vocabulary and resource shapes for the quality management domain.</p>
+<p>This specification defines a vocabulary and resource shapes for the OSLC Quality Management (QM) domain.</p>
 </section>
 
   <section id='toc'></section>
@@ -176,7 +176,7 @@
     intended to be compatible with them. The approach to supporting these
     scenarios is to delegate operations, as driven by service provider
     contributed user interfaces, as much as possible and not require a service
-    provider to expose its complete data model and application logic.</p>
+    provider to expose its complete data model and application logic. The diagram below shows the relationships between QM Resources.</p>
 
 <figure>
   <img src="oslc_qm_resources.png" />
@@ -190,6 +190,7 @@
 <p>Terminology is based on OSLC Core Overview [[!OSLCCore3]], W3C Linked Data
     Platform [[!LDP]], W3C's Architecture of the World Wide Web [[WEBARCH]],
     Hyper-text Transfer Protocol [[!HTTP11]].</p>
+<p>Terminology for this specification is defined in part 1 of the multi-part specification.</p>
 <!--
 <dl>
     <dt class='loc-heading'>Term-xxx</dt>
@@ -216,7 +217,7 @@
 
 <section id="qmVocab">
   <h2>Quality Management Vocabulary Terms</h2>
-  <p>This specification defines the **root** superclass, and a number of specific, commonly occurring subclasses, properties and values. Servers may define additional **root** subclasses and provide additional properties as needed.</p>
+  <p>This specification defines the **root** superclass, properties and values. Servers may define additional subclasses and provide additional properties as needed.</p>
     <div title='RDF Vocabulary for OSLC Quality Management Domain'
         data-include='./quality-management-vocab.ttl'
         data-oninclude='vocabToSpec'
