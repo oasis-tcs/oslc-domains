@@ -249,7 +249,7 @@ formats.</p>
 
 <section id='intro' class='informative'>
   <h2>Introduction</h2>
-  <p>This specification builds on the OSLC Core Specification to define the resources and operations supported by an Open Services for Lifecycle Collaboration (OSLC) Quality Management (QM) provider.</p>
+  <p>This specification builds on the OSLC Core Specification [[!OSLCCore3]] to define the resources and operations supported by an Open Services for Lifecycle Collaboration (OSLC) Quality Management (QM) provider.</p>
   <p>Quality Management resources define the test plans, test cases, and test results of the software delivery lifecycle. They represent individual resources along with their relationships to other shared resource types such change requests and requirements. The intent of this specification is to define the set of HTTP-based RESTful interfaces in terms of HTTP methods: GET, POST, PUT and DELETE, HTTP response codes, mime type handling and resource formats. The capabilities of the interface definitions are driven by key integration scenarios and therefore don't represent a complete setup of operations on resources or resource types. The resource formats and operations may not match exactly the native models supported by quality management service providers but are intended to be compatible with them. </p>
   <p>A key approach to supporting these scenarios is to delegate operations, as driven by service provider contributed user interfaces, as much as possible and not require a service provider to expose its complete data model and application logic. </p>
 <section id="iprPolicy">
@@ -319,11 +319,11 @@ these specifications.</p>
 
 <p class=‘conformance’>An OSLC QM server MUST implement the domain vocabulary defined in <a href="http://docs.oasis-open.org/oslc-domains/qm/v2.1/qm-v2.1-part2-quality-management-vocab.html">OSLC Quality Management Version 2.1. Part 2: Vocabulary</a>
 
-<p>The following table summarizes the requirements from OSLC Core Specification
+<p>The following table summarizes the requirements from OSLC Core Specification [[!OSLCCore3]]
 as well as some additional requirements specific to the QM domain. Note that
 this specification further restricts some of the requirements for OSLC Core
 Specification. See subsequent sections in this specification or the
-OSLC Core Specification to get further details on each of these
+OSLC Core Specification [[!OSLCCore3]] to get further details on each of these
 requirements.</p>
 
 <table border="1" cellspacing="0" cellpadding="5">
@@ -581,20 +581,20 @@ requirements.</p>
 <p>Turtle example using a reified statement:</p>
 
 <pre class="example">
-@prefix ns0: &lt;http://open-services.net/ns/qm#&gt; .
+@prefix oslc_qm: &lt;http://open-services.net/ns/qm#&gt; .
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
 
-&lt;http://example.com/tests/4321&gt;
+&lt;http://example.com/testcase/4321&gt;
   a &lt;http://open-services.net/ns/qm#TestCase&gt; ;
-  ns0:uses &lt;http://anotherexample.com/testscript/123&gt; .
+  oslc_qm:usesTestScript &lt;http://anotherexample.com/testscript/123&gt; .
 
 &lt;http://njh.me/#link1&gt;
   a rdf:Statement ;
-  rdf:subject &lt;http://example.com//4321&gt; ;
+  rdf:subject &lt;http://example.com/testcase/4321&gt; ;
   rdf:predicate ns0:uses ;
-  rdf:object &lt;http://anotherexample.com/testscript/123&gt; ;
-  dcterms:title &quot;Test Script 123: &quot; .
+  rdf:object &lt;http://example.com/testscript/123&gt; ;
+  dcterms:title &quot;Test Script 123: Request maximum output &quot; .
 </pre>
 
 <p>JSON-LD example using reified statement:</p>
