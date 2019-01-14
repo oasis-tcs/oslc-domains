@@ -1,9 +1,7 @@
 @prefix oslc_qm:  <http://open-services.net/ns/qm#> .
-@prefix oslc_acc:     <http://open-services.net/ns/core/acc#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix oslc_cm:  <http://open-services.net/ns/cm#> .
-@prefix acp:     <http://jazz.net/ns/acp#> .
 @prefix xml:     <http://www.w3.org/XML/1998/namespace> .
 @prefix oslc:    <http://open-services.net/ns/core#> .
 @prefix oslc_rm:  <http://open-services.net/ns/rm#> .
@@ -13,7 +11,6 @@
 @prefix process:  <http://jazz.net/ns/process#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
-@prefix rqm_process:  <http://jazz.net/xmlns/prod/jazz/rqm/process/1.0/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
 <#TestExecutionRecord>

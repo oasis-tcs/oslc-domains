@@ -1,5 +1,4 @@
 @prefix oslc_qm:  <http://open-services.net/ns/qm#> .
-@prefix oslc_acc:     <http://open-services.net/ns/core/acc#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix acp:     <http://jazz.net/ns/acp#> .

@@ -1,9 +1,7 @@
 @prefix oslc_qm:  <http://open-services.net/ns/qm#> .
-@prefix oslc_acc:     <http://open-services.net/ns/core/acc#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix oslc_cm:  <http://open-services.net/ns/cm#> .
-@prefix acp:     <http://jazz.net/ns/acp#> .
 @prefix xml:     <http://www.w3.org/XML/1998/namespace> .
 @prefix oslc:    <http://open-services.net/ns/core#> .
 @prefix oslc_rm:  <http://open-services.net/ns/rm#> .
@@ -77,7 +75,7 @@
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "testsChangeRequest"^^xsd:string ;
 		  oslc:occurs oslc:Zero-or-many ;
-		  oslc:isMemberProperty  oslc_qm:testsChangeRequest ;
+		  oslc:propertyDefinition  oslc_qm:testsChangeRequest ;
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
@@ -88,24 +86,11 @@
 		] ;
   oslc:property
 		[ a       oslc:Property ;
-		  oslc:hidden "true"^^xsd:boolean ;
-		  oslc:isMemberProperty  "false"^^xsd:boolean ;
-		  oslc:name "accessControl"^^xsd:string ;
-		  oslc:occurs oslc:Zero-or-one ;
-		  oslc:isMemberProperty  acp:accessControl ;
-		  oslc:readOnly "true"^^xsd:boolean ;
-		  oslc:representation oslc:Reference ;
-		  oslc:valueType oslc:Resource ;
-		  dcterms:description "The Access Control point resource for the test artifact."^^xsd:string ;
-		  dcterms:title "Access Control"^^xsd:string , "Access Control"@en
-		] ;
-  oslc:property
-		[ a       oslc:Property ;
 		  oslc:hidden "false"^^xsd:boolean ;
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "validatesRequirement"^^xsd:string ;
 		  oslc:occurs oslc:Zero-or-many ;
-		  oslc:isMemberProperty  oslc_qm:validatesRequirement ;
+		  oslc:propertyDefinition  oslc_qm:validatesRequirement ;
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
@@ -137,7 +122,7 @@
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "creator"^^xsd:string ;
 		  oslc:occurs oslc:Zero-or-many ;
-		  oslc:isMemberProperty  dcterms:creator ;
+		  oslc:propertyDefinition dcterms:creator ;
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
@@ -152,7 +137,7 @@
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "title"^^xsd:string ;
 		  oslc:occurs oslc:Exactly-one ;
-		  oslc:isMemberProperty  dcterms:title ;
+		  oslc:propertyDefinition  dcterms:title ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:valueType rdf:XMLLiteral ;
 		  dcterms:description "Title (reference: Dublin Core) of the resource represented as rich text in XHTML content. SHOULD include only content that is valid inside an XHTML <span> element."^^xsd:string ;
@@ -164,7 +149,7 @@
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "modified"^^xsd:string ;
 		  oslc:occurs oslc:Zero-or-one ;
-		  oslc:isMemberProperty  dcterms:modified ;
+		  oslc:propertyDefinition  dcterms:modified ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:valueType xsd:dateTime ;
 		  dcterms:description "Timestamp of latest resource modification (reference: Dublin Core)."^^xsd:string ;
@@ -176,7 +161,7 @@
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "type"^^xsd:string ;
 		  oslc:occurs oslc:Zero-or-many ;
-		  oslc:isMemberProperty  rdf:type ;
+		  oslc:propertyDefinition  rdf:type ;
 		  oslc:range oslc_qm:TestCase ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
@@ -190,7 +175,7 @@
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "relatedChangeRequest"^^xsd:string ;
 		  oslc:occurs oslc:Zero-or-many ;
-		  oslc:isMemberProperty  oslc_qm:relatedChangeRequest ;
+		  oslc:propertyDefinition  oslc_qm:relatedChangeRequest ;
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
@@ -205,7 +190,7 @@
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "instanceShape"^^xsd:string ;
 		  oslc:occurs oslc:Zero-or-one ;
-		  oslc:isMemberProperty  oslc:instanceShape ;
+		  oslc:propertyDefinition  oslc:instanceShape ;
 		  oslc:range oslc:ResourceShape ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
@@ -220,7 +205,7 @@
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "usesTestScript"^^xsd:string ;
 		  oslc:occurs oslc:Zero-or-many ;
-		  oslc:isMemberProperty  oslc_qm:usesTestScript ;
+		  oslc:propertyDefinition  oslc_qm:usesTestScript ;
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
@@ -235,7 +220,7 @@
 		  oslc:isMemberProperty  "false"^^xsd:boolean ;
 		  oslc:name "identifier"^^xsd:string ;
 		  oslc:occurs oslc:Exactly-one ;
-		  oslc:isMemberProperty  dcterms:identifier ;
+		  oslc:propertyDefinition dcterms:identifier ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:valueType xsd:string ;
 		  dcterms:description "A unique identifier for a resource. Assigned by the service provider when a resource is created. Not intended for end-user display."^^xsd:string ;
