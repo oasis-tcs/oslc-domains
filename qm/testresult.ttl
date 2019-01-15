@@ -12,7 +12,7 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-<#TestResult>
+oslc_qm:TestResult
 	a       oslc:ResourceShape ;
 	oslc:describes oslc_qm:TestResult ;
 	oslc:property
@@ -53,7 +53,7 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rqm.planning.VersionedExecutionScript> ;
+		  oslc:valueShape oslc_qm:TestScript ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Script executed to produce the Test Result. It is likely that the target resource will be an oslc_qm:TestScript but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Executes Test Script"^^xsd:string , "Executes Test Script"@en
@@ -68,7 +68,7 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rqm.planning.VersionedTestCase> ;
+		  oslc:valueShape oslc_qm:TestCase ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Case that the Test Result reports on. It is likely that the target resource will be an oslc_qm:TestCase but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Reports on Test Case"^^xsd:string , "Reports on Test Case"@en
@@ -83,7 +83,6 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rational.test.lm.AssetConfiguration> ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Configuration associated with the execution work item executed to generate the execution result."^^xsd:string ;
 		  dcterms:title "Runs on Test Environment"^^xsd:string , "Runs on Test Environment"@en
@@ -98,7 +97,7 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rqm.planning.VersionedTestPlan> ;
+		  oslc:valueShape oslc_qm:TestPlan ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Plan that the Test Result reports on. It is likely that the target resource will be an oslc_qm:TestPlan but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Reports on Test Plan"^^xsd:string , "Reports on Test Plan"@en
@@ -119,7 +118,7 @@
         [ a oslc:Property ;
         oslc:name "shortTitle" ;
         oslc:occurs oslc:Zero-or-one;
-        dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt element."^^rdf:XMLLiteral ;
+        dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt; element."^^rdf:XMLLiteral ;
         oslc:propertyDefinition  oslc:shortTitle ;
         oslc:valueType rdf:XMLLiteral 
         ] ;
@@ -157,7 +156,7 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rqm.execution.TestcaseExecutionRecord> ;
+		  oslc:valueShape oslc_qm:TestExecutionRecord ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Execution Record that the Test Result was produced by. It is likely that the target resource will be an oslc_qm:TestExecutionRecord but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Produced by Test Execution Record"^^xsd:string , "Produced by Test Execution Record"@en

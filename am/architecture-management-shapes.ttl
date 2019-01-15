@@ -57,7 +57,7 @@ resource like a UML Class, Use Case, or Business Process Diagram."""^^rdf:XMLLit
         oslc:propertyDefinition  dcterms:contributor ;
         oslc:valueType           oslc:AnyResource ;
         oslc:representation      oslc:Either ;
-        dcterms:description      "Contributor or contributors to the resource. It is likely that the target resource will be a foaf:Person but that is not necessarily the case. "^^rdf:XMLLiteral .
+        dcterms:description      "Contributor or contributors to the resource. It is likely that the target resource will be a foaf:Person but that is not necessarily the case."^^rdf:XMLLiteral .
 
 <#creator>  a                 oslc:Property ;
         oslc:name                "creator" ;
@@ -73,7 +73,7 @@ resource like a UML Class, Use Case, or Business Process Diagram."""^^rdf:XMLLit
         oslc:occurs              oslc:Zero-or-one ;
         oslc:propertyDefinition  dcterms:created ;
         oslc:valueType           xsd:dateTime ;
-        dcterms:description      "Timestamp of resource creation "^^rdf:XMLLiteral .
+        dcterms:description      "Timestamp of resource creation."^^rdf:XMLLiteral .
 
 # Dublin Core Properties
 <#description> a oslc:Property ;

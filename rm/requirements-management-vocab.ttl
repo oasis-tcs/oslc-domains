@@ -27,15 +27,13 @@ oslc_rm:Requirement
         a                    rdfs:Class ;
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "Requirement" ;
-        oslc:hasBasicShape   oslc_rm:requirementShape ;
         rdfs:comment  "Statement of need." .
 
 oslc_rm:RequirementCollection
         a                    rdfs:Class ;
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "RequirementCollection" ;
-        oslc:hasBasicShape   <http://open-services-net/shapes/rm#requirementCollectionShape> ;
-        rdfs:comment  "Collection of requirements. A collection uses zero or more requirements." .
+        rdfs:comment      "Collection of requirements. A collection uses zero or more requirements." .
 
 
 # ******** Properties ********
@@ -70,11 +68,54 @@ oslc_rm:specifiedBy
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "specifiedBy" .
 
+oslc_rm:decomposedBy
+        a             rdf:Property ;
+        rdfs:comment  "The subject is decomposed by the object. For example, a system requirement is decomposed into a collection of system requirements." ;
+        rdfs:isDefinedBy     oslc_rm: ;
+        rdfs:label    "decomposedBy" .
+
+oslc_rm:decomposes
+        a             rdf:Property ;
+        rdfs:comment  "The object is a partial decompositon of the subject. For example, a sub-system requirement is part of the decomposition of a system requirement." ;
+        rdfs:label    "decomposes" ;
+        rdfs:isDefinedBy     oslc_rm: .
+
+oslc_rm:elaborates
+        a                 rdf:Property ;
+        rdfs:comment      "Expresses an elaboration relationship with a resource. For example, an Architecture Management <em>Resource</em> could be an elaborating model or model element." ;
+        rdfs:isDefinedBy     oslc_rm: ;
+        rdfs:label        "elaborates" .
+
+oslc_rm:constrainedBy
+        a             rdf:Property ;
+        rdfs:comment  "The subject is constrained by the object. For example, a system is constrained by a safety requirement." ;
+        rdfs:label    "constrainedBy" ;
+        rdfs:isDefinedBy     oslc_rm: .
+
+oslc_rm:constrains
+        a             rdf:Property ;
+        rdfs:comment  "The subject constrains the object. For example, a safety requirement constrains a system." ;
+        rdfs:label    "constrains" ;
+        rdfs:isDefinedBy     oslc_rm: .
+
+oslc_rm:specifies
+        a             rdf:Property ;
+        rdfs:comment  "Expresses a specfication relationship with a resource. For example, an Architecture Management <em>Resource</em>could be a specifying model or model element." ;
+        rdfs:isDefinedBy oslc_rm: ;
+        rdfs:label    "specifies" .
+
+
 oslc_rm:satisfiedBy
         a                    rdf:Property ;
         rdfs:comment         "The subject is satisfied by the object. For example, a user requirement is satisfied by a system requirement." ;
         rdfs:isDefinedBy     oslc_rm: ;
         rdfs:label           "satisfiedBy" .
+
+oslc_rm:satisfies
+        a             rdf:Property ;
+        rdfs:comment  "The subject satisfies the object. For example, a system requirement satisfies a user requirement." ;
+        rdfs:label    "satisfies" ;
+        rdfs:isDefinedBy oslc_rm: .
 
 oslc_rm:affectedBy
         a                    rdf:Property ;

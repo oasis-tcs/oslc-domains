@@ -13,7 +13,7 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-<#TestExecutionRecord>
+oslc_qm:TestExecutionRecord
 	a       oslc:ResourceShape ;
 	oslc:describes oslc_qm:TestExecutionRecord ;
 	oslc:property
@@ -55,7 +55,7 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rqm.planning.VersionedExecutionScript> ;
+		  oslc:valueShape oslc_qm:TestScript ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Script executed by the Test Execution Record. It is likely that the target resource will be an oslc_qm:TestScript but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Executes Test Script"@en , "Executes Test Script"^^xsd:string
@@ -97,7 +97,6 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rational.test.lm.AssetConfiguration> ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Indicates the environment details of the test case for this execution record."^^xsd:string ;
 		  dcterms:title "Runs on Test Environment"^^xsd:string , "Runs on Test Environment"@en
@@ -139,7 +138,7 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rqm.planning.VersionedTestCase> ;
+		  oslc:valueShape oslc_qm:TestCase ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Case run by the Test Execution Record. It is likely that the target resource will be an oslc_qm:TestCase but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Runs Test Case"^^xsd:string , "Runs Test Case"@en
@@ -175,7 +174,7 @@
         [ a oslc:Property ;
         oslc:name "shortTitle" ;
         oslc:occurs oslc:Zero-or-one;
-        dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt element."^^rdf:XMLLiteral ;
+        dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt; element."^^rdf:XMLLiteral ;
         oslc:propertyDefinition  oslc:shortTitle ;
         oslc:valueType rdf:XMLLiteral 
         ] ;
@@ -225,7 +224,7 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rqm.planning.VersionedTestPlan> ;
+		  oslc:valueShape oslc_qm:TestPlan ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Plan that the Test Execution Record reports on. It is likely that the target resource will be an oslc_qm:TestPlan but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Reports on Test Plan"@en , "Reports on Test Plan"^^xsd:string

@@ -12,7 +12,7 @@
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 
-<#TestPlan>
+oslc_qm:TestPlan
   a   oslc:ResourceShape ;
   oslc:describes oslc_qm:TestPlan ;
   oslc:property
@@ -177,7 +177,6 @@
     oslc:range oslc:AnyResource ;
     oslc:readOnly "false"^^xsd:boolean ;
     oslc:representation oslc:Reference ;
-    oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rational.test.lm.AssetConfiguration> ;
     oslc:valueType oslc:Resource ;
     dcterms:description "The test environment that the Test Plan will be run on."^^xsd:string ;
     dcterms:title "Runs on Test Environment"^^xsd:string , "Runs on Test Environment"@en
@@ -192,7 +191,7 @@
     oslc:range oslc:AnyResource ;
     oslc:readOnly "false"^^xsd:boolean ;
     oslc:representation oslc:Either ;
-    oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rqm.planning.VersionedTestCase> ;
+    oslc:valueShape oslc_qm:TestCase ;
     oslc:valueType oslc:Resource ;
     dcterms:description "Test Case used by the Test Plan. It is likely that the target resource will be an oslc_qm:TestCase but that is not necessarily the case."^^xsd:string ;
     dcterms:title "Uses Test Case"^^xsd:string , "Uses Test Case"@en
@@ -216,7 +215,7 @@
     [ a oslc:Property ;
     oslc:name "shortTitle" ;
     oslc:occurs oslc:Zero-or-one;
-    dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt element."^^rdf:XMLLiteral ;
+    dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt; element."^^rdf:XMLLiteral ;
     oslc:propertyDefinition  oslc:shortTitle ;
     oslc:valueType rdf:XMLLiteral 
     ] ;
@@ -228,21 +227,6 @@
     dcterms:description "Tag or keyword for a resource. Each occurrence of a dcterms:subject property denotes an additional tag for the resource."^^rdf:XMLLiteral ;
     oslc:readOnly    false ;
     oslc:valueType xsd:string 
-    ] ;
-  oslc:property
-    [ a   oslc:Property ;
-    oslc:hidden "false"^^xsd:boolean ;
-    oslc:isMemberProperty "false"^^xsd:boolean ;
-    oslc:name "runsOnTestEnvironment"^^xsd:string ;
-    oslc:occurs oslc:Zero-or-one ;
-    oslc:propertyDefinition oslc_qm:runsOnTestEnvironment ;
-    oslc:range oslc:AnyResource ;
-    oslc:readOnly "false"^^xsd:boolean ;
-    oslc:representation oslc:Reference ;
-    oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rational.test.lm.AssetConfiguration> ;
-    oslc:valueType oslc:Resource ;
-    dcterms:description "Indicates the environment details of the test case for this execution record."^^xsd:string ;
-    dcterms:title "Runs on Test Environment"^^xsd:string , "Runs on Test Environment"@en
     ] ;
   dcterms:description "Defines the overall process and strategy for testing a system."^^xsd:string ;
   dcterms:title "QM Test Plan"@en , "QM Test Plan"^^xsd:string .

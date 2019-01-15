@@ -13,7 +13,7 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-<TestScript>
+oslc_qm:TestScript
 	a       oslc:ResourceShape ;
 	oslc:describes oslc_qm:TestScript ;
 	oslc:property
@@ -197,7 +197,7 @@
     [ a oslc:Property ;
     oslc:name "shortTitle" ;
     oslc:occurs oslc:Zero-or-one;
-    dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt element."^^rdf:XMLLiteral ;
+    dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt; element."^^rdf:XMLLiteral ;
     oslc:propertyDefinition  oslc:shortTitle ;
     oslc:valueType rdf:XMLLiteral 
     ] ;

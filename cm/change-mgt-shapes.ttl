@@ -9,6 +9,7 @@
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#>.
 
+@base <http://open-services.net/ns/cm/shapes/3.0/change-mgt-shapes.ttl>
 
 <#ChangeRequestShape> a oslc:ResourceShape ;
         oslc:describes  oslc_cm:ChangeRequest ;

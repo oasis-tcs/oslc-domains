@@ -12,7 +12,7 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-<#TestCase>
+oslc_qm:TestCase
   a       oslc:ResourceShape ;
   oslc:describes oslc_qm:TestCase ;
   oslc:property
@@ -103,7 +103,7 @@
     [ a oslc:Property ;
     oslc:name "shortTitle" ;
     oslc:occurs oslc:Zero-or-one;
-    dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt element."^^rdf:XMLLiteral ;
+    dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt; element."^^rdf:XMLLiteral ;
     oslc:propertyDefinition  oslc:shortTitle ;
     oslc:valueType rdf:XMLLiteral 
     ] ;
@@ -209,7 +209,7 @@
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape <https://localhost:9443/jazz/oslc_qm/contexts/_stJVgGfqEd24KMoDcFLfcQ/shape/resource/com.ibm.rqm.planning.VersionedExecutionScript> ;
+		  oslc:valueShape oslc_qm:TestScript ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Script used by the Test Case. It is likely that the target resource will be an oslc_qm:TestScript but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Uses Test Script"^^xsd:string , "Uses Test Script"@en
