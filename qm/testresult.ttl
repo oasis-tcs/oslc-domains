@@ -12,7 +12,9 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-oslc_qm:TestResult
+@base <http://open-services.net/ns/qm/shapes/2.1/testresult.ttl>
+
+<#TestResult>
 	a       oslc:ResourceShape ;
 	oslc:describes oslc_qm:TestResult ;
 	oslc:property
@@ -38,7 +40,6 @@ oslc_qm:TestResult
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape foaf:Person ;
 		  oslc:valueType oslc:AnyResource ;
 		  dcterms:description "Creator or creators of resource (reference: Dublin Core). It is likely that the target resource will be an oslc:AnyResource but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Creator"^^xsd:string , "Creator"@en
@@ -53,7 +54,6 @@ oslc_qm:TestResult
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape oslc_qm:TestScript ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Script executed to produce the Test Result. It is likely that the target resource will be an oslc_qm:TestScript but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Executes Test Script"^^xsd:string , "Executes Test Script"@en
@@ -68,7 +68,6 @@ oslc_qm:TestResult
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape oslc_qm:TestCase ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Case that the Test Result reports on. It is likely that the target resource will be an oslc_qm:TestCase but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Reports on Test Case"^^xsd:string , "Reports on Test Case"@en
@@ -97,7 +96,6 @@ oslc_qm:TestResult
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape oslc_qm:TestPlan ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Plan that the Test Result reports on. It is likely that the target resource will be an oslc_qm:TestPlan but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Reports on Test Plan"^^xsd:string , "Reports on Test Plan"@en
@@ -115,22 +113,39 @@ oslc_qm:TestResult
 		  dcterms:title "Title"^^xsd:string , "Title"@en
 		] ;
     oslc:property
-        [ a oslc:Property ;
-        oslc:name "shortTitle" ;
-        oslc:occurs oslc:Zero-or-one;
-        dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt; element."^^rdf:XMLLiteral ;
-        oslc:propertyDefinition  oslc:shortTitle ;
-        oslc:valueType rdf:XMLLiteral 
-        ] ;
+      [ a oslc:Property ;
+      oslc:name "shortTitle" ;
+      oslc:occurs oslc:Zero-or-one;
+      dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt; element."^^rdf:XMLLiteral ;
+      oslc:propertyDefinition  oslc:shortTitle ;
+      oslc:valueType rdf:XMLLiteral 
+      ] ;
+	  oslc:property
+	    [ a oslc:Property ;
+	    oslc:name "shortId" ;
+	    oslc:propertyDefinition oslc:shortId  ;
+	    oslc:occurs oslc:Zero-or-many;
+	    dcterms:description "A short, human-readable, plain text value. This value should be unique in some context that is apparent to human users of a service."^^rdf:XMLLiteral ;
+	    oslc:valueType xsd:string
+	    ] ;
+	  oslc:property
+	    [ a oslc:Property ;
+	    oslc:name "relation" ;
+	    oslc:propertyDefinition dcterms:relation   ;
+	    oslc:occurs oslc:Zero-or-many;
+	    dcterms:description "Relation which identifies a related resource."^^rdf:XMLLiteral ;
+	    oslc:valueType oslc:AnyResource ;
+	    oslc:representation oslc:Either 
+	    ] ;
     oslc:property
-        [ a oslc:Property ;
-        oslc:name "subject" ;
-        oslc:propertyDefinition dcterms:subject   ;
-        oslc:occurs oslc:Zero-or-many;
-        dcterms:description "Tag or keyword for a resource. Each occurrence of a dcterms:subject property denotes an additional tag for the resource."^^rdf:XMLLiteral ;
-        oslc:readOnly    false ;
-        oslc:valueType xsd:string 
-        ] ;
+      [ a oslc:Property ;
+      oslc:name "subject" ;
+      oslc:propertyDefinition dcterms:subject   ;
+      oslc:occurs oslc:Zero-or-many;
+      dcterms:description "Tag or keyword for a resource. Each occurrence of a dcterms:subject property denotes an additional tag for the resource."^^rdf:XMLLiteral ;
+      oslc:readOnly    false ;
+      oslc:valueType xsd:string 
+      ] ;
 	oslc:property
 		[ a       oslc:Property ;
 		  oslc:hidden "false"^^xsd:boolean ;
@@ -141,7 +156,6 @@ oslc_qm:TestResult
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc_cm:ChangeRequest ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Change request that affects the Test Result. It is likely that the target resource will be an oslc_cm:ChangeRequest but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Affected by Change Request"^^xsd:string , "Affected by Change Request"@en
@@ -156,7 +170,6 @@ oslc_qm:TestResult
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape oslc_qm:TestExecutionRecord ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Execution Record that the Test Result was produced by. It is likely that the target resource will be an oslc_qm:TestExecutionRecord but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Produced by Test Execution Record"^^xsd:string , "Produced by Test Execution Record"@en
@@ -171,7 +184,6 @@ oslc_qm:TestResult
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape foaf:Person ;
 		  oslc:valueType oslc:AnyResource ;
 		  dcterms:description "Contributor or contributors to resource (reference: Dublin Core). It is likely that the target resource will be an oslc:AnyResource but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Contributor"^^xsd:string , "Contributor"@en
@@ -198,7 +210,6 @@ oslc_qm:TestResult
 		  oslc:range oslc:ResourceShape ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc:ResourceShape ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Resource Shape that provides hints as to resource property value-types and allowed values."^^xsd:string ;
 		  dcterms:title "Instance Shape"^^xsd:string , "Instance Shape"@en
@@ -225,7 +236,6 @@ oslc_qm:TestResult
 		  oslc:range oslc:ServiceProvider ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc:ServiceProvider ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "The scope of a resource is a link to the resource's OSLC Service Provider."^^xsd:string ;
 		  dcterms:title "Service Provider"^^xsd:string , "Service Provider"@en

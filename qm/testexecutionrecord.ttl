@@ -1,4 +1,4 @@
-@prefix oslc_qm:  <http://open-services.net/ns/qm#> .
+ @prefix oslc_qm:  <http://open-services.net/ns/qm#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 @prefix oslc_cm:  <http://open-services.net/ns/cm#> .
@@ -13,7 +13,9 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-oslc_qm:TestExecutionRecord
+@base <http://open-services.net/ns/qm/shapes/2.1/testexecutionrecord.ttl>
+
+<#TestExecutionRecord>
 	a       oslc:ResourceShape ;
 	oslc:describes oslc_qm:TestExecutionRecord ;
 	oslc:property
@@ -40,7 +42,6 @@ oslc_qm:TestExecutionRecord
 		  oslc:range oslc:ResourceShape ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc:ResourceShape ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Resource Shape that provides hints as to resource property value-types and allowed values."^^xsd:string ;
 		  dcterms:title "Instance Shape"^^xsd:string , "Instance Shape"@en
@@ -55,7 +56,6 @@ oslc_qm:TestExecutionRecord
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape oslc_qm:TestScript ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Script executed by the Test Execution Record. It is likely that the target resource will be an oslc_qm:TestScript but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Executes Test Script"@en , "Executes Test Script"^^xsd:string
@@ -82,7 +82,6 @@ oslc_qm:TestExecutionRecord
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape foaf:Person ;
 		  oslc:valueType oslc:AnyResource ;
 		  dcterms:description "Contributor or contributors to resource (reference: Dublin Core). It is likely that the target resource will be an foaf:Person but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Contributor"^^xsd:string , "Contributor"@en
@@ -111,7 +110,6 @@ oslc_qm:TestExecutionRecord
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc_cm:ChangeRequest ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "A related change request. It is likely that the target resource will be an oslc_cm:ChangeRequest but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Related Change Request"^^xsd:string , "Related Change Request"@en
@@ -138,7 +136,6 @@ oslc_qm:TestExecutionRecord
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape oslc_qm:TestCase ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Case run by the Test Execution Record. It is likely that the target resource will be an oslc_qm:TestCase but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Runs Test Case"^^xsd:string , "Runs Test Case"@en
@@ -165,7 +162,6 @@ oslc_qm:TestExecutionRecord
 		  oslc:range oslc:ServiceProvider ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc:ServiceProvider ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "The scope of a resource is a link to the resource's OSLC Service Provider."^^xsd:string ;
 		  dcterms:title "Service Provider"^^xsd:string , "Service Provider"@en
@@ -178,6 +174,23 @@ oslc_qm:TestExecutionRecord
         oslc:propertyDefinition  oslc:shortTitle ;
         oslc:valueType rdf:XMLLiteral 
         ] ;
+	  oslc:property
+	    [ a oslc:Property ;
+	    oslc:name "shortId" ;
+	    oslc:propertyDefinition oslc:shortId  ;
+	    oslc:occurs oslc:Zero-or-many;
+	    dcterms:description "A short, human-readable, plain text value. This value should be unique in some context that is apparent to human users of a service."^^rdf:XMLLiteral ;
+	    oslc:valueType xsd:string
+	    ] ;
+	  oslc:property
+	    [ a oslc:Property ;
+	    oslc:name "relation" ;
+	    oslc:propertyDefinition dcterms:relation   ;
+	    oslc:occurs oslc:Zero-or-many;
+	    dcterms:description "Relation which identifies a related resource."^^rdf:XMLLiteral ;
+	    oslc:valueType oslc:AnyResource ;
+	    oslc:representation oslc:Either 
+	    ] ;
     oslc:property
         [ a oslc:Property ;
         oslc:name "subject" ;
@@ -209,7 +222,6 @@ oslc_qm:TestExecutionRecord
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc_cm:ChangeRequest ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Change Request that prevents execution of the Test Execution Record. It is likely that the target resource will be an oslc_cm:ChangeRequest but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Blocked by Change Request"^^xsd:string , "Blocked by Change Request"@en
@@ -224,7 +236,6 @@ oslc_qm:TestExecutionRecord
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape oslc_qm:TestPlan ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Test Plan that the Test Execution Record reports on. It is likely that the target resource will be an oslc_qm:TestPlan but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Reports on Test Plan"@en , "Reports on Test Plan"^^xsd:string
@@ -239,7 +250,6 @@ oslc_qm:TestExecutionRecord
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape foaf:Person ;
 		  oslc:valueType oslc:AnyResource ;
 		  dcterms:description "Creator or creators of resource (reference: Dublin Core). It is likely that the target resource will be an foaf:Person but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Creator"^^xsd:string , "Creator"@en

@@ -9,8 +9,6 @@
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-@base <https://github.com/oasis-tcs/oslc-domains/blob/master/cm/change-mgt-vocab.ttl>.
-
 oslc_cm:
   a owl:Ontology ;
   dcterms:title "The OSLC Change Management(CM) Vocabulary" ;

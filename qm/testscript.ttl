@@ -13,7 +13,9 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 
-oslc_qm:TestScript
+@base <http://open-services.net/ns/qm/shapes/2.1/testscript.ttl>
+
+<#TestScript>
 	a       oslc:ResourceShape ;
 	oslc:describes oslc_qm:TestScript ;
 	oslc:property
@@ -26,7 +28,6 @@ oslc_qm:TestScript
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape foaf:Person ;
 		  oslc:valueType oslc:AnyResource ;
 		  dcterms:description "Creator or creators of resource (reference: Dublin Core). It is likely that the target resource will be an foaf:Person but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Creator"^^xsd:string , "Creator"@en
@@ -79,7 +80,6 @@ oslc_qm:TestScript
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Either ;
-		  oslc:valueShape foaf:Person ;
 		  oslc:valueType oslc:AnyResource ;
 		  dcterms:description "Contributor or contributors to resource (reference: Dublin Core). It is likely that the target resource will be an foaf:Person but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Contributor"^^xsd:string , "Contributor"@en
@@ -94,7 +94,6 @@ oslc_qm:TestScript
 		  oslc:range oslc:ResourceShape ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc:ResourceShape ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Resource Shape that provides hints as to resource property value-types and allowed values."^^xsd:string ;
 		  dcterms:title "Instance Shape"^^xsd:string , "Instance Shape"@en
@@ -109,7 +108,6 @@ oslc_qm:TestScript
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc_rm:Requirement ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "Requirement that is validated by the Test Script. It is likely that the target resource will be an oslc_rm:Requirement but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Validates Requirement"^^xsd:string , "Validates Requirement"@en
@@ -160,7 +158,6 @@ oslc_qm:TestScript
 		  oslc:range oslc:ServiceProvider ;
 		  oslc:readOnly "true"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc:ServiceProvider ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "The scope of a resource is a link to the resource's OSLC Service Provider."^^xsd:string ;
 		  dcterms:title "Service Provider"^^xsd:string , "Service Provider"@en
@@ -175,7 +172,6 @@ oslc_qm:TestScript
 		  oslc:range oslc:AnyResource ;
 		  oslc:readOnly "false"^^xsd:boolean ;
 		  oslc:representation oslc:Reference ;
-		  oslc:valueShape oslc_cm:ChangeRequest ;
 		  oslc:valueType oslc:Resource ;
 		  dcterms:description "A related change request. It is likely that the target resource will be an oslc_cm:ChangeRequest but that is not necessarily the case."^^xsd:string ;
 		  dcterms:title "Related Change Request"^^xsd:string , "Related Change Request"@en
@@ -200,6 +196,23 @@ oslc_qm:TestScript
     dcterms:description "Short name identifying a resource, often used as an abbreviated identifier for presentation to end-users. SHOULD include only content that is valid inside an XHTML &lt;span&gt; element."^^rdf:XMLLiteral ;
     oslc:propertyDefinition  oslc:shortTitle ;
     oslc:valueType rdf:XMLLiteral 
+    ] ;
+  oslc:property
+    [ a oslc:Property ;
+    oslc:name "shortId" ;
+    oslc:propertyDefinition oslc:shortId  ;
+    oslc:occurs oslc:Zero-or-many;
+    dcterms:description "A short, human-readable, plain text value. This value should be unique in some context that is apparent to human users of a service."^^rdf:XMLLiteral ;
+    oslc:valueType xsd:string
+    ] ;
+  oslc:property
+    [ a oslc:Property ;
+    oslc:name "relation" ;
+    oslc:propertyDefinition dcterms:relation   ;
+    oslc:occurs oslc:Zero-or-many;
+    dcterms:description "Relation which identifies a related resource."^^rdf:XMLLiteral ;
+    oslc:valueType oslc:AnyResource ;
+    oslc:representation oslc:Either 
     ] ;
   oslc:property
     [ a oslc:Property ;
