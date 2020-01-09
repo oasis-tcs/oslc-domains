@@ -1,6 +1,7 @@
 <div>
 <h2>README</h2>
   <p><strong>Archived 09 Jan 2020</strong>: this repository was archived by OASIS TC Administration on 09 Jan 2020 at the request of the OSLC Open Project chairs.</p>
+  <hr/>
 
 <p>Members of the <a href="https://www.oasis-open.org/committees/oslc-domains/">OASIS OSLC Lifecycle Integration for Domains (OSLC Domains) Technical Committee</a> create and manage technical content in this TC GitHub repository ( <a href="https://github.com/oasis-tcs/oslc-domains">https://github.com/oasis-tcs/oslc-domains</a> ) as part of the TC's chartered work (<i>i.e.</i>, the program of work and deliverables described in its <a href="https://www.oasis-open.org/committees/oslc-domains/charter.php">charter</a>).</p>
 
